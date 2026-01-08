@@ -1,0 +1,50 @@
+---
+import "../styles/globals.css";
+
+const {
+  title = "El DoradoFx - Trading Solutions",
+  description = "Professional trading solutions and market insights.",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=League+Spartan:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="min-h-screen bg-black text-white">
+    <!-- Header -->
+    <header class="border-b border-(--color-grey)">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <span class="font-bold tracking-wide">
+          El DoradoFx
+        </span>
+        <!-- React Navbar irá aquí -->
+      </div>
+    </header>
+
+   
+    <main>
+      <slot />
+    </main>
+
+    <footer class="border-t border-(--color-grey) mt-20">
+      <div class="max-w-7xl mx-auto px-6 py-8 text-sm text-(--color-grey-light)">
+        © {new Date().getFullYear()} TradingCompany. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* =========================
+   DESIGN TOKENS (CUSTOM)
+   ========================= */
+:root {
+  /* Brand / custom */
+  --color-gold: #B98A25;
+  --color-yellow: #FFEB7F;
+  --color-lemon: #FFF4CC;
+
+  /* Greys custom */
+  --color-grey: #2F2F2F;
+  --color-grey-light: #A6A6A6;
+
+  /* Utility */
+  --color-white-transparent: rgba(251, 251, 251, 0.2);
+
+  /* Fonts */
+  --font-primary: "Play", system-ui, sans-serif;
+  --font-heading: "League Spartan", system-ui, sans-serif;
+}
+
+/* =========================
+   BASE STYLES
+   ========================= */
+@layer base {
+  html {
+    @apply bg-black text-white;
+    font-family: var(--font-primary);
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+  }
+}

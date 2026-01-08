@@ -1,0 +1,46 @@
+---
+import "../styles/globals.css";
+
+const {
+  title = "TradingCompany – Offer",
+  description = "Access our trading solutions.",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- NO SEO para landings -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=League+Spartan:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="min-h-screen bg-black text-white">
+    <!-- Main -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Sticky CTA -->
+    <div
+      class="fixed bottom-0 left-0 right-0
+             bg-(--color-gold) text-black
+             py-4 text-center font-semibold"
+    >
+      Call to Action
+    </div>
+  </body>
+</html>
