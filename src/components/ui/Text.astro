@@ -1,0 +1,19 @@
+---
+interface Props {
+  muted?: boolean;
+  class?: string;
+}
+
+const {
+  muted = false,
+  class: extraClass = "",
+} = Astro.props as Props;
+---
+
+<p
+  class={`text-base leading-relaxed ${
+    muted ? "text-white/60" : "text-white/80"
+  } ${extraClass}`}
+>
+  <slot />
+</p>

@@ -1,0 +1,23 @@
+---
+type ContainerSize = "default" | "narrow" | "wide";
+
+interface Props {
+  size?: ContainerSize;
+  class?: string;
+}
+
+const {
+  size = "default",
+  class: extraClass = "",
+} = Astro.props as Props;
+
+const sizes: Record<ContainerSize, string> = {
+  default: "max-w-7xl",
+  narrow: "max-w-5xl",
+  wide: "max-w-[90rem]",
+};
+---
+
+<div class={`${sizes[size]} mx-auto px-6 ${extraClass}`}>
+  <slot />
+</div>

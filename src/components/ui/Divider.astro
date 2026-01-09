@@ -1,0 +1,9 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: extraClass = "" } = Astro.props as Props;
+---
+
+<div class={`my-16 h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent ${extraClass}`}></div>

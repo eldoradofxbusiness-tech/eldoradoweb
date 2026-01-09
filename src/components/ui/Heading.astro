@@ -1,0 +1,29 @@
+---
+interface Props {
+  level?: 1 | 2 | 3;
+  accent?: boolean;
+  class?: string;
+}
+
+const {
+  level = 2,
+  accent = false,
+  class: extraClass = "",
+} = Astro.props as Props;
+
+const Tag = `h${level}` as any;
+
+const sizes = {
+  1: "text-5xl md:text-6xl",
+  2: "text-3xl md:text-4xl",
+  3: "text-2xl",
+};
+---
+
+<Tag
+  class={`${sizes[level]} font-bold tracking-tight ${
+    accent ? "text-yellow-400" : "text-white"
+  } ${extraClass}`}
+>
+  <slot />
+</Tag>

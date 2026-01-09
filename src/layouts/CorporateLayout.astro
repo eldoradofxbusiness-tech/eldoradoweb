@@ -1,5 +1,6 @@
 ---
 import "../styles/globals.css";
+import Navbar from "../components/react/Navbar";
 
 const {
   title = "El DoradoFx - Trading Solutions",
@@ -15,35 +16,31 @@ const {
 
     <title>{title}</title>
     <meta name="description" content={description} />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=League+Spartan:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
 
-  <body class="min-h-screen bg-black text-white">
-    <!-- Header -->
-    <header class="border-b border-(--color-grey)">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <span class="font-bold tracking-wide">
-          El DoradoFx
-        </span>
-        <!-- React Navbar irá aquí -->
-      </div>
+  <body class="min-h-screen bg-black text-white antialiased">
+    <!-- HEADER -->
+    <header class="">
+      <Navbar client:load />
     </header>
 
-   
-    <main>
+    <!-- MAIN -->
+    <main class="relative">
       <slot />
     </main>
 
-    <footer class="border-t border-(--color-grey) mt-20">
-      <div class="max-w-7xl mx-auto px-6 py-8 text-sm text-(--color-grey-light)">
-        © {new Date().getFullYear()} TradingCompany. All rights reserved.
+    <!-- FOOTER -->
+    <footer class="mt-24 border-t border-(--color-grey)">
+      <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-(--color-grey-light)">
+        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <span>© {new Date().getFullYear()} El DoradoFx. All rights reserved.</span>
+
+          <div class="flex gap-6">
+            <a href="/privacy" class="hover:text-white transition">Privacy</a>
+            <a href="/terms" class="hover:text-white transition">Terms</a>
+            <a href="/contact" class="hover:text-white transition">Contact</a>
+          </div>
+        </div>
       </div>
     </footer>
   </body>
