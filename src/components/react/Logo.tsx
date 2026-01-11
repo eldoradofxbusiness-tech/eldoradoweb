@@ -2,6 +2,8 @@ export default function Logo({ size = "md" }: { size?: "sm" | "md" }) {
   const sizes = {
     sm: "h-12",
     md: "h-14",
+    lg: "h-16",
+    xl: "h-20",
   };
 
   return (

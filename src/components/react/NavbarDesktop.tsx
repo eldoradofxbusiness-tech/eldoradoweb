@@ -2,18 +2,15 @@ import { Send } from "lucide-react";
 import Logo from "./Logo";
 import ContactButton from "./ContactButton";
 
-const links = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+type Props = {
+  links: { label: string; href: string }[];
+};
 
-export default function NavbarDesktop() {
+export default function NavbarDesktop({ links }: Props) {
   return (
     <div className="hidden h-16  md:flex items-center justify-center gap-48 py-4">
       {/* LOGO */}
-      <Logo />
+      <Logo size="xl" />
 
       {/* LINKS */}
       <nav className="flex justify-center gap-8">

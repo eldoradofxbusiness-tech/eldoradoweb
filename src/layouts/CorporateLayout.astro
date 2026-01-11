@@ -6,6 +6,12 @@ const {
   title = "El DoradoFx - Trading Solutions",
   description = "Professional trading solutions and market insights.",
 } = Astro.props;
+
+const pathName = Astro.url.pathname;
+
+const isEspanol = pathName.startsWith("/es") || pathName.startsWith("/es/");
+
+const lang = isEspanol ? "es" : "en";
 ---
 
 <!DOCTYPE html>
@@ -21,7 +27,7 @@ const {
   <body class="min-h-screen bg-black text-white antialiased">
     <!-- HEADER -->
     <header class="">
-      <Navbar client:load />
+      <Navbar client:load lang={lang}/>
     </header>
 
     <!-- MAIN -->

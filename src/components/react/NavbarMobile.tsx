@@ -6,18 +6,19 @@ type Props = {
   open: boolean;
   onToggle: () => void;
   onClose: () => void;
+  links: { label: string; href: string }[];
 };
 
-export default function NavbarMobile({ open, onToggle, onClose }: Props) {
+export default function NavbarMobile({ open, onToggle, onClose, links }: Props) {
   return (
     <div className="flex items-center justify-between p-8 md:hidden">
       {/* LEFT */}
-      <Logo size="sm" />
+      <Logo size="xl" />
 
       {/* RIGHT */}
       <div className="flex items-center justify-center gap-4">
         <ContactButton size="sm" />
-        <MobileMenu open={open} onToggle={onToggle} onClose={onClose} />
+        <MobileMenu open={open} onToggle={onToggle} onClose={onClose} links={links} />
       </div>
     </div>
   );
