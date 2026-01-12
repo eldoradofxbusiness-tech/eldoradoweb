@@ -19,7 +19,7 @@ export default function Navbar({ lang }: Props) {
   ];
 
   return (
-    <div className="relative">
+    <div className="relative z-20">
       <NavbarMobile
         links={links}
         open={open}

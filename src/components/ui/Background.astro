@@ -1,0 +1,47 @@
+---
+type Props = {
+  /** gif o video, ej: "/backgroundAnimation-1.gif" */
+  src?: string;
+
+  /** alt opcional si es gif */
+  alt?: string;
+
+  /** overlay oscuro */
+  darken?: boolean;
+
+  /** glow dorado */
+  glow?: boolean;
+
+  /** clases extra */
+  class?: string;
+};
+
+const {
+  src,
+  alt = "",
+  darken = true,
+  glow = false,
+  class: extraClass = "",
+} = Astro.props;
+---
+
+<div
+  class={`pointer-events-none absolute inset-0 overflow-hidden ${extraClass}`}
+>
+  {src && (
+    <img
+      src={src}
+      alt={alt}
+      class="h-full w-full object-cover opacity-30"
+      loading="lazy"
+    />
+  )}
+
+  {darken && (
+    <div class="absolute inset-0 bg-black/60"></div>
+  )}
+
+  {glow && (
+    <div class="absolute inset-0 bg-glow-gold"></div>
+  )}
+</div>

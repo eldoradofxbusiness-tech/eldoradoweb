@@ -1,0 +1,70 @@
+---
+import Section from "../ui/Section.astro";
+import Container from "../ui/Container.astro";
+import Badge from "../ui/Badge.astro";
+import Heading from "../ui/Heading.astro";
+import Text from "../ui/Text.astro";
+import Button from "../ui/Button.astro";
+---
+
+<Section class="relative flex flex-col items-center justify-center gap-8 p-16">
+  
+<!-- RAYO DE SOL DIAGONAL -->
+<div
+  class="
+    pointer-events-none
+    absolute -top-[10%] left-1/2
+    w-[80%] h-[25%]
+    -translate-x-1/2
+    rotate-[10deg]
+    z-0
+    bg-[linear-gradient(to_right,transparent_20%,rgba(255,215,120,0.35)_45%,rgba(255,215,120,0.55)_50%,rgba(255,215,120,0.35)_55%,transparent_80%)]
+    blur-[80px]
+  "
+></div>
+
+
+
+
+ <div
+  class="
+    absolute w-500 h-full -translate-y-3 -translate-x-80
+    rounded-br-[2.5rem]
+    z-10
+    bg-[radial-gradient(80%_80%_at_70%_100%,rgba(255,215,120,0.45),rgba(255,215,120,0.25)_8%,rgba(185,138,37,0.15)_35%,transparent_90%)]
+  "
+></div>
+
+
+
+
+
+    <div class="mb-6 flex justify-center z-20">
+    <Badge class="badge-glow">
+        Trading signals & automation
+    </Badge>
+    </div>
+
+      <Heading level="1" class="text-center z-20">
+        Professional Trading
+        <br />
+        Signals & Automation
+      </Heading>
+
+      <Text class="mx-auto text-center max-w-2xl text-(--color-grey-light) z-20">
+        High-quality market signals, automated bots and premium
+        strategies designed for serious traders.
+      </Text>
+
+      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row z-20">
+        <Button variant="primary">
+          Join Telegram
+        </Button>
+
+        <Button variant="secondary">
+          View Services
+        </Button>
+      </div>
+
+ 
+</Section>

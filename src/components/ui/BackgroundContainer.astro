@@ -1,0 +1,29 @@
+---
+import Background from "./Background.astro";
+
+type Props = {
+  bgSrc?: string;
+  glow?: boolean;
+  darken?: boolean;
+  class?: string;
+};
+
+const {
+  bgSrc,
+  glow = false,
+  darken = true,
+  class: extraClass = "",
+} = Astro.props;
+---
+
+<div class={`relative overflow-hidden ${extraClass}`}>
+  <Background
+    src={bgSrc}
+    glow={glow}
+    darken={darken}
+  />
+
+  <div class="relative z-10">
+    <slot />
+  </div>
+</div>
