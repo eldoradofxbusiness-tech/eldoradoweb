@@ -1,0 +1,45 @@
+---
+import PhilosophyPrincipleItem from "./PhilosophyPrincipleItem.astro";
+import {
+  ShieldCheck,
+  Scale,
+  Eye,
+  Repeat,
+  ZapOff,
+  TrendingUp
+} from "lucide-react";
+---
+
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+  <PhilosophyPrincipleItem
+    text="Defined risk on every trade"
+    Icon={ShieldCheck}
+  />
+
+  <PhilosophyPrincipleItem
+    text="No overexposure, ever"
+    Icon={Scale}
+  />
+
+  <PhilosophyPrincipleItem
+    text="Transparent logic and rules"
+    Icon={Eye}
+  />
+
+  <PhilosophyPrincipleItem
+    text="Consistency over frequency"
+    Icon={Repeat}
+  />
+
+  <PhilosophyPrincipleItem
+    text="Execution without impulse"
+    Icon={ZapOff}
+  />
+
+  <PhilosophyPrincipleItem
+    text="Long-term mindset"
+    Icon={TrendingUp}
+  />
+
+</div>

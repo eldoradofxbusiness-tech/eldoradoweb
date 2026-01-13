@@ -84,6 +84,17 @@
   color: white;
   background: transparent;
 }
+
+.no-scrollbar {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / Edge legacy */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;                /* Chrome / Safari */
+}
+
+
 /* ===============================
    BASE CANVAS
 ================================ */
@@ -265,4 +276,76 @@
   will-change: transform;
 
   animation: slow-rotate 16s linear infinite;
+}
+/* ===============================
+   Philosophy - CARD CURSOR GLOW
+================================ */
+
+.card-glow-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glow-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(185, 138, 37, 0.18),
+    transparent 40%
+  );
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card-glow-hover:hover::before {
+  opacity: 1;
+}
+
+.card-transparent {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Top card glow: white → gold */
+.glow-top-philosophy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    320px 160px at -5% 10%,
+    rgba(255,215,120,0.35) 5%,
+    rgba(185,138,37,0.25) 5%,
+    transparent 95%
+  );
+}
+
+/* Bottom cards glow: subtle white */
+.glow-bottom-philosophy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    420px 160px at 20% 100%,
+    rgba(255,255,255,0.22),
+    transparent 70%
+  );
+}
+
+.glow-bottom-philosophy-right::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    320px 160px at 82% 10%,
+    rgba(255,255,255,0.22),
+    transparent 70%
+  );
 }

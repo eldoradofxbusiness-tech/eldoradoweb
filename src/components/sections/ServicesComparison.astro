@@ -1,0 +1,113 @@
+---
+import Section from "../ui/Section.astro";
+import Container from "../ui/Container.astro";
+import Heading from "../ui/Heading.astro";
+import Text from "../ui/Text.astro";
+import Button from "../ui/Button.astro";
+---
+
+<Section class="py-32">
+  <Container>
+
+    <!-- Header -->
+    <div class="max-w-2xl mb-16">
+      <Heading level={2} class="mb-4">
+        Services & access
+      </Heading>
+      <Text muted>
+        Choose based on structure, automation level and risk framework.
+      </Text>
+    </div>
+
+    <!-- GRID -->
+    <div class="relative grid grid-cols-4 gap-0 rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur">
+
+      <!-- LEFT LABELS -->
+      <div class="p-8 text-sm text-white/50 space-y-6">
+        <div class="h-20"></div>
+        <div>Markets</div>
+        <div>Execution</div>
+        <div>Risk rules</div>
+        <div>Education</div>
+        <div>Frequency</div>
+        <div>Payment</div>
+        <div class="h-12"></div>
+      </div>
+
+      <!-- FREE -->
+      <div class="p-8 border-l border-white/10 text-sm space-y-6">
+        <div class="h-20">
+          <Heading level={4}>Free Signals</Heading>
+          <Text muted>No commitment</Text>
+        </div>
+        <div>XAUUSD · BTCUSD</div>
+        <div>Manual</div>
+        <div>✔</div>
+        <div>✖</div>
+        <div>Low</div>
+        <div>No payment</div>
+        <div>
+          <Button
+            href="https://t.me/ELDORADOFX?text=Hi%20I%20want%20Free%20Signals"
+            target="_blank"
+            variant="secondary"
+            class="w-full"
+          >
+            Telegram
+          </Button>
+        </div>
+      </div>
+
+      <!-- PREMIUM (HIGHLIGHT) -->
+      <div class="relative p-8 border-l border-r border-(--color-gold)/40 bg-(--color-gold)/5 text-sm space-y-6">
+        <div class="h-20">
+          <Heading level={4} class="text-(--color-gold)">
+            Premium Signals
+          </Heading>
+          <Text muted>Structured & explained</Text>
+        </div>
+        <div>XAUUSD · BTCUSD</div>
+        <div>Manual</div>
+        <div>✔ Advanced</div>
+        <div>✔</div>
+        <div>Medium</div>
+        <div>Monthly / Yearly</div>
+        <div>
+          <Button
+            href="https://t.me/ELDORADOFX?text=Hi%20I%20want%20Premium%20Signals"
+            target="_blank"
+            class="w-full"
+          >
+            Telegram
+          </Button>
+        </div>
+      </div>
+
+      <!-- BOT -->
+      <div class="p-8 border-r border-white/10 text-sm space-y-6">
+        <div class="h-20">
+          <Heading level={4}>Trading Bot</Heading>
+          <Text muted>Fully automated</Text>
+        </div>
+        <div>XAUUSD</div>
+        <div>Automated</div>
+        <div>✔ Hard-coded</div>
+        <div>✔ Logic based</div>
+        <div>Continuous</div>
+        <div>One-time payment</div>
+        <div>
+          <Button
+            href="https://t.me/ELDORADOFX?text=Hi%20I%20want%20the%20Trading%20Bot"
+            target="_blank"
+            variant="secondary"
+            class="w-full"
+          >
+            Telegram
+          </Button>
+        </div>
+      </div>
+
+    </div>
+
+  </Container>
+</Section>
