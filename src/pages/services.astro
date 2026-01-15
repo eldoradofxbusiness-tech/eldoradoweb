@@ -1,17 +1,64 @@
 ---
 import CorporateLayout from "../layouts/CorporateLayout.astro";
+import Section from "../components/ui/Section.astro";
+import Container from "../components/ui/Container.astro";
+import Heading from "../components/ui/Heading.astro";
+import Text from "../components/ui/Text.astro";
+import Badge from "../components/ui/Badge.astro";
+import ServicesGrid from "../components/sections/services/ServicesGrid.astro";
 ---
 
-<CorporateLayout title="El DoradoFx - Services">
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <h1 class="text-3xl font-bold mb-4">
-        Services
-      </h1>
-      <p class="text-(--color-grey-light)">
-        Aquí se listarán los servicios:
-        señales, suscripciones, bots y productos premium.
-      </p>
-    </div>
-  </section>
+<CorporateLayout title="ElDoradoFx - Services">
+
+  <!-- HERO SECTION -->
+  <Section class="relative pt-32 pb-20 flex flex-col items-center justify-center">
+
+    <!-- Subtle background glow -->
+    <div
+      class="
+        pointer-events-none
+        absolute top-0 left-1/2
+        w-[60%] h-[40%]
+        -translate-x-1/2
+        bg-[radial-gradient(ellipse_at_top,rgba(255,215,120,0.12),transparent_70%)]
+        blur-[80px]
+      "
+    ></div>
+
+    <Container class="relative z-10 flex flex-col items-center text-center">
+      <Badge variant="gold" class="mb-6">
+        Access
+      </Badge>
+
+      <Heading level={1} class="mb-6">
+        Services & Access
+      </Heading>
+
+      <Text muted class="max-w-2xl">
+        Choose based on structure, automation level and risk framework.
+        No pressure, no promises — only clarity on what each option provides.
+      </Text>
+    </Container>
+  </Section>
+
+  <!-- SERVICES GRID -->
+  <Section class="py-20">
+    <Container class="flex items-center justify-center flex-col w-full">
+      <ServicesGrid />
+
+      <!-- Legal disclaimer -->
+      <div class="mt-20 text-center">
+        <Text muted class="text-xs">
+          Trading involves risk. All leveraged products carry the potential for loss.
+          <a
+            href="/disclaimer"
+            class="ml-1 underline underline-offset-4 hover:text-white transition"
+          >
+            Read full risk disclosure
+          </a>
+        </Text>
+      </div>
+    </Container>
+  </Section>
+
 </CorporateLayout>
