@@ -5,10 +5,11 @@ import Badge from "../ui/Badge.astro";
 import Heading from "../ui/Heading.astro";
 import Text from "../ui/Text.astro";
 import Button from "../ui/Button.astro";
+import PhoneMockup from "../react/PhoneMockup";
 ---
 
-<Section class="relative flex flex-col items-center justify-center gap-8 p-16">
-  
+<Section class="relative w-full min-h-screen flex items-center justify-center p-6 lg:p-16">
+
 <!-- RAYO DE SOL DIAGONAL -->
 <div
   class="
@@ -23,9 +24,6 @@ import Button from "../ui/Button.astro";
   "
 ></div>
 
-
-
-
  <div
   class="
     absolute w-500 h-full -translate-y-3 -translate-x-80
@@ -35,36 +33,48 @@ import Button from "../ui/Button.astro";
   "
 ></div>
 
+<div class="relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-7xl">
 
-
-
-
-    <div class="mb-6 flex justify-center z-20">
-    <Badge class="badge-glow">
+  <!-- LEFT SIDE - Content -->
+  <div class="flex flex-col gap-8">
+    <div class="flex justify-start">
+      <Badge class="badge-glow">
         Trading signals & automation
-    </Badge>
+      </Badge>
     </div>
 
-      <Heading level="1" class="text-center z-20">
-        Professional Trading
-        <br />
-        Signals & Automation
-      </Heading>
+    <Heading level="1" class="text-left">
+      Professional Trading
+      <br />
+      Signals & Automation
+    </Heading>
 
-      <Text class="mx-auto text-center max-w-2xl text-(--color-grey-light) z-20">
-        High-quality market signals, automated bots and premium
-        strategies designed for serious traders.
-      </Text>
+    <Text class="text-left max-w-2xl text-(--color-grey-light)">
+      High-quality market signals, automated bots and premium
+      strategies designed for serious traders.
+    </Text>
 
-      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row z-20">
-        <Button variant="primary">
-          Join Telegram
-        </Button>
+    <div class="flex flex-col gap-3 sm:flex-row">
+      <Button variant="primary">
+        Join Telegram
+      </Button>
 
-        <Button variant="secondary">
-          View Services
-        </Button>
-      </div>
+      <Button variant="secondary">
+        View Services
+      </Button>
+    </div>
+  </div>
 
- 
+  <!-- RIGHT SIDE - Phone Mockup (hidden on mobile, shown on lg+) -->
+  <div class="hidden lg:flex justify-center items-center h-[600px]">
+    <PhoneMockup client:visible />
+  </div>
+
+</div>
+
+<!-- Mobile Phone (shown only on smaller screens, below content) -->
+<div class="lg:hidden w-full flex justify-center items-center mt-12 h-96">
+  <PhoneMockup client:visible />
+</div>
+
 </Section>
