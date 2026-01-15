@@ -1,0 +1,75 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+
+export const services = [
+  {
+    id: "free",
+    badge: "Free",
+    title: "Free Signals",
+    subtitle: "Public access · No commitment",
+    highlighted: false,
+    conditions: [
+      { label: "XAUUSD · BTCUSD", ok: true },
+      { label: "Manual execution", ok: true },
+      { label: "Basic risk rules", ok: true },
+      { label: "Trade explanations", ok: false },
+      { label: "Education included", ok: false },
+      { label: "Customization", ok: false },
+      { label: "Private access", ok: false },
+      { label: "No payment", ok: true },
+    ],
+    cta: {
+      label: "Learn more",
+      href: "https://t.me/ELDORADOFX?text=Hi%20I%20want%20Free%20Signals",
+    },
+  },
+  {
+    id: "premium",
+    badge: "Recommended",
+    title: "Premium Signals",
+    subtitle: "Structured · Explained · Disciplined",
+    highlighted: true,
+    conditions: [
+      { label: "XAUUSD · BTCUSD", ok: true },
+      { label: "Manual execution", ok: true },
+      { label: "Advanced risk framework", ok: true },
+      { label: "Trade explanations", ok: true },
+      { label: "Education included", ok: true },
+      { label: "Ongoing support", ok: true },
+      { label: "Private access", ok: true },
+      { label: "Monthly / Yearly", ok: true },
+    ],
+    cta: {
+      label: "Learn more",
+      href: "https://t.me/ELDORADOFX?text=Hi%20I%20want%20Premium%20Signals",
+    },
+  },
+  {
+    id: "bot",
+    badge: "Automation",
+    title: "Trading Bot",
+    subtitle: "Fully automated · Logic-driven",
+    highlighted: false,
+    conditions: [
+      { label: "XAUUSD only", ok: true },
+      { label: "Automated execution", ok: true },
+      { label: "Hard-coded risk rules", ok: true },
+      { label: "Logic-based entries", ok: true },
+      { label: "Emotional-free trading", ok: true },
+      { label: "Set & forget", ok: true },
+      { label: "Education included", ok: false },
+      { label: "One-time payment", ok: true },
+    ],
+    cta: {
+      label: "Learn more",
+      href: "https://t.me/ELDORADOFX?text=Hi%20I%20want%20the%20Trading%20Bot",
+    },
+  },
+];
+---
+
+<div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 items-end">
+  {services.map(service => (
+    <ServiceCard service={service} />
+  ))}
+</div>

@@ -1,0 +1,40 @@
+---
+import Section from "../../ui/Section.astro";
+import Container from "../../ui/Container.astro";
+import Heading from "../../ui/Heading.astro";
+import Text from "../../ui/Text.astro";
+import Badge from "../../ui/Badge.astro";
+import ServicesGrid from "./ServicesGrid.astro";
+---
+
+<Section class="w-full ">
+  <Container class="flex items-center justify-center flex-col w-full">
+
+    <!-- Header -->
+    <div class="max-w-2xl mb-20 flex flex-col items-center text-center">
+      <Badge variant="gold">Access</Badge>
+      <Heading level={2} class="mt-4 mb-4">
+        Services & access
+      </Heading>
+      <Text muted>
+        Choose based on structure, automation level and risk framework.
+      </Text>
+    </div>
+
+    <ServicesGrid />
+
+    <!-- Legal -->
+    <div class="mt-20 mb-20 text-right">
+      <Text muted class="text-xs">
+        Trading involves risk.
+        <a
+          href="/disclaimer"
+          class="ml-1 underline underline-offset-4 hover:text-white transition"
+        >
+          Read full risk disclosure
+        </a>
+      </Text>
+    </div>
+
+  </Container>
+</Section>

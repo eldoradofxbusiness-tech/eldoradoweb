@@ -1,0 +1,92 @@
+---
+import Card from "../../ui/Card.astro";
+import Text from "../../ui/Text.astro";
+import Button from "../../ui/Button.astro";
+import Badge from "../../ui/Badge.astro";
+import { Check, X, Send } from "lucide-react";
+
+const { service } = Astro.props;
+---
+
+<Card
+  class={`
+    relative flex flex-col gap-6 p-8 transition-all duration-300
+    ${
+      service.highlighted
+        ? `
+          scale-[1.08]
+          border-(--color-gold)/60
+          bg-[linear-gradient(180deg,rgba(255,215,120,0.12),rgba(255,215,120,0.04))]
+        `
+        : "border-white/10 bg-white/[0.02]"
+    }
+  `}
+>
+
+  <!-- GLOW INTERNO + INFERIOR (solo central) -->
+  {service.highlighted && (
+    <>
+      <!-- glow interior -->
+      <div
+        class="pointer-events-none absolute inset-0 rounded-xl
+        bg-[radial-gradient(ellipse_at_bottom,rgba(255,215,120,0.25),transparent_65%)]"
+      />
+      <!-- glow exterior inferior -->
+      <div
+        class="pointer-events-none absolute inset-x-6 -bottom-8 h-24
+        bg-[radial-gradient(ellipse_at_center,rgba(255,215,120,0.45),transparent_70%)]
+        blur-[32px]"
+      />
+    </>
+  )}
+
+  <!-- HEADER -->
+  <div class="relative z-10 flex flex-col gap-3">
+
+
+    <Text
+      class={`
+        text-2xl font-semibold tracking-tight
+        ${service.highlighted ? "text-(--color-gold)" : ""}
+      `}
+    >
+      {service.title}
+    </Text>
+
+    <Text muted class="text-sm">
+      {service.subtitle}
+    </Text>
+  </div>
+
+  <!-- CONDITIONS -->
+  <ul class="relative z-10 text-sm space-y-3">
+    {service.conditions.map(item => (
+      <li class="flex items-center gap-3">
+        {item.ok ? (
+          <Check className="w-4 h-4 shrink-0 !text-emerald-400" />
+        ) : (
+          <X className="w-4 h-4 shrink-0 !text-red-400" />
+        )}
+        <span class={item.ok ? "text-white/85" : "text-white/40"}>
+          {item.label}
+        </span>
+      </li>
+    ))}
+  </ul>
+
+  <!-- CTA -->
+  <Button
+    href={service.cta.href}
+    target="_blank"
+    variant={service.highlighted ? "primary" : "secondary"}
+    class=" relative z-10 w-full flex items-center justify-center gap-2 group"
+  >
+    <Send
+      className=" w-4 h-4 transition-transform duration-300 group-hover:scale-[1.2]"
+    />
+    <span class="transition-transform duration-300 group-hover:translate-x-1">
+      {service.cta.label}
+    </span>
+  </Button>
+
+</Card>

@@ -2,43 +2,34 @@
 import Card from "../../ui/Card.astro";
 import Text from "../../ui/Text.astro";
 ---
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-12">
 
-<div class="grid grid-cols-2 gap-6">
+  <div>
+    <Text class="text-5xl font-semibold mb-3">8+</Text>
+    <Text muted class="text-xs uppercase tracking-[0.2em]">
+      Years experience
+    </Text>
+  </div>
 
-  <Card class="relative overflow-hidden p-6">
-    <Text class="text-2xl font-semibold mb-1">
-      8+
-    </Text>
-    <Text muted class="text-sm">
-      Years of experience
-    </Text>
-  </Card>
-
-  <Card class="relative overflow-hidden p-6">
-    <Text class="text-2xl font-semibold mb-1">
-      XAUUSD · BTCUSD
-    </Text>
-    <Text muted class="text-sm">
+  <div>
+    <Text class="text-3xl font-semibold mb-3">XAUUSD · BTCUSD</Text>
+    <Text muted class="text-xs uppercase tracking-[0.2em]">
       Markets covered
     </Text>
-  </Card>
+  </div>
 
-  <Card class="relative overflow-hidden p-6">
-    <Text class="text-2xl font-semibold mb-1">
-      300+
+  <div>
+    <Text class="text-5xl font-semibold mb-3">300+</Text>
+    <Text muted class="text-xs uppercase tracking-[0.2em]">
+      Signals last year
     </Text>
-    <Text muted class="text-sm">
-      Signals delivered last year
-    </Text>
-  </Card>
+  </div>
 
-  <Card class="relative overflow-hidden p-6">
-    <Text class="text-2xl font-semibold mb-1">
-      40+
+  <div>
+    <Text class="text-5xl font-semibold mb-3">40+</Text>
+    <Text muted class="text-xs uppercase tracking-[0.2em]">
+      Masterclasses
     </Text>
-    <Text muted class="text-sm">
-      Masterclasses & mentoring sessions
-    </Text>
-  </Card>
+  </div>
 
 </div>
