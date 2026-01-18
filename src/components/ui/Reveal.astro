@@ -1,0 +1,53 @@
+---
+const {
+  delay = 0,
+  class: className = "",
+} = Astro.props;
+---
+
+<div
+  class={`reveal ${className}`}
+  data-delay={delay}
+>
+  <slot />
+</div>
+
+<script>
+  const elements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          entry.target.style.animationDelay = `${delay}ms`;
+          entry.target.classList.add("reveal--visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  .reveal--visible {
+    animation: revealUp 0.7s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+
+  @keyframes revealUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

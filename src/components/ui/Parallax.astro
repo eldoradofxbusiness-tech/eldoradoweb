@@ -1,0 +1,33 @@
+---
+const {
+  speed = 0.2, // 0.1 = muy sutil | 0.3 = más evidente
+  class: className = "",
+} = Astro.props;
+---
+
+<div class={`parallax ${className}`} data-speed={speed}>
+  <slot />
+</div>
+
+<script>
+  const elements = document.querySelectorAll(".parallax");
+
+  const onScroll = () => {
+    elements.forEach((el) => {
+      const speed = parseFloat(el.dataset.speed || 0.2);
+      const rect = el.getBoundingClientRect();
+      const offset = rect.top * speed;
+      el.style.transform = `translateY(${offset}px)`;
+    });
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>
+
+<style>
+  .parallax {
+    will-change: transform;
+    transition: transform 0.05s linear;
+  }
+</style>
