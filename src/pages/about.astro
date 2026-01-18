@@ -1,159 +1,65 @@
 ---
 import CorporateLayout from "../layouts/CorporateLayout.astro";
+
 import Section from "../components/ui/Section.astro";
 import Container from "../components/ui/Container.astro";
 import Heading from "../components/ui/Heading.astro";
 import Text from "../components/ui/Text.astro";
 import Badge from "../components/ui/Badge.astro";
-import Card from "../components/ui/Card.astro";
 import Divider from "../components/ui/Divider.astro";
-import TraderCoins from "../components/sections/trust/TraderCoins.astro";
+
+import HowWeGotHere from "../components/sections/about/HowWeGotHere.astro";
+import Team from "../components/sections/about/Team.astro";
+import CommunityBento from "../components/sections/about/CommunityBento.astro";
 ---
 
-<CorporateLayout title="ElDoradoFx - About">
+<CorporateLayout title="ElDoradoFx — About">
 
-  <!-- HERO SECTION -->
-  <Section class="relative pt-32 pb-16 flex flex-col items-center justify-center">
+  <!-- HERO -->
+  <Section class="relative pt-32 pb-20">
+    <Container class="text-center max-w-3xl">
 
-    <!-- Subtle background glow -->
-    <div
-      class="
-        pointer-events-none
-        absolute top-0 left-1/2
-        w-[50%] h-[35%]
-        -translate-x-1/2
-        bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.08),transparent_65%)]
-        blur-[70px]
-      "
-    ></div>
-
-    <Container class="relative z-10 flex flex-col items-center text-center">
       <Badge variant="gold" class="mb-6">
         About
       </Badge>
 
       <Heading level={1} class="mb-6">
-        Structure, Not Hype
+        Structure, not hype
       </Heading>
 
-      <Text muted class="max-w-3xl text-lg leading-relaxed">
-        ElDoradoFx is built around a single principle: risk comes first, always.
-        We don't promise outcomes. We define a clear framework for how we analyze markets,
-        manage exposure, and make decisions.
-      </Text>
-    </Container>
-  </Section>
-
-  <!-- PHILOSOPHY SECTION -->
-  <Section class="py-16">
-    <Container>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
-        <div>
-          <Heading level={3} class="mb-4">
-            How we operate
-          </Heading>
-          <Text muted class="mb-6">
-            Every signal, every trade, every decision follows a defined process.
-            We don't react to emotions. We execute based on logic, structure, and predefined rules.
-          </Text>
-          <Text muted>
-            The goal is not frequency — it's consistency. Not excitement — it's discipline.
-            Capital preservation matters more than any individual result.
-          </Text>
-        </div>
-
-        <div>
-          <Heading level={3} class="mb-4">
-            What we don't do
-          </Heading>
-          <Text muted class="mb-6">
-            We don't promise returns. We don't guarantee wins. We don't operate on hunches
-            or market noise. We don't overtrade or overexpose.
-          </Text>
-          <Text muted>
-            If a setup doesn't meet our risk criteria, we simply don't trade.
-            The market doesn't care about our opinions — only structure matters.
-          </Text>
-        </div>
-
-      </div>
-    </Container>
-  </Section>
-
-  <Divider class="my-12" />
-
-  <!-- TEAM SECTION -->
-  <Section class="py-16">
-    <Container class="flex flex-col items-center">
-
-      <Badge variant="gold" class="mb-6">
-        Our traders
-      </Badge>
-
-      <Heading level={2} class="mb-6 text-center">
-        Two Traders, Two Strategies
-      </Heading>
-
-      <Text muted class="max-w-3xl text-center mb-12">
-        Two professional traders with distinct execution styles.
-        One scalps shorter timeframes. One trades swing setups.
-        Both follow the same risk-first mindset.
-      </Text>
-
-      <TraderCoins />
-
-      <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-4xl">
-
-        <!-- Ricardo -->
-        <Card class="p-8">
-          <Heading level={3} class="text-xl mb-3">
-            Ricardo — Scalping
-          </Heading>
-          <Text muted class="text-sm leading-relaxed">
-            Operates on shorter timeframes with quick entries and exits.
-            Focused on precision, speed, and tight risk control.
-            Every trade follows the same execution rules.
-          </Text>
-        </Card>
-
-        <!-- MasterKelvin -->
-        <Card class="p-8">
-          <Heading level={3} class="text-xl mb-3">
-            MasterKelvin — Swing Trading
-          </Heading>
-          <Text muted class="text-sm leading-relaxed">
-            Focuses on multi-day positions based on higher timeframe structure.
-            Less frequent, more patient. Risk is always defined before entry.
-            Process over impulse.
-          </Text>
-        </Card>
-
-      </div>
-
-      <Text muted class="mt-12 text-center max-w-2xl text-sm">
-        Two styles allow flexibility across market conditions.
-        When scalping conditions weaken, swing setups may be clearer — and vice versa.
-        This isn't about hedging. It's about structural adaptability.
+      <Text muted class="text-lg leading-relaxed">
+        ElDoradoFx is built around a single principle: risk comes first.
+        No promises, no shortcuts — just a clear framework for how markets
+        are analyzed and trades are executed.
       </Text>
 
     </Container>
   </Section>
 
-  <Divider class="my-12" />
+  <!-- HOW WE GOT HERE -->
+  <HowWeGotHere />
 
-  <!-- FINAL STATEMENT -->
-  <Section class="py-16">
-    <Container class="flex flex-col items-center text-center">
-      <Heading level={2} class="mb-6">
-        No shortcuts. No promises.
-      </Heading>
-      <Text muted class="max-w-2xl">
-        If you're looking for guaranteed returns or get-rich-quick strategies,
-        this isn't the place. We offer structure, clarity, and a rational approach
-        to trading — nothing more, nothing less.
-      </Text>
-    </Container>
-  </Section>
+  <Divider class="my-20" />
+
+  <!-- TEAM -->
+  <Team />
+
+  <Divider class="my-20" />
+
+  <!-- COMMUNITY -->
+  <CommunityBento
+    badge="Community"
+    title="What the community says"
+    description="Real conversations from inside the group. No performance claims, no screenshots of profits — just discussion, structure and process."
+    mainLabel="Inside the private Telegram group"
+    images={[
+      "https://images.pexels.com/photos/7567440/pexels-photo-7567440.jpeg",
+      "https://images.pexels.com/photos/7567460/pexels-photo-7567460.jpeg",
+      "https://images.pexels.com/photos/7567447/pexels-photo-7567447.jpeg",
+      "https://images.pexels.com/photos/7567458/pexels-photo-7567458.jpeg",
+      "https://images.pexels.com/photos/7567462/pexels-photo-7567462.jpeg"
+    ]}
+    disclaimer="Screens shown for illustrative purposes only. Conversations reflect discussion, not financial advice or results."
+  />
 
 </CorporateLayout>
