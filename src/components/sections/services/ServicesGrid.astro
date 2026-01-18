@@ -1,5 +1,6 @@
 ---
 import ServiceCard from "./ServiceCard.astro";
+import ScrollReveal from "../../react/ScrollReveal";
 
 export const services = [
   {
@@ -69,7 +70,9 @@ export const services = [
 ---
 
 <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 items-end">
-  {services.map(service => (
-    <ServiceCard service={service} />
+  {services.map((service, index) => (
+    <ScrollReveal delay={index * 100} client:load>
+      <ServiceCard service={service} />
+    </ScrollReveal>
   ))}
 </div>

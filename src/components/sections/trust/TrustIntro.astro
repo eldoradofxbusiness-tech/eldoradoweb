@@ -3,34 +3,45 @@ import Heading from "../../ui/Heading.astro";
 import Text from "../../ui/Text.astro";
 import TraderCoins from "./TraderCoins.astro";
 import Badge from "../../ui/Badge.astro";
+import ScrollReveal from "../../react/ScrollReveal";
 
 ---
 <div class="w-full py-10 px-6 lg:px-0 flex flex-col items-center gap-8">
 
-   <Badge variant="gold" class="mb-4">
-        Our traders
-    </Badge>
+  <ScrollReveal client:load>
+    <Badge variant="gold" class="mb-4">
+          Our traders
+      </Badge>
+  </ScrollReveal>
 
+  <ScrollReveal delay={100} client:load>
     <Heading level={2} >
       Trusted by disciplined traders
     </Heading>
+  </ScrollReveal>
 
+  <ScrollReveal delay={200} client:load>
     <Text muted class="text-base lg:text-lg leading-relaxed max-w-3xl mx-auto">
       Two professional traders. Two distinct strategies.
       A single focus: disciplined risk management, clarity,
       and long-term consistency across changing market conditions.
     </Text>
+  </ScrollReveal>
 
+  <ScrollReveal delay={300} client:load>
     <div class="flex justify-center">
       <TraderCoins />
     </div>
+  </ScrollReveal>
 
+  <ScrollReveal delay={400} client:load>
     <a
       href="/about"
       class="inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition mt-10"
     >
       Learn more about our approach →
     </a>
+  </ScrollReveal>
 
 </div>
 

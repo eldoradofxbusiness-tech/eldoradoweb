@@ -5,6 +5,7 @@ import Badge from "../../ui/Badge.astro";
 import Heading from "../../ui/Heading.astro";
 import Text from "../../ui/Text.astro";
 import ScrollImage from "../../react/ScrollImage";
+import ScrollReveal from "../../react/ScrollReveal";
 ---
 
 <Section class="relative py-28 overflow-hidden">
@@ -26,27 +27,35 @@ import ScrollImage from "../../react/ScrollImage";
       <!-- RIGHT: CONTENT -->
       <div class="flex flex-col gap-6 max-w-xl">
 
-        <Badge class="w-fit">
-          Our path
-        </Badge>
+        <ScrollReveal client:load>
+          <Badge class="w-fit">
+            Our path
+          </Badge>
+        </ScrollReveal>
 
-        <Heading level={2}>
-          How we got here
-        </Heading>
+        <ScrollReveal delay={100} client:load>
+          <Heading level={2}>
+            How we got here
+          </Heading>
+        </ScrollReveal>
 
-        <Text muted class="leading-relaxed">
-          ElDoradoFx wasn’t built overnight.
-          It’s the result of years spent observing markets,
-          making mistakes, refining execution,
-          and understanding that survival always comes before profit.
-        </Text>
+        <ScrollReveal delay={200} client:load>
+          <Text muted class="leading-relaxed">
+            ElDoradoFx wasn't built overnight.
+            It's the result of years spent observing markets,
+            making mistakes, refining execution,
+            and understanding that survival always comes before profit.
+          </Text>
+        </ScrollReveal>
 
-        <Text muted class="leading-relaxed">
-          We’ve traded through different market cycles,
-          different conditions, and different emotional states.
-          What remained constant was the need for structure,
-          discipline, and defined risk.
-        </Text>
+        <ScrollReveal delay={300} client:load>
+          <Text muted class="leading-relaxed">
+            We've traded through different market cycles,
+            different conditions, and different emotional states.
+            What remained constant was the need for structure,
+            discipline, and defined risk.
+          </Text>
+        </ScrollReveal>
 
       </div>
 

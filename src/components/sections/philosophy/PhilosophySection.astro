@@ -5,6 +5,7 @@ import Heading from "../../ui/Heading.astro";
 import Text from "../../ui/Text.astro";
 import Badge from "../../ui/Badge.astro";
 import Divider from "../../ui/Divider.astro";
+import ScrollReveal from "../../react/ScrollReveal";
 
 import PhilosophyBento from "./PhilosophyBento.astro";
 import PhilosophyPrinciples from "./PhilosophyPrinciples.astro";
@@ -13,18 +14,24 @@ import PhilosophyPrinciples from "./PhilosophyPrinciples.astro";
 <Section class="relative p-16 overflow-hidden flex flex-col items-center justify-center gap-12">
 
     <div class="max-w-2xl flex flex-col items-center">
-      <Badge variant="glow" class="mb-8">
-        Nuestra filosofía
-      </Badge>
+      <ScrollReveal client:load>
+        <Badge variant="glow" class="mb-8">
+          Nuestra filosofía
+        </Badge>
+      </ScrollReveal>
 
-      <Heading level={2} class="mb-4">
-        Cómo entendemos el trading
-      </Heading>
+      <ScrollReveal delay={100} client:load>
+        <Heading level={2} class="mb-4">
+          Cómo entendemos el trading
+        </Heading>
+      </ScrollReveal>
 
-      <Text muted>
-        No prometemos resultados. Definimos un marco claro de cómo
-        operamos, gestionamos el riesgo y tomamos decisiones.
-      </Text>
+      <ScrollReveal delay={200} client:load>
+        <Text muted>
+          No prometemos resultados. Definimos un marco claro de cómo
+          operamos, gestionamos el riesgo y tomamos decisiones.
+        </Text>
+      </ScrollReveal>
     </div>
 
    

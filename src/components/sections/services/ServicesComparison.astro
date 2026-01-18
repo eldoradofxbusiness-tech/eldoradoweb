@@ -5,6 +5,7 @@ import Heading from "../../ui/Heading.astro";
 import Text from "../../ui/Text.astro";
 import Badge from "../../ui/Badge.astro";
 import ServicesGrid from "./ServicesGrid.astro";
+import ScrollReveal from "../../react/ScrollReveal";
 ---
 
 <Section class="w-full ">
@@ -12,13 +13,19 @@ import ServicesGrid from "./ServicesGrid.astro";
 
     <!-- Header -->
     <div class="max-w-2xl mb-20 flex flex-col items-center text-center">
-      <Badge variant="gold">Access</Badge>
-      <Heading level={2} class="mt-4 mb-4">
-        Services & access
-      </Heading>
-      <Text muted>
-        Choose based on structure, automation level and risk framework.
-      </Text>
+      <ScrollReveal client:load>
+        <Badge variant="gold">Access</Badge>
+      </ScrollReveal>
+      <ScrollReveal delay={100} client:load>
+        <Heading level={2} class="mt-4 mb-4">
+          Services & access
+        </Heading>
+      </ScrollReveal>
+      <ScrollReveal delay={200} client:load>
+        <Text muted>
+          Choose based on structure, automation level and risk framework.
+        </Text>
+      </ScrollReveal>
     </div>
 
     <ServicesGrid />
