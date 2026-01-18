@@ -6,75 +6,90 @@ import Heading from "../ui/Heading.astro";
 import Text from "../ui/Text.astro";
 import Button from "../ui/Button.astro";
 import PhoneMockup from "../react/PhoneMockup";
+import PhoneMockup from "../react/PhoneMockup";
 ---
 
-<Section class="relative w-full min-h-screen flex items-center justify-center p-6 lg:p-16">
+<Section class="relative py-24 lg:py-28 pb-16 lg:pb-28 overflow-hidden rounded-br-[2.5rem]">
 
-<!-- RAYO DE SOL DIAGONAL -->
-<div
-  class="
-    pointer-events-none
-    absolute -top-[10%] left-1/2
-    w-[80%] h-[25%]
-    -translate-x-1/2
-    rotate-[10deg]
-    z-0
-    bg-[linear-gradient(to_right,transparent_20%,rgba(255,215,120,0.35)_45%,rgba(255,215,120,0.55)_50%,rgba(255,215,120,0.35)_55%,transparent_80%)]
-    blur-[80px]
-  "
-></div>
+  <!-- RAYO DE SOL DIAGONAL -->
+  <div
+    class="
+      pointer-events-none
+      absolute -top-[10%] left-1/2
+      w-[80%] h-[25%]
+      -translate-x-1/2
+      rotate-[10deg]
+      z-0
+      bg-[linear-gradient(to_right,transparent_20%,rgba(255,215,120,0.35)_45%,rgba(255,215,120,0.55)_50%,rgba(255,215,120,0.35)_55%,transparent_80%)]
+      blur-[80px]
+    "
+  ></div>
 
- <div
-  class="
-    absolute w-500 h-full -translate-y-3 -translate-x-80
-    rounded-br-[2.5rem]
-    z-10
-    bg-[radial-gradient(80%_80%_at_70%_100%,rgba(255,215,120,0.45),rgba(255,215,120,0.25)_8%,rgba(185,138,37,0.15)_35%,transparent_90%)]
-  "
-></div>
+  <!-- GLOW RADIAL -->
+  <div
+    class="
+      absolute w-500 h-[80%]
+      -translate-y-3 -translate-x-80
+      rounded-br-[2.5rem]
+      z-10
+      bg-[radial-gradient(80%_80%_at_100%_100%,rgba(255,215,120,0.45),rgba(255,215,120,0.25)_8%,rgba(185,138,37,0.15)_35%,transparent_90%)]
+    "
+  ></div>
 
-<div class="relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-7xl">
+  <Container>
+    <div
+      class="
+        relative z-20
+        grid grid-cols-1 lg:grid-cols-2
+        gap-12
+        items-center
+        w-full max-w-7xl
+      "
+    >
 
-  <!-- LEFT SIDE - Content -->
-  <div class="flex flex-col gap-8">
-    <div class="flex justify-start">
-      <Badge class="badge-glow">
-        Trading signals & automation
-      </Badge>
+      <!-- LEFT CONTENT -->
+      <div class="flex flex-col gap-7">
+        <Badge class="badge-glow w-fit">
+          Trading signals & automation
+        </Badge>
+
+        <Heading level="1" class="leading-tight max-w-xl">
+          Professional trading
+          <br />
+          signals & automation
+        </Heading>
+
+        <Text class="max-w-xl text-(--color-grey-light)">
+          High-quality market signals and automation,
+          built around risk management and disciplined execution.
+        </Text>
+
+        <div class="flex gap-3 mt-2">
+          <Button variant="primary">
+            Join Telegram
+          </Button>
+
+          <Button variant="secondary">
+            View services
+          </Button>
+        </div>
+      </div>
+
+      <!-- PHONE DESKTOP -->
+      <div class="hidden lg:flex justify-center">
+        <!-- ⬇️ SOLO ajustado el X para acercarlo al texto -->
+        <div class="translate-x-10 -translate-y-10 scale-[1.05]">
+          <PhoneMockup client:visible />
+        </div>
+      </div>
+
     </div>
 
-    <Heading level="1" class="text-left">
-      Professional Trading
-      <br />
-      Signals & Automation
-    </Heading>
-
-    <Text class="text-left max-w-2xl text-(--color-grey-light)">
-      High-quality market signals, automated bots and premium
-      strategies designed for serious traders.
-    </Text>
-
-    <div class="flex flex-col gap-3 sm:flex-row">
-      <Button variant="primary">
-        Join Telegram
-      </Button>
-
-      <Button variant="secondary">
-        View Services
-      </Button>
+    <!-- PHONE MOBILE -->
+    <!-- ⬇️ MENOS ESPACIO VERTICAL -->
+    <div class="lg:hidden mt-16 flex justify-center scale-90">
+      <PhoneMockup client:visible />
     </div>
-  </div>
 
-  <!-- RIGHT SIDE - Phone Mockup (hidden on mobile, shown on lg+) -->
-  <div class="hidden lg:flex justify-center items-center h-[600px]">
-    <PhoneMockup client:visible />
-  </div>
-
-</div>
-
-<!-- Mobile Phone (shown only on smaller screens, below content) -->
-<div class="lg:hidden w-full flex justify-center items-center mt-12 h-96">
-  <PhoneMockup client:visible />
-</div>
-
+  </Container>
 </Section>

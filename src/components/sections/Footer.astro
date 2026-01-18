@@ -1,3 +1,9 @@
+---
+import TelegramIcon from "../../components/ui/TelegramIcon.astro";
+import InstagramIcon from "../../components/ui/InstagramIcon.astro";
+import YoutubeIcon from "../../components/ui/YoutubeIcon.astro";
+---
+
 <!-- FOOTER -->
 <footer class="border-t border-white/10">
   <div class="mx-auto max-w-7xl px-6 py-16">
@@ -21,32 +27,36 @@
           No promises. No shortcuts.
         </p>
 
-          <!-- Social icons -->
+        <!-- Social icons -->
         <div class="flex gap-4 text-white/40">
           <a
             href="https://t.me/ELDORADOFX"
             target="_blank"
             rel="noopener"
-            class="hover:text-white transition"
             aria-label="Telegram"
+            class="hover:text-white transition"
           >
-            <!-- Telegram icon -->
-            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current">
-              <path d="M9.036 15.864l-.378 5.318c.54 0 .774-.234 1.056-.516l2.538-2.424 5.262 3.858c.966.534 1.656.252 1.896-.888l3.438-16.104.001-.001c.282-1.32-.474-1.836-1.404-1.488L1.44 9.492c-1.296.504-1.278 1.224-.234 1.548l5.1 1.59L18.9 6.78c.594-.396 1.134-.18.69.216z"/>
-            </svg>
+            <TelegramIcon class="w-5 h-5" />
           </a>
 
           <a
             href="https://instagram.com/eldoradofx"
             target="_blank"
             rel="noopener"
-            class="hover:text-white transition"
             aria-label="Instagram"
+            class="hover:text-white transition"
           >
-            <!-- Instagram icon -->
-            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current">
-              <path d="M7.5 2h9A5.5 5.5 0 0122 7.5v9a5.5 5.5 0 01-5.5 5.5h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2zm0 2A3.5 3.5 0 004 7.5v9A3.5 3.5 0 007.5 20h9a3.5 3.5 0 003.5-3.5v-9A3.5 3.5 0 0016.5 4h-9zm4.5 3.5a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.25-.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/>
-            </svg>
+            <InstagramIcon class="w-5 h-5" />
+          </a>
+
+          <a
+            href="https://youtube.com/@eldoradofx"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+            class="hover:text-white transition"
+          >
+            <YoutubeIcon class="w-5 h-5" />
           </a>
         </div>
       </div>
@@ -97,25 +107,21 @@
 
     </div>
 
-
+    <!-- BOTTOM -->
     <div class="mt-16 flex flex-col gap-6 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
 
       <span class="text-xs text-white/40">
         © {new Date().getFullYear()} ElDoradoFx. All rights reserved.
       </span>
 
-      <div class="flex items-center gap-6">
-
-        <a
-          href="https://daviddevlopez.com/"
-          target="_blank"
-          rel="noopener"
-          class="text-xs text-white/30 hover:text-white transition"
-        >
-          Developed by David López
-        </a>
-
-      </div>
+      <a
+        href="https://daviddevlopez.com/"
+        target="_blank"
+        rel="noopener"
+        class="text-xs text-white/30 hover:text-white transition"
+      >
+        Developed by David López
+      </a>
 
     </div>
 

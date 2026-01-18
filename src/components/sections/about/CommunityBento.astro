@@ -1,0 +1,134 @@
+---
+import Section from "../../ui/Section.astro";
+import Container from "../../ui/Container.astro";
+import Heading from "../../ui/Heading.astro";
+import Text from "../../ui/Text.astro";
+import Badge from "../../ui/Badge.astro";
+---
+
+<Section class="relative py-24 overflow-hidden">
+  <Container>
+
+    <!-- HEADER -->
+    <div class="flex flex-col items-center text-center mb-16">
+      <Badge variant="gold" class="mb-4">
+        Community
+      </Badge>
+
+      <Heading level={2} class="mb-4">
+        What the community says
+      </Heading>
+
+      <Text muted class="max-w-2xl">
+        Real conversations from inside the group.
+        No performance claims. Just clarity, structure and discipline.
+      </Text>
+    </div>
+
+    <!-- BENTO GRID -->
+    <div
+      class="
+        relative
+        grid
+        grid-cols-1
+        md:grid-cols-4
+        md:grid-rows-2
+        gap-6
+        h-194
+      "
+    >
+      <!-- GLOW BACKGROUND -->
+      <div
+        class="
+          pointer-events-none
+          absolute -inset-24
+          bg-[radial-gradient(ellipse_at_center,rgba(255,215,120,0.12),transparent_65%)]
+          blur-[120px]
+        "
+      ></div>
+
+      <!-- MAIN IMAGE -->
+      <div
+        class="
+          relative
+          md:col-span-2
+          md:row-span-2
+          rounded-2xl
+          overflow-hidden
+          border border-white/10
+          bg-white/[0.03]
+        "
+      >
+        <img
+          src="https://images.pexels.com/photos/7567440/pexels-photo-7567440.jpeg"
+          alt="Trading community chat"
+          class="w-full h-full object-cover opacity-90"
+        />
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+        <div class="absolute bottom-4 left-4 text-xs text-white/70">
+          Inside the private Telegram group
+        </div>
+      </div>
+
+      <!-- IMAGE 2 -->
+      <div
+        class="
+          rounded-2xl
+          overflow-hidden
+          border border-white/10
+          bg-white/[0.03]
+        "
+      >
+        <img
+          src="https://images.pexels.com/photos/7567460/pexels-photo-7567460.jpeg"
+          alt="Trader using phone"
+          class="w-full h-full object-cover opacity-85"
+        />
+      </div>
+
+      <!-- IMAGE 3 -->
+      <div
+        class="
+          rounded-2xl
+          overflow-hidden
+          border border-white/10
+          bg-white/[0.03]
+        "
+      >
+        <img
+          src="https://images.pexels.com/photos/7567458/pexels-photo-7567458.jpeg"
+          alt="Trading desk chat"
+          class="w-full h-full object-cover opacity-85"
+        />
+      </div>
+
+      <!-- IMAGE 4 -->
+      <div
+        class="
+          md:col-span-2
+          rounded-2xl
+          overflow-hidden
+          border border-white/10
+          bg-white/[0.03]
+        "
+      >
+        <img
+          src="https://images.pexels.com/photos/7567447/pexels-photo-7567447.jpeg"
+          alt="Mobile trading discussion"
+          class="w-full h-full object-cover opacity-85"
+        />
+      </div>
+    </div>
+
+    <!-- DISCLAIMER MINI -->
+    <div class="mt-10 flex justify-center">
+      <Text muted class="text-xs max-w-xl text-center">
+        Screens shown for illustrative purposes.
+        Conversations reflect community discussion, not financial advice or results.
+      </Text>
+    </div>
+
+  </Container>
+</Section>

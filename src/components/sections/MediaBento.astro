@@ -1,0 +1,116 @@
+---
+import Section from "../../components/ui/Section.astro";
+import Container from "../../components/ui/Container.astro";
+import Heading from "../../components/ui/Heading.astro";
+import Text from "../../components/ui/Text.astro";
+import Badge from "../../components/ui/Badge.astro";
+import InstagramIcon from "../ui/InstagramIcon.astro";
+
+const {
+  badge = "Community",
+  title,
+  description,
+  images = [],
+  mainLabel,
+  disclaimer,
+  icon = null
+} = Astro.props;
+---
+
+<Section class="relative py-24 overflow-hidden">
+  <Container>
+
+    <!-- HEADER -->
+    <div class="flex flex-col items-center text-center mb-16">
+      <Badge variant="gold" class="mb-4 flex items-center justify-center mx-auto">
+        {badge} {icon && <InstagramIcon class="w-4 h-4 ml-2 -mt-1" />}
+      </Badge>
+
+      <Heading level={2} class="mb-4">
+        {title}
+      </Heading>
+
+      <Text muted class="max-w-2xl">
+        {description}
+      </Text>
+    </div>
+
+    <!-- BENTO GRID -->
+    <div
+      class="
+        relative
+        grid
+        grid-cols-1
+        md:grid-cols-4
+        md:grid-rows-2
+        gap-6
+        h-194
+      "
+    >
+      <!-- GLOW -->
+      <div
+        class="
+          pointer-events-none
+          absolute -inset-24
+          bg-[radial-gradient(ellipse_at_center,rgba(255,215,120,0.12),transparent_65%)]
+          blur-[120px]
+        "
+      ></div>
+
+      <!-- MAIN IMAGE -->
+      <div
+        class="
+          relative
+          md:col-span-2
+          md:row-span-2
+          rounded-2xl
+          overflow-hidden
+          border border-white/10
+          bg-white/[0.03]
+        "
+      >
+        <img
+          src={images[0]}
+          class="w-full h-full object-cover opacity-90"
+          alt=""
+        />
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+        {mainLabel && (
+          <div class="absolute bottom-4 left-4 text-xs text-white/70">
+            {mainLabel}
+          </div>
+        )}
+      </div>
+
+      <!-- SMALL IMAGES -->
+      {images.slice(1).map((img) => (
+        <div
+          class="
+            rounded-2xl
+            overflow-hidden
+            border border-white/10
+            bg-white/[0.03]
+          "
+        >
+          <img
+            src={img}
+            class="w-full h-full object-cover opacity-85"
+            alt=""
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- DISCLAIMER -->
+    {disclaimer && (
+      <div class="mt-10 flex justify-center">
+        <Text muted class="text-xs max-w-xl text-center">
+          {disclaimer}
+        </Text>
+      </div>
+    )}
+
+  </Container>
+</Section>

@@ -1,86 +1,70 @@
-import React, { useState } from 'react';
+import { useRef } from "react";
 
 interface PhoneMockupProps {
   videoUrl?: string;
 }
 
-export default function PhoneMockup({ videoUrl = 'https://www.youtube.com/embed/dQw4w9WgXcQ' }: PhoneMockupProps) {
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
+export default function PhoneMockup({
+  videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ",
+}: PhoneMockupProps) {
+  const phoneRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isHovering) return;
-
-    const rect = e.currentTarget.getBoundingClientRect();
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const rotX = ((y - centerY) / centerY) * 8;
-    const rotY = ((centerX - x) / centerX) * 8;
-
-    setRotateX(rotX);
-    setRotateY(rotY);
+  const handleEnter = () => {
+    if (!phoneRef.current) return;
+    phoneRef.current.style.transform =
+      "rotateX(20deg) rotateY(-30deg) rotateZ(15deg)";
   };
 
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-    setRotateX(0);
-    setRotateY(0);
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovering(true);
+  const handleLeave = () => {
+    if (!phoneRef.current) return;
+    phoneRef.current.style.transform =
+      "rotateX(0deg) rotateY(-10deg) rotateZ(0deg)";
   };
 
   return (
     <div
-      className="flex items-center justify-center perspective w-full h-full"
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      className="
+        relative perspective-[1600px] animate-[floatPro_8s_ease-in-out_infinite]"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
     >
+      {/* PHONE */}
       <div
-        className="relative w-64 h-[520px] transition-transform duration-300"
+        ref={phoneRef}
+        className="
+          relative
+          w-64 h-[520px]
+          will-change-transform
+          transition-transform
+          duration-500
+          ease-out
+        "
         style={{
-          transformStyle: 'preserve-3d',
-          transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+          transform: "rotateX(0deg) rotateY(-10deg) rotateZ(0deg) ",
+          transformStyle: "preserve-3d",
         }}
       >
-        {/* Phone Frame */}
-        <div className="absolute inset-0 rounded-[40px] border-8 border-gray-800 bg-black shadow-2xl overflow-hidden">
-          {/* Notch */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-black rounded-b-3xl z-20"></div>
+        {/* FRAME */}
+        <div className="absolute inset-0 rounded-[42px] border-8 border-neutral-800 bg-black shadow-[0_50px_120px_rgba(0,0,0,.65)] overflow-hidden">
+          {/* NOTCH */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-black rounded-b-3xl z-20" />
 
-          {/* Screen Content */}
-          <div className="absolute inset-0 rounded-[32px] overflow-hidden bg-gradient-to-b from-gray-900 to-black">
-            {/* Video or Content */}
-            <div className="w-full h-full flex items-center justify-center bg-black">
-              <iframe
-                width="100%"
-                height="100%"
-                src={videoUrl}
-                title="ElDoradoFx Demo"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="pointer-events-none"
-              />
-            </div>
-          </div>
-
-          {/* Shine Effect */}
-          <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
+          {/* SCREEN */}
+          <iframe
+            src={videoUrl}
+            className="w-full h-full"
+            title="ElDoradoFx demo"
+            frameBorder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
         </div>
 
-        {/* Shadow under phone */}
-        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-full h-8 bg-gradient-to-t from-black/20 to-transparent blur-lg rounded-full"></div>
-
-        {/* Subtle glow */}
-        <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/10 via-transparent to-white/10 rounded-[48px] blur-2xl pointer-events-none opacity-0 group-hover/phone:opacity-100 transition-opacity"></div>
+        
       </div>
+
+      {/* FLOOR SHADOW */}
+      <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[90%] h-14 bg-black/10 blur-3xl rounded-full" />
     </div>
   );
 }

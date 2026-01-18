@@ -1,0 +1,71 @@
+---
+import Section from "../../../components/ui/Section.astro";
+import Container from "../../../components/ui/Container.astro";
+import Badge from "../../../components/ui/Badge.astro";
+import Heading from "../../../components/ui/Heading.astro";
+import Text from "../../../components/ui/Text.astro";
+import Button from "../../../components/ui/Button.astro";
+import YouTubeIcon from "../../../components/ui/YoutubeIcon.astro";
+
+const {
+  videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  channelUrl = "https://www.youtube.com",
+} = Astro.props;
+---
+
+<Section class="py-20 relative overflow-hidden">
+  <Container>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- VIDEO -->
+      <div class="relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black">
+        <iframe
+          src={videoUrl}
+          class="w-full h-full"
+          allowfullscreen
+        />
+
+        <!-- subtle glow -->
+        <div
+          class="
+            pointer-events-none
+            absolute inset-x-8 -bottom-6 h-20
+            bg-[radial-gradient(ellipse_at_center,rgba(255,215,120,0.25),transparent_70%)]
+            blur-[30px]
+          "
+        ></div>
+      </div>
+
+      <!-- TEXT -->
+      <div class="flex flex-col gap-6">
+        <Badge variant="gold" class="w-fit flex items-center justify-center mx-auto">
+          YouTube <YouTubeIcon class="w-4 h-4 ml-2 -mt-1" />
+        </Badge>
+
+        <Heading level={2}>
+          Market breakdowns & execution logic
+        </Heading>
+
+        <Text muted>
+          We use YouTube to explain how we analyze markets,
+          how trades are structured, and why risk management comes first.
+          No hype — just process and reasoning.
+        </Text>
+
+        <!-- IMAGE STRIP -->
+        <div class="grid grid-cols-2 gap-4 mt-2">
+          <img
+            src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg"
+            class="rounded-xl opacity-80"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg"
+            class="rounded-xl opacity-80"
+            alt=""
+          />
+        </div>
+
+    </div>
+  </Container>
+</Section>

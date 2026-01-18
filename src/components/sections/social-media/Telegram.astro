@@ -1,0 +1,79 @@
+---
+import Section from "../../ui/Section.astro";
+import Container from "../../ui/Container.astro";
+import Heading from "../../ui/Heading.astro";
+import Text from "../../ui/Text.astro";
+import Badge from "../../ui/Badge.astro";
+import Button from "../../ui/Button.astro";
+import PhoneMockup from "../../react/PhoneMockup";
+import TelegramIcon from "../../ui/TelegramIcon.astro";
+---
+
+<Section class="relative py-28 overflow-hidden">
+  <Container>
+
+    <!-- HEADER -->
+    <div class="text-center mb-20">
+      <Badge variant="gold" class="mb-4 flex items-center justify-center mx-auto">
+        Telegram <TelegramIcon class="w-4 h-4 ml-2 -mt-1" />
+      </Badge>
+
+      <Heading level={2} class="mb-4">
+        Where the work actually happens
+      </Heading>
+
+      <Text muted class="max-w-2xl mx-auto">
+        Telegram is not support. It’s not marketing.
+        It’s where analysis, execution logic and real-time context live.
+      </Text>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- PHONE / VISUAL -->
+      <div class="flex justify-center lg:justify-start">
+        <div class="relative translate-x-4">
+          <PhoneMockup client:visible />
+        </div>
+      </div>
+
+      <!-- COPY -->
+      <div class="flex flex-col gap-6 max-w-xl">
+
+        <Heading level={3}>
+          One channel. Clear structure.
+        </Heading>
+
+        <Text muted>
+          We use Telegram as a real working environment.
+          Market context, execution notes and updates are shared openly,
+          without promises or artificial urgency.
+        </Text>
+
+        <ul class="text-sm text-white/70 space-y-2">
+          <li>• Market context & structure</li>
+          <li>• Execution reasoning</li>
+          <li>• Free & premium environments</li>
+        </ul>
+
+        <Text muted class="text-xs">
+          Access to groups is managed from the main channel.
+          No guarantees. No signals without context.
+        </Text>
+
+        <div class="pt-4">
+          <Button
+            href="https://t.me/ELDORADOFX"
+            target="_blank"
+          >
+            Open Telegram Channel →
+          </Button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </Container>
+</Section>
