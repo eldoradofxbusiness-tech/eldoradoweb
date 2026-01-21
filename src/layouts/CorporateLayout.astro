@@ -2,7 +2,7 @@
 import "../styles/globals.css";
 import Navbar from "../components/react/Navbar";
 import Footer from "../components/sections/Footer.astro";
-
+import ParticlesBackground from "../components/ui/ParticlesBackground.astro";
 const {
   title = "El DoradoFx - Trading Solutions",
   description = "Professional trading solutions and market insights.",
@@ -33,9 +33,17 @@ const lang = isEspanol ? "es" : "en";
 
     <!-- MAIN -->
     <main class="relative">
+       <ParticlesBackground count={80} color="#FFD700" />
       <slot />
     </main>
 
     <Footer />
+
   </body>
+  <script>
+    import { initReveal } from "../helpers/reveal";
+    window.addEventListener("DOMContentLoaded", () => {
+      initReveal();
+    });
+  </script>
 </html>

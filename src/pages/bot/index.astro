@@ -1,17 +1,205 @@
 ---
 import LandingLayout from "../../layouts/LandingLayout.astro";
+import Section from "../../components/ui/Section.astro";
+import Container from "../../components/ui/Container.astro";
+import Heading from "../../components/ui/Heading.astro";
+import Text from "../../components/ui/Text.astro";
+import Button from "../../components/ui/Button.astro";
+import Badge from "../../components/ui/Badge.astro";
+import VideoBackground from "../../components/ui/VideoBackground.astro";
+import ParticlesBackground from "../../components/ui/ParticlesBackground.astro";
+import HeroGlow from "../../components/ui/HeroGlow.astro";
+import TelegramIcon from "../../components/ui/TelegramIcon.astro";
+import Card from "../../components/ui/Card.astro";
+import Divider from "../../components/ui/Divider.astro";
+import { Bot, Cpu, Zap, ShieldAlert, Timer, Ban, CheckCircle, XCircle, TrendingUp, Target, ShieldCheck } from "lucide-react";
+
+const iconClass = "text-yellow-400 mb-4 size-8";
 ---
 
-<LandingLayout title="Trading Bot - El DoradoFx">
-  <section class="min-h-screen flex items-center justify-center px-6">
-    <div class="max-w-xl text-center">
-      <h1 class="text-4xl font-bold mb-4">
-        Trading Bot
-      </h1>
-      <p class="text-(--color-grey-light)">
-        Landing del bot automático.
-        Aquí se explicará cómo funciona, resultados y CTA.
-      </p>
-    </div>
-  </section>
+<LandingLayout 
+  title="ElDoradoFX AutoBot | Hands-Free Institutional Trading"
+  description="Stop manual trading stress. Plug into our battle-tested XAUUSD automated strategy."
+  ctaText="REQUEST BOT ACCESS"
+>
+  <Section class="relative min-h-screen flex items-center bg-black overflow-hidden pt-20">
+    <VideoBackground 
+      src="/bot_tech_bg.mp4" 
+      overlayClass="bg-gradient-to-b from-black/90 via-black/40 to-black z-10" 
+      videoClass="opacity-20 grayscale"
+    />
+    <HeroGlow />
+    
+    <Container class="relative z-20 text-center">
+      <Badge variant="glow" class="mb-8 py-2 px-8 border-white/10 bg-white/5 text-white tracking-[0.3em]">
+        <ShieldAlert size={14} class="mr-2 text-red-500" /> HUMAN ERROR IS COSTLY
+      </Badge>
+
+      <Heading level={1} class="text-6xl md:text-[110px] mb-8 font-black uppercase italic leading-[0.8] text-white tracking-tighter">
+        MANUAL TRADING <br/>
+        <span class="text-white/40 italic">IS DRAINING YOU.</span>
+      </Heading>
+
+      <Text class="text-xl md:text-2xl text-white/60 mb-12 max-w-3xl mx-auto font-light leading-tight">
+        Charts all day. Missed entries. Emotional exits. You're trying to trade like a robot — but you're only human. <span class="text-yellow-400 font-bold italic">What if the machine just did it for you?</span>
+      </Text>
+
+      <Button variant="primary" href="https://t.me/your_link" class="px-12 py-6 text-xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
+        <Bot class="mr-3 group-hover:rotate-12 transition-transform" />
+        REQUEST ACCESS VIA TELEGRAM
+      </Button>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-black relative border-y border-white/5">
+    <div class="absolute inset-0 grid-bg opacity-5"></div>
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div>
+          <Badge variant="danger" class="mb-6 bg-red-500/10 text-red-500 border-red-500/20 uppercase tracking-widest">The Harsh Reality</Badge>
+          <Heading level={2} class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white mb-10 leading-none">
+            YOU DON'T HAVE TIME <br/> <span class="text-red-500 underline decoration-red-500/30">TO MASTER THE MARKETS</span>
+          </Heading>
+          
+          <div class="space-y-6 mb-12">
+            {[
+              "You’re not a full-time trader — you have a life.",
+              "You’ve already lost time and money trying to learn.",
+              "Every mistake feels more expensive than the last.",
+              "Trading isn't just strategy — it's discipline and timing."
+            ].map(point => (
+              <div class="flex items-center gap-4 group">
+                <Ban size={20} class="text-red-500 shrink-0" />
+                <Text class="text-white/70 font-bold uppercase tracking-tight text-sm">{point}</Text>
+              </div>
+            ))}
+          </div>
+          <Text muted class="italic border-l-2 border-red-500 pl-6">Most people fail not because they’re lazy… but because they’re not robots. We built one for you.</Text>
+        </div>
+
+        <div class="relative bg-white/[0.02] border border-white/10 rounded-[3rem] p-12 backdrop-blur-3xl overflow-hidden shadow-2xl">
+          <div class="space-y-8">
+             <div class="flex justify-between items-center opacity-30">
+                <Text class="text-[10px] font-black tracking-widest uppercase text-red-500">Manual Trader</Text>
+                <div class="h-px flex-1 mx-4 bg-white/10"></div>
+                <XCircle size={16} class="text-red-500" />
+             </div>
+             <Heading level={3} class="text-2xl text-white/20 italic uppercase tracking-tighter">Emotional • Tired • Inconsistent</Heading>
+             
+             <Divider class="opacity-10" />
+
+             <div class="flex justify-between items-center">
+                <Text class="text-[10px] font-black tracking-widest uppercase text-yellow-500">ElDoradoFX AutoBot</Text>
+                <div class="h-px flex-1 mx-4 bg-yellow-500/20"></div>
+                <CheckCircle size={16} class="text-yellow-500" />
+             </div>
+             <Heading level={3} class="text-4xl text-white font-black italic uppercase tracking-tighter leading-none">
+                <span class="text-yellow-400">EMOTION-FREE</span> <br/> 24/7 EXECUTION
+             </Heading>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-canvas relative overflow-hidden">
+    <ParticlesBackground count={50} color="#B98A25" />
+    <Container>
+      <div class="flex flex-col items-center text-center mb-24">
+        <Badge variant="glow" class="mb-6 border-yellow-500/30 text-yellow-400">INTRODUCING THE ELDORADOFX AUTOBOT</Badge>
+        <Heading level={2} class="text-6xl md:text-[100px] font-black italic uppercase tracking-tighter text-white leading-[0.85]">
+          THE MACHINE <br/> <span class="text-yellow-400 underline decoration-yellow-500/50">DOES THE WORK.</span>
+        </Heading>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { t: "XAUUSD SPECIALIST", d: "Uses our exact scalping & swing strategies automatically.", icon: Target },
+          { t: "SECURE VM SETUP", d: "Runs on your account via MT4. We handle the technical install.", icon: Cpu },
+          { t: "100% AUTOMATED", d: "Emotion-free entries and exits. No need to touch anything.", icon: Zap },
+          { t: "CONSISTENT ROI", d: "Real performance history: 13–20% ROI monthly.", icon: TrendingUp },
+          { t: "PLUG & PLAY", d: "We install it for you. Hands-free. Stress-free.", icon: Timer },
+          { t: "REAL PERFORMANCE", d: "Built by real traders — for people who want results.", icon: ShieldCheck }
+        ].map(item => (
+          <Card class="bg-white/[0.03] border-white/10 p-8 hover:border-yellow-500/30 transition-all duration-500 group">
+            <item.icon size={32} class="text-yellow-500 mb-6 group-hover:scale-110 transition-transform" />
+            <h3 class="text-xl font-black text-white mb-3 font-heading italic uppercase tracking-tight">{item.t}</h3>
+            <p class="text-white/40 text-sm leading-relaxed">{item.d}</p>
+          </Card>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-black relative">
+    <Container size="narrow">
+      <div class="relative bg-white/[0.02] border border-white/10 rounded-[3rem] p-12 md:p-20 shadow-2xl overflow-hidden text-center">
+        <div class="absolute inset-0 grid-bg opacity-10"></div>
+        <Badge variant="glow" class="mb-8 border-yellow-500/20 text-yellow-400">ONE-TIME ACCESS — NO SUBSCRIPTIONS</Badge>
+        
+        <Heading level={2} class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white mb-10 leading-none">
+          PAY ONCE. <br/> <span class="text-yellow-400">KEEP IT FOREVER.</span>
+        </Heading>
+
+        <ul class="text-left max-w-md mx-auto space-y-4 mb-12">
+          {["Managed for you via secure VM setup", "No setup stress — we handle everything", "Price is not public — serious clients only"].map(li => (
+            <li class="flex items-center gap-4 text-white font-bold uppercase tracking-tight text-xs">
+              <CheckCircle size={16} class="text-yellow-500 shrink-0" /> {li}
+            </li>
+          ))}
+        </ul>
+
+        <Button variant="primary" href="https://t.me/your_link" class="w-full py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_60px_rgba(185,138,37,0.4)]">
+          <TelegramIcon class="mr-3 group-hover:rotate-12 transition-transform" />
+          REQUEST ACCESS VIA TELEGRAM
+        </Button>
+        <p class="mt-6 text-red-500 text-[10px] tracking-[0.4em] font-black uppercase italic animate-pulse">
+          ⚠️ Limited installs available. Only a few bots per cycle.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-canvas relative text-center">
+    <Container>
+      <Heading level={2} class="text-4xl md:text-6xl font-black uppercase italic text-white tracking-tighter mb-16">
+        DON’T JUST TAKE <span class="text-yellow-400">OUR WORD FOR IT</span>
+      </Heading>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 opacity-40">
+        {[
+          "Bot Trade Logs Placeholder",
+          "Account Growth Chart Placeholder",
+          "User Reaction Testimonial Placeholder"
+        ].map(p => (
+          <div class="aspect-square bg-neutral-900 border border-white/10 rounded-[2rem] flex items-center justify-center p-8 italic text-[10px] uppercase tracking-widest text-white/30 text-center">
+            {p}
+          </div>
+        ))}
+      </div>
+
+      <Divider class="mb-24 opacity-20" />
+      
+      <div class="max-w-4xl mx-auto">
+        <Heading level={2} class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white mb-8 leading-tight">
+          TRADING MANUALLY <br/> <span class="text-yellow-400">IS OPTIONAL NOW</span>
+        </Heading>
+        <Text class="text-xl text-white/50 mb-12 uppercase tracking-widest font-bold">Zero stress. Real performance. Fully managed.</Text>
+        
+        <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-3xl font-black italic tracking-tighter uppercase w-full max-w-2xl">
+          JOIN THE TELEGRAM TO REQUEST ACCESS
+        </Button>
+      </div>
+    </Container>
+  </Section>
 </LandingLayout>
+
+<style>
+  /* [cite: 1, 3] Forzamos la textura de cuadrícula en el fondo para este estilo técnico */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+</style>

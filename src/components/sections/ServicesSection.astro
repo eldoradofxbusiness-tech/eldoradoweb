@@ -5,16 +5,23 @@ import ServicesTabs from "../react/ServicesTabs.tsx";
 import Badge from "../ui/Badge.astro";
 ---
 
-<Section class="relative py-32 flex flex-col items-center justify-center gap-12 mes overflow-hidden h-auto lg:h-[80vh]">
-  
+<Section
+  class=" relative lg:py-32 flex flex-col items-center justify-center gap-12 overflow-hidden h-auto lg:h-[80vh]"
+>
+ 
+
   <Badge variant="gold" class="mb-4">
-       This is what we do
-  
+    This is what we do
   </Badge>
+  
 
   <Container>
-    
-    <ServicesTabs client:load />
+    <div
+      id="services-tabs"
+      class="reveal scale slow ease-out w-full"
+    >
+      <ServicesTabs client:load />
+    </div>
   </Container>
-
+  
 </Section>

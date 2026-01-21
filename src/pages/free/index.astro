@@ -1,17 +1,176 @@
 ---
 import LandingLayout from "../../layouts/LandingLayout.astro";
+import Section from "../../components/ui/Section.astro";
+import Container from "../../components/ui/Container.astro";
+import Heading from "../../components/ui/Heading.astro";
+import Text from "../../components/ui/Text.astro";
+import Button from "../../components/ui/Button.astro";
+import Badge from "../../components/ui/Badge.astro";
+import TelegramIcon from "../../components/ui/TelegramIcon.astro";
+import ParticlesBackground from "../../components/ui/ParticlesBackground.astro";
+import HeroGlow from "../../components/ui/HeroGlow.astro";
+import Card from "../../components/ui/Card.astro";
+import Divider from "../../components/ui/Divider.astro";
+import { CheckCircle2, TrendingUp, Users, ShieldCheck, Zap, BarChart3 } from "lucide-react";
+
+const TARGET_DATE = "2026-02-01T00:00:00"; // Placeholder para el countdown
 ---
 
-<LandingLayout title="Free Group - El DoradoFx">
-  <section class="min-h-screen flex items-center justify-center px-6">
-    <div class="max-w-xl text-center">
-      <h1 class="text-4xl font-bold mb-4">
-        Free Signals
-      </h1>
-      <p class="text-(--color-grey-light)">
-        Landing de señales gratuitas.
-        Aquí irá el copy corto, beneficios y CTA agresivo.
-      </p>
-    </div>
-  </section>
+<LandingLayout 
+  title="ElDoradoFX – Gratis | 87% Win Rate Free Signals"
+  description="Join 1,000+ traders profiting from real daily signals on XAUUSD & BTCUSD."
+  ctaText="GET FREE SIGNALS NOW"
+>
+  <Section class="relative min-h-screen flex items-center bg-black overflow-hidden pt-20">
+    <div class="absolute inset-0 grid-bg opacity-20 mask-circle"></div>
+    <HeroGlow />
+    <ParticlesBackground count={30} color="#B98A25" />
+    
+    <Container class="relative z-20">
+      <div class="flex flex-col items-center text-center max-w-5xl mx-auto">
+        <div class="relative mb-6">
+          <div class="rotating-halo opacity-40"></div>
+          <Badge variant="glow" class="relative py-2 px-8 border-yellow-500/30 bg-black/50 text-yellow-400 backdrop-blur-xl tracking-[0.2em]">
+            OFFICIAL TELEGRAM CHANNEL
+          </Badge>
+        </div>
+        
+        <Heading level={1} class="text-6xl md:text-[110px] mb-6 font-black uppercase italic leading-[0.8] text-white tracking-tighter">
+          87% WIN RATE. <br/>
+          <span class="text-yellow-400 drop-shadow-[0_0_40px_rgba(185,138,37,0.5)]">100% FREE. NO CATCH.</span>
+        </Heading>
+        
+        <Text class="text-xl md:text-2xl text-white/70 mb-10 max-w-3xl leading-tight">
+          Join <span class="text-white font-bold">ElDoradoFX – Gratis</span>, the no-BS Telegram group where 1,000+ traders are already profiting from real, daily signals on XAUUSD & BTCUSD.
+        </Text>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 w-full max-w-3xl">
+          {["No signup", "No broker required", "No DM from weird admins"].map(item => (
+            <div class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <CheckCircle2 size={16} class="text-yellow-500" />
+              <span class="text-[10px] uppercase tracking-widest font-bold text-white/90">{item}</span>
+            </div>
+          ))}
+        </div>
+
+        <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
+          <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
+          GET FREE SIGNALS NOW
+        </Button>
+        <p class="mt-4 text-[10px] tracking-[0.3em] text-white/40 font-bold uppercase">Instant access. No payment. No pitch.</p>
+
+        <div class="mt-20 w-full max-w-4xl relative group">
+          <div class="absolute -inset-1 bg-yellow-500/20 blur-2xl opacity-30"></div>
+          <div class="relative rounded-[2rem] border border-white/10 overflow-hidden bg-white/5 p-4 backdrop-blur-md">
+            <div class="aspect-video bg-neutral-900 flex items-center justify-center rounded-xl overflow-hidden">
+               <BarChart3 size={64} class="text-white/10" />
+               <span class="absolute text-[10px] uppercase tracking-widest text-white/20 font-bold">Live Signals Visualization Placeholder</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-canvas relative overflow-hidden">
+    <Container>
+      <div class="max-w-4xl mx-auto mb-20 text-center">
+        <Badge variant="gold" class="mb-4">THE VALUE</Badge>
+        <Heading level={2} class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white">
+          What You Get <span class="text-yellow-400">Inside The Group</span>
+        </Heading>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { t: "DAILY SIGNALS", d: "2–3 high-quality signals every single day (XAUUSD + BTCUSD only).", icon: TrendingUp },
+          { t: "MARKET INSIGHTS", d: "Daily market insights + expert commentary directly from our London desk.", icon: Zap },
+          { t: "MASTERCLASS ACCESS", d: "Priority access to discounted trading masterclasses and educational events.", icon: ShieldCheck },
+          { t: "PARTNER OFFERS", d: "Special broker offers from Vantage & PU Prime for our community members.", icon: BarChart3 },
+          { t: "REAL COMMUNITY", d: "A real, engaged community — not bots or spam. Latin traders based in London.", icon: Users }
+        ].map(item => (
+          <Card class="bg-white/[0.03] border-white/10 p-8 hover:border-yellow-500/30 transition-all duration-500 group">
+            <item.icon size={32} class="text-yellow-500 mb-6 group-hover:scale-110 transition-transform" />
+            <h3 class="text-xl font-bold text-white mb-3 font-heading italic uppercase tracking-tight">{item.t}</h3>
+            <p class="text-white/50 text-sm leading-relaxed">{item.d}</p>
+          </Card>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-black relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div>
+          <Badge variant="glow" class="mb-6">TRUSTED AUTHORITY</Badge>
+          <Heading level={2} class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white mb-8">
+            Why Over 1,000+ <br/> <span class="text-yellow-400">Traders Trust Us</span>
+          </Heading>
+          
+          <ul class="space-y-8">
+            {[
+              { t: "6+ Years Experience", d: "Proven track record navigating volatile markets." },
+              { t: "87% Accuracy", d: "Signal precision recorded throughout 2023." },
+              { t: "Real London Presence", d: "Latinos in London, not anonymous ghost admins." },
+              { t: "Designed for Income", d: "Built for people seeking side income without stress." }
+            ].map(point => (
+              <li class="flex items-start gap-5">
+                <div class="mt-1 h-5 w-5 rounded-full border border-yellow-500 flex items-center justify-center flex-shrink-0">
+                  <div class="h-2 w-2 rounded-full bg-yellow-500"></div>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold uppercase tracking-tight italic">{point.t}</h4>
+                  <p class="text-white/40 text-sm">{point.d}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-12 pt-8 border-t border-white/5 flex flex-wrap items-center gap-8 opacity-40">
+            <span class="text-[10px] font-bold tracking-[0.2em] text-white">TRUSTED BROKERS:</span>
+            <div class="h-6 w-24 bg-white/10 rounded flex items-center justify-center text-[8px] font-bold">VANTAGE</div>
+            <div class="h-6 w-24 bg-white/10 rounded flex items-center justify-center text-[8px] font-bold">PU PRIME</div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] p-4 shadow-2xl overflow-hidden aspect-[4/5] flex items-center justify-center">
+             <div class="text-center">
+                <Users size={48} class="text-white/5 mx-auto mb-4" />
+                <span class="text-[10px] uppercase tracking-widest text-white/20 font-bold block">Carousel: Telegram Signals & Testimonials Placeholder</span>
+             </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-canvas relative overflow-hidden">
+    <HeroGlow />
+    <Container size="narrow" class="text-center relative z-20">
+      <Divider class="mb-20 opacity-20" />
+      <Heading level={2} class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white mb-6">
+        Ready to <span class="text-yellow-400 underline decoration-yellow-500/50">Start Winning?</span>
+      </Heading>
+      <Text class="text-xl text-white/60 mb-12 uppercase tracking-[0.2em] font-bold">No spam. No fees. Just signals.</Text>
+
+      <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-3xl font-black italic tracking-tighter uppercase w-full">
+        JOIN THE FREE TELEGRAM GROUP NOW
+      </Button>
+      
+      <p class="mt-8 text-white/40 text-sm font-bold uppercase tracking-widest">You'll be inside in 10 seconds or less.</p>
+      
+      <div class="mt-12 flex items-center justify-center gap-3">
+        <div class="flex -space-x-2">
+          {[1,2,3,4].map(() => (
+            <div class="h-8 w-8 rounded-full border-2 border-black bg-neutral-800 flex items-center justify-center text-[8px] font-bold">U</div>
+          ))}
+        </div>
+        <p class="text-[10px] text-yellow-500 font-bold tracking-[0.3em] uppercase">Thousands already inside</p>
+      </div>
+      <Divider class="mt-20 opacity-20" />
+    </Container>
+  </Section>
 </LandingLayout>

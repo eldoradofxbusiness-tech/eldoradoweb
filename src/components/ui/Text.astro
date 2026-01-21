@@ -2,15 +2,18 @@
 interface Props {
   muted?: boolean;
   class?: string;
+  id?: string;
 }
 
 const {
   muted = false,
   class: extraClass = "",
+  id,
 } = Astro.props as Props;
 ---
 
 <p
+  id={id}
   class={`text-base leading-relaxed ${
     muted ? "text-white/60" : "text-white/80"
   } ${extraClass}`}

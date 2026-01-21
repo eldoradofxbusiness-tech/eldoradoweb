@@ -19,7 +19,7 @@ const TestimonialCard = forwardRef<
         rounded-xl border p-6
         flex flex-col justify-between
         overflow-hidden
-        transition-all duration-300
+        transition-all duration-300 reveal far-from-right
         ${
           active
             ? "border-white/25 bg-white/[0.06]"

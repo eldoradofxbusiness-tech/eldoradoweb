@@ -1,0 +1,31 @@
+---
+interface Props {
+  src: string;
+  poster?: string;
+  overlayClass?: string;
+  videoClass?: string;
+}
+
+const { 
+  src, 
+  poster, 
+  overlayClass = "", 
+  videoClass = "" 
+} = Astro.props;
+---
+
+<video
+  autoplay
+  muted
+  loop
+  playsinline
+  poster={poster}
+  class:list={[
+    "absolute inset-0 object-cover z-0 ", 
+    videoClass
+  ]}
+>
+  <source src={src} type="video/mp4" />
+</video>
+
+<div class:list={["absolute inset-0 z-0", overlayClass]}></div>

@@ -1,12 +1,9 @@
 ---
 import Text from "../../ui/Text.astro";
-
-const { text, Icon } = Astro.props;
+const { text, id } = Astro.props;
 ---
 
-<div class="flex items-start gap-3">
-  <Icon class="mt-0.5 w-4 h-4opacity-90" />
-  <Text muted>
-    {text}
-  </Text>
+<div id={id} class="flex items-start gap-3 reveal-item from-bottom-delay-1">
+  <span class="mt-1 w-1.5 h-1.5 rounded-full bg-white/60"></span>
+  <Text muted>{text}</Text>
 </div>

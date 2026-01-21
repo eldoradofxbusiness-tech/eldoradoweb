@@ -1,0 +1,27 @@
+---
+import Section from "../../ui/Section.astro";
+import Container from "../../ui/Container.astro";
+import Badge from "../../ui/Badge.astro";
+import Heading from "../../ui/Heading.astro";
+import Text from "../../ui/Text.astro";
+import Button from "../../ui/Button.astro";
+import TelegramIcon from "../../ui/TelegramIcon.astro";
+---
+<Section class="py-32 relative overflow-hidden bg-(--color-canvas-end) z-2">
+  <div class="absolute inset-0 bg-slate-900/50 z-0"></div>
+  <Container class="relative z-10 max-w-4xl text-center reveal scale">
+    <Badge variant="gold" class="mb-6">Education</Badge>
+    <Heading level={2} class="mb-6">Trading Masterclass</Heading>
+    <Text muted class="mb-8">Learn the fundamentals behind our trading framework.</Text>
+    
+    <div class="grid md:grid-cols-3 gap-6 mb-12 text-sm text-white/70">
+      <div class="p-6 rounded-xl bg-white/5 reveal up hero-delay-1 border border-white/5">Risk management 101</div>
+      <div class="p-6 rounded-xl bg-white/5 reveal up hero-delay-2 border border-white/5">Market structure basics</div>
+      <div class="p-6 rounded-xl bg-white/5 reveal up hero-delay-3 border border-white/5">Signal execution rules</div>
+    </div>
+
+    <Button href="https://t.me/ELDORADOFX" variant="primary" class="gap-2">
+      <TelegramIcon size={18} /> Join the masterclass
+    </Button>
+  </Container>
+</Section>

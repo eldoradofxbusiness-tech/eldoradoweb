@@ -1,0 +1,196 @@
+---
+import LandingLayout from "../../../layouts/LandingLayout.astro";
+import Section from "../../../components/ui/Section.astro";
+import Container from "../../../components/ui/Container.astro";
+import Heading from "../../../components/ui/Heading.astro";
+import Text from "../../../components/ui/Text.astro";
+import Button from "../../../components/ui/Button.astro";
+import Badge from "../../../components/ui/Badge.astro";
+import HeroGlow from "../../../components/ui/HeroGlow.astro";
+import ParticlesBackground from "../../../components/ui/ParticlesBackground.astro";
+import TelegramIcon from "../../../components/ui/TelegramIcon.astro";
+import Card from "../../../components/ui/Card.astro";
+import Divider from "../../../components/ui/Divider.astro";
+import CountdownTimer from "../../../components/react/CountdownTimer";
+import { Cpu, Zap, Lock, BarChart3, Clock, AlertCircle } from "lucide-react";
+
+const BOT_OFFER_EXPIRY = "2026-01-23T23:59:59";
+---
+
+<LandingLayout 
+  title="50% OFF ElDoradoFX Trading Bot | Limited Slots"
+  ctaText="RESERVE YOUR BOT SLOT"
+>
+  <div class="fixed top-0 left-0 right-0 z-[110] bg-red-600 py-2 text-white font-black text-center text-[10px] tracking-[0.3em] uppercase shadow-2xl">
+    🔥 ONLY 2 BOTS LEFT – 50% OFF SETUP – <span class="underline">RESERVE VIA TELEGRAM</span>
+  </div>
+
+  <Section class="relative min-h-screen flex items-center bg-black overflow-hidden pt-28">
+    <div class="absolute inset-0 grid-bg opacity-20 mask-circle"></div>
+    <HeroGlow />
+    <ParticlesBackground count={50} color="#B98A25" />
+    
+    <Container class="relative z-20 text-center">
+      <div class="relative inline-block mb-8">
+        <div class="rotating-halo opacity-40"></div>
+        <Badge variant="glow" class="relative py-2 px-8 border-red-500/30 bg-red-500/10 text-red-400 backdrop-blur-xl font-black">
+          50% OFF FIRST ACTIVATION
+        </Badge>
+      </div>
+
+      <Heading level={1} class="text-6xl md:text-[110px] mb-8 font-black uppercase italic leading-[0.8] text-white tracking-tighter">
+        ELDORADOFX BOT <br/>
+        <span class="text-yellow-400 drop-shadow-[0_0_40px_rgba(185,138,37,0.5)]">LIMITED ACTIVATIONS</span>
+      </Heading>
+      
+      <div class="mb-12 max-w-3xl mx-auto scale-90 md:scale-100">
+        <CountdownTimer client:load targetDate={BOT_OFFER_EXPIRY} title="ACTIVATION WINDOW CLOSES IN:" />
+      </div>
+
+      <Text class="text-xl md:text-3xl text-white/70 mb-10 max-w-3xl mx-auto leading-tight italic">
+        13–20% ROI. 100% hands-free. Our in-house bot is back — <span class="text-white font-bold underline decoration-yellow-500">but only for a few serious clients.</span>
+      </Text>
+
+      <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
+        <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
+        RESERVE YOUR SPOT NOW
+      </Button>
+      <p class="mt-6 text-[10px] tracking-[0.4em] text-white/40 font-bold uppercase">Once activation slots are full, it’s gone.</p>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-canvas relative border-y border-white/5">
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -inset-10 bg-yellow-500/10 blur-[120px] rounded-full"></div>
+          <div class="grid grid-cols-2 gap-4">
+             {[
+               { val: "13-20%", label: "MONTHLY ROI", icon: BarChart3 },
+               { val: "100%", label: "HANDS-FREE", icon: Zap },
+               { val: "24/7", label: "MONITORING", icon: Clock },
+               { val: "MT4", label: "INTEGRATION", icon: Cpu }
+             ].map(stat => (
+               <Card class="bg-white/[0.03] border-white/10 p-8 text-center backdrop-blur-3xl group hover:border-yellow-500/40 transition-all">
+                  <stat.icon size={24} class="text-yellow-500 mx-auto mb-4" />
+                  <p class="text-3xl font-black text-white italic mb-1 tracking-tighter">{stat.val}</p>
+                  <p class="text-[8px] font-bold text-white/40 tracking-[0.3em] uppercase">{stat.label}</p>
+               </Card>
+             ))}
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <Badge variant="gold" class="mb-6">PERFORMANCE BUILT-IN</Badge>
+          <Heading level={2} class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white mb-8">
+            THIS BOT DOESN’T <br/> <span class="text-yellow-400 font-normal">JUST RUN — IT WINS</span>
+          </Heading>
+          
+          <div class="space-y-6">
+            {[
+              "Fully automated strategy — no inputs needed",
+              "Trades XAUUSD using our real in-house system",
+              "Hosted on a private VM — managed for you",
+              "You keep full control of your MT4 account"
+            ].map(point => (
+              <div class="flex items-center gap-4 group">
+                <div class="h-1.5 w-6 bg-yellow-500 shadow-[0_0_10px_#B98A25]"></div>
+                <Text class="text-white font-bold uppercase tracking-tight text-sm md:text-base">{point}</Text>
+              </div>
+            ))}
+          </div>
+          <Text muted class="mt-10 italic border-l border-white/20 pl-6 leading-relaxed">
+            We’re not selling access. We’re offering performance — installed by pros, run by results.
+          </Text>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-black relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-10"></div>
+    <Container size="narrow" class="text-center relative z-20">
+      <div class="bg-white/[0.02] border border-red-500/20 rounded-[3rem] p-12 md:p-20 shadow-2xl backdrop-blur-3xl">
+        <Badge variant="danger" class="mb-8 border-red-500/20 text-red-500">LIMITED BATCH ACTIVATION</Badge>
+        <Heading level={2} class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white mb-10 leading-none">
+          ONLY <span class="text-red-500 italic">5 SPOTS</span> LEFT <br/> FOR THIS CYCLE
+        </Heading>
+        
+        <div class="max-w-md mx-auto mb-12">
+          <div class="w-full h-4 bg-white/5 rounded-full overflow-hidden border border-white/10 p-1">
+             <div class="w-[85%] h-full bg-gradient-to-r from-red-600 to-red-400 rounded-full animate-pulse shadow-[0_0_15px_#ef4444]"></div>
+          </div>
+          <div class="flex justify-between mt-4">
+            <Text class="text-[10px] font-black uppercase tracking-widest text-white/40">15 Activations Total</Text>
+            <Text class="text-[10px] font-black uppercase tracking-widest text-red-500">85% Capacity Reached</Text>
+          </div>
+        </div>
+
+        <Text class="text-white/60 mb-12 font-bold uppercase tracking-widest text-sm italic">
+          First-time setup now 50% OFF — but only for this batch. Once full, you’ll be added to the waitlist.
+        </Text>
+
+        <Button variant="primary" href="https://t.me/your_link" class="w-full py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_60px_rgba(239,68,68,0.2)]">
+          <Lock size={20} class="mr-3 group-hover:rotate-12 transition-transform" />
+          RESERVE YOUR 50% DISCOUNT
+        </Button>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-canvas border-t border-white/5">
+    <Container>
+      <div class="text-center mb-16">
+        <Heading level={2} class="text-4xl md:text-6xl font-black uppercase italic text-white tracking-tighter mb-4">
+          LET THE BOT <span class="text-yellow-400 underline decoration-yellow-500/30">PROVE IT</span>
+        </Heading>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 items-stretch">
+        <div class="bg-neutral-900 border border-white/10 rounded-3xl p-8 flex flex-col justify-center text-center italic text-[10px] text-white/20 uppercase tracking-[0.4em] aspect-video">
+           <BarChart3 size={48} class="mx-auto mb-6 opacity-50" />
+           ROI Screenshots From Real accounts
+        </div>
+        <div class="bg-neutral-900 border border-white/10 rounded-3xl p-8 flex flex-col justify-center text-center italic text-[10px] text-white/20 uppercase tracking-[0.4em] aspect-video">
+           <TelegramIcon size={48} class="mx-auto mb-6 opacity-50" />
+           User Feedback: "Made $200 while at work"
+        </div>
+      </div>
+
+      <div class="mt-20 p-12 bg-white/[0.02] border border-white/10 rounded-[2.5rem] text-center max-w-4xl mx-auto">
+        <Text class="text-2xl text-white font-light italic leading-relaxed">
+          "We built this bot to remove stress, emotion, and missed entries. It’s the tool we wish we had when we started."
+        </Text>
+        <div class="mt-8 flex items-center justify-center gap-4">
+           <div class="h-px w-12 bg-yellow-500/50"></div>
+           <Text class="text-[10px] font-black tracking-widest text-yellow-500 uppercase">Ricardo & MasterKelvin</Text>
+           <div class="h-px w-12 bg-yellow-500/50"></div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-black relative">
+    <Container size="narrow" class="text-center">
+      <Divider class="mb-20 opacity-20" />
+      <Heading level={2} class="text-5xl md:text-9xl font-black italic uppercase tracking-tighter text-white mb-6 leading-none">
+        AUTOMATED PROFIT <br/> <span class="text-yellow-400">DOESN’T WAIT.</span>
+      </Heading>
+      
+      <div class="mb-12">
+        <Text class="text-xl text-white/40 mb-10 uppercase tracking-widest font-bold">50% OFF setup ends when slots are filled or timer hits zero.</Text>
+        <CountdownTimer client:load targetDate={BOT_OFFER_EXPIRY} />
+      </div>
+
+      <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-3xl font-black italic tracking-tighter uppercase w-full mb-8">
+        RESERVE YOUR SPOT NOW
+      </Button>
+      
+      <div class="flex items-center justify-center gap-2">
+        <AlertCircle size={14} class="text-red-500 animate-pulse" />
+        <p class="text-[10px] text-white/30 font-bold uppercase tracking-[0.3em]">Next signal cycle starts in less than 12 hours</p>
+      </div>
+      <Divider class="mt-20 opacity-20" />
+    </Container>
+  </Section>
+</LandingLayout>

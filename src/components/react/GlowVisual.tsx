@@ -1,6 +1,6 @@
 export default function GlowVisual({ icon }: { icon: string }) {
   return (
-    <div className="relative w-85 h-85 flex items-center justify-center overflow-visible">
+    <div className="relative w-85 h-85 flex items-center justify-center overflow-visible reveal scale-in">
 
       {/* GRID */}
       <div className="absolute inset-0 rounded-full grid-bg opacity-35 mask-circle" />
@@ -24,14 +24,9 @@ export default function GlowVisual({ icon }: { icon: string }) {
         "
       />
 
-      {/* Central glass */}
       <div
         className="
-          relative z-10
-          w-28 h-28
-          rounded-xl
-          card-glass
-          flex items-center justify-center
+          relative z-10 w-34 h-34 rounded-ful card-glass flex items-center justify-center
         "
       >
       <img

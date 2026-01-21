@@ -5,27 +5,18 @@ import ServicesSection from "../components/sections/ServicesSection.astro";
 import PhilosophySection from "../components/sections/philosophy/PhilosophySection.astro";
 import TrustSection from "../components/sections/trust/TrustSection.astro";
 import ServicesComparison from "../components/sections/services/ServicesComparison.astro";
-import Reveal from "../components/ui/Reveal.astro";
 ---
 
 <CorporateLayout title="El DoradoFx - Home">
 
   <Hero />
+ 
+  <ServicesSection />
 
-  <Reveal>
-    <ServicesSection />
-  </Reveal>
+  <PhilosophySection />
+  
+  <TrustSection />
 
-  <Reveal delay={120}>
-    <PhilosophySection />
-  </Reveal>
-
-  <Reveal delay={240}>
-    <TrustSection />
-  </Reveal>
-
-  <Reveal delay={360}>
-    <ServicesComparison />
-  </Reveal>
+  <ServicesComparison />
 
 </CorporateLayout>

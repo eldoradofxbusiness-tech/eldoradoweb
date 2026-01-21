@@ -1,0 +1,86 @@
+---
+interface Props {
+  src?: string;
+  poster?: string;
+  drift?: "left" | "right";
+}
+
+const {
+  src = "/hero-phone-video.mp4",
+  poster = "/hero-phone-cover.webp",
+  drift = "left"
+} = Astro.props;
+
+
+const initialRotation = drift === "left" 
+  ? "rotateX(5deg) rotateY(25deg) rotateZ(-2deg)" 
+  : "rotateX(5deg) rotateY(-25deg) rotateZ(2deg)";
+
+const hoverRotation = "rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.05)";
+---
+
+<div 
+  class="phone-container relative group perspective-[2000px] py-20"
+  data-drift={drift}
+>
+  <div
+    class="phone-wrapper relative w-72 h-[580px] mx-auto will-change-transform transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1)"
+    style={`transform: ${initialRotation}; transform-style: preserve-3d;`}
+    data-initial={initialRotation}
+    data-hover={hoverRotation}
+  >
+    <div class="absolute inset-0 rounded-[3rem] border-[12px] border-neutral-900 bg-black 
+                shadow-[0_50px_100px_rgba(0,0,0,0.8),inset_0_0_2px_1px_rgba(255,255,255,0.1)] 
+                overflow-hidden ring-1 ring-white/10 z-10">
+      
+      <div class="absolute top-2 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-30 flex items-center justify-end px-4">
+         <div class="w-1.5 h-1.5 rounded-full bg-blue-500/40 blur-[1px]"></div>
+      </div>
+
+      <video
+        src={src}
+        poster={poster}
+        class="w-full h-full object-cover relative z-10"
+        autoplay muted loop playsinline
+      ></video>
+      
+      <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-50"></div>
+    </div>
+
+   <div 
+        class={`
+            absolute inset-y-4 rounded-[3rem] bg-neutral-800 border border-white/5 -z-10 w-full 
+            transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1)
+            ${drift === 'left' 
+            ? "-translate-x-4 group-hover:-translate-x-1" 
+            : "translate-x-4 group-hover:translate-x-1"
+            }
+        `}
+        />
+  </div>
+
+  <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-10 bg-black/60 blur-[40px] rounded-full"></div>
+</div>
+
+<script>
+  const init = () => {
+    const containers = document.querySelectorAll('.phone-container');
+    
+    containers.forEach(container => {
+      const wrapper = container.querySelector('.phone-wrapper') as HTMLElement;
+      const initial = wrapper.dataset.initial || "";
+      const hover = wrapper.dataset.hover || "";
+
+      container.addEventListener('mouseenter', () => {
+        wrapper.style.transform = hover;
+      });
+
+      container.addEventListener('mouseleave', () => {
+        wrapper.style.transform = initial;
+      });
+    });
+  }
+
+  init();
+  document.addEventListener('astro:after-swap', init);
+</script>

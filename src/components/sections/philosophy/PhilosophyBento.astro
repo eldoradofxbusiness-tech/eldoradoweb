@@ -7,15 +7,17 @@ import Text from "../../ui/Text.astro";
 <div class="lg:w-2/3 grid grid-cols-1 gap-8 lg:grid-cols-6 lg:grid-rows-2">
 
   <!-- TOP CARD -->
-  <Card class="card-glow-hover card-transparent glow-top-philosophy relative overflow-hidden lg:col-span-6 min-h-[360px]">
+  <Card class="card-glow-hover card-transparent relative overflow-hidden lg:col-span-6 min-h-[360px] reveal from-bottom slow ease-out">
     <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 h-full">
-
       <div class="flex flex-col justify-center px-8 py-10 max-w-xl">
         <Heading level={3} class="mb-3 text-2xl">
           Risk-first mindset
         </Heading>
+
         <Text muted class="text-sm lg:text-base leading-relaxed">
-          Cada decisión parte del riesgo asumido, no del beneficio esperado. Si el riesgo no está perfectamente definido, la operación simplemente no existe. El control del riesgo es el origen de todo.
+          Cada decisión parte del riesgo asumido, no del beneficio esperado.
+          Si el riesgo no está perfectamente definido, la operación no existe.
+          El control del riesgo es el origen de todo.
         </Text>
       </div>
 
@@ -26,18 +28,20 @@ import Text from "../../ui/Text.astro";
           class="absolute inset-0 w-full h-full object-cover opacity-15"
         />
       </div>
-
     </div>
   </Card>
 
   <!-- BOTTOM LEFT -->
-  <Card class="card-glow-hover card-transparent glow-bottom-philosophy relative overflow-hidden lg:col-span-4 min-h-[300px] flex flex-col">
+  <Card class="card-glow-hover card-transparent relative overflow-hidden lg:col-span-4 min-h-[300px] flex flex-col reveal from-left slow ease-out">
     <div class="relative z-10 px-6 py-6">
       <Heading level={3} class="mb-2 text-xl">
         Capital preservation
       </Heading>
+
       <Text muted class="text-sm leading-relaxed">
-        Proteger el capital es siempre la prioridad. Sin capital no existe operativa. La consistencia a largo plazo importa más que cualquier resultado aislado.
+        Proteger el capital es siempre la prioridad.
+        Sin capital no existe operativa.
+        La consistencia a largo plazo importa más que cualquier resultado aislado.
       </Text>
     </div>
 
@@ -51,13 +55,15 @@ import Text from "../../ui/Text.astro";
   </Card>
 
   <!-- BOTTOM RIGHT -->
-  <Card class="card-glow-hover card-transparent glow-bottom-philosophy-right relative overflow-hidden lg:col-span-2 min-h-[300px] flex flex-col">
+  <Card class="card-glow-hover card-transparent relative overflow-hidden lg:col-span-2 min-h-[300px] flex flex-col reveal from-right slow ease-out">
     <div class="relative z-10 px-6 py-6">
       <Heading level={3} class="mb-2 text-xl">
         Process-driven trading
       </Heading>
+
       <Text muted class="text-sm leading-relaxed">
-        Operamos procesos definidos, no emociones. El sistema manda siempre, independientemente del resultado de una sola operación.
+        Operamos procesos definidos, no emociones.
+        El sistema manda siempre, independientemente del resultado individual.
       </Text>
     </div>
 
@@ -73,11 +79,11 @@ import Text from "../../ui/Text.astro";
 </div>
 
 <script is:inline>
-  document.querySelectorAll(".card-glow-hover").forEach(function (card) {
-    card.addEventListener("mousemove", function (e) {
+  document.querySelectorAll(".card-glow-hover").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
       const rect = card.getBoundingClientRect();
-      card.style.setProperty("--x", (e.clientX - rect.left) + "px");
-      card.style.setProperty("--y", (e.clientY - rect.top) + "px");
+      card.style.setProperty("--x", `${e.clientX - rect.left}px`);
+      card.style.setProperty("--y", `${e.clientY - rect.top}px`);
     });
   });
 </script>

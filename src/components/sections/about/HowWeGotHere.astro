@@ -7,13 +7,13 @@ import Text from "../../ui/Text.astro";
 import ScrollImage from "../../react/ScrollImage";
 ---
 
-<Section class="relative py-28 overflow-hidden">
+<Section class="relative py-28 overflow-hidden reveal fade">
   <Container>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-      <!-- LEFT: IMAGE (DESKTOP) -->
-      <div class="hidden lg:block">
+
+      <div class="hidden lg:block reveal from-bottom-scale">
         <div class="sticky top-32">
           <ScrollImage
             client:visible

@@ -1,12 +1,6 @@
 ---
 import CorporateLayout from "../layouts/CorporateLayout.astro";
-
-import Section from "../components/ui/Section.astro";
-import Container from "../components/ui/Container.astro";
-import Heading from "../components/ui/Heading.astro";
-import Text from "../components/ui/Text.astro";
-import Badge from "../components/ui/Badge.astro";
-import HeroGlow from "../components/ui/HeroGlow.astro";
+import HeroForPages from "../components/sections/HeroForPages.astro";
 
 import Youtube from "../components/sections/social-media/Youtube.astro";
 import MediaBento from "../components/sections/MediaBento.astro";
@@ -15,25 +9,13 @@ import Telegram from "../components/sections/social-media/Telegram.astro";
 
 <CorporateLayout title="ElDoradoFx — Our Channels">
 
-  <!-- HERO -->
-  <Section class="relative pt-28 pb-20">
-    <Container class="text-center max-w-3xl">
-      <HeroGlow />
-
-      <Badge variant="glow" class="mb-6">
-        Our channels
-      </Badge>
-
-      <Heading level={1} class="mb-6">
-        Where we share our work
-      </Heading>
-
-      <Text muted class="text-lg leading-relaxed">
-        Each platform has a clear role — education, community and updates.
-        We don't cross-post noise. We use each channel intentionally.
-      </Text>
-    </Container>
-  </Section>
+  <HeroForPages 
+  badge="Our channels"
+  title="Where we share our work"
+  description=" Each platform has a clear role — education, community and updates. We don't cross-post noise. We use each channel intentionally."
+  videoSrc="/1_video.mp4"
+  videoClass="opacity-30"
+/>
 
   <!-- YOUTUBE -->
   <Youtube
@@ -47,6 +29,7 @@ import Telegram from "../components/sections/social-media/Telegram.astro";
     title="Daily market snapshots"
     description="Short-form insights, execution context and market observations shared daily."
     mainLabel="@eldoradofx"
+    icon="yes"
     images={[
       "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg",
       "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg",

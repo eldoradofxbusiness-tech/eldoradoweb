@@ -5,91 +5,69 @@ import Badge from "../ui/Badge.astro";
 import Heading from "../ui/Heading.astro";
 import Text from "../ui/Text.astro";
 import Button from "../ui/Button.astro";
-import PhoneMockup from "../react/PhoneMockup";
-import Parallax from "../ui/Parallax.astro";
+import TelegramButton from "../ui/TelegramButton.astro";
+import PhoneMockup from "../../components/PhoneMockup.astro";
+import HeroGlow from "../ui/HeroGlow.astro";
+import VideoBackground from "../ui/VideoBackground.astro";
 ---
 
-<Section class="relative py-24 lg:py-28 pb-16 lg:pb-28 overflow-hidden rounded-br-[2.5rem]">
+<Section class="relative py-24 lg:py-28 overflow-hidden rounded-br-[2.5rem] bg-transparent">
 
-  <!-- RAYO DE SOL DIAGONAL -->
-  <div
-    class="
-      pointer-events-none
-      absolute -top-[10%] left-1/2
-      w-[80%] h-[25%]
-      -translate-x-1/2
-      rotate-[10deg]
-      z-0
-      bg-[linear-gradient(to_right,transparent_20%,rgba(255,215,120,0.35)_45%,rgba(255,215,120,0.55)_50%,rgba(255,215,120,0.35)_55%,transparent_80%)]
-      blur-[80px]
-    "
-  ></div>
+ <VideoBackground
+    src="/hero_video.mp4"
+    videoClass="w-420 h-[93.3%] rounded-br-[2.5rem] opacity-30"
+  />
 
-  <!-- GLOW RADIAL -->
-  <div
-    class="
-      absolute w-500 h-[80%]
-      -translate-y-3 -translate-x-80
-      rounded-br-[2.5rem]
-      z-10
-      bg-[radial-gradient(80%_80%_at_100%_100%,rgba(255,215,120,0.45),rgba(255,215,120,0.25)_8%,rgba(185,138,37,0.15)_35%,transparent_90%)]
-    "
-  ></div>
+  <HeroGlow />
 
-  <Container>
-    <div
-      class="
-        relative z-20
-        grid grid-cols-1 lg:grid-cols-2
-        gap-12
-        items-center
-        w-full max-w-7xl
-      "
-    >
+  <Container class="relative z-20">
+      
 
-      <!-- LEFT CONTENT -->
-      <div class="flex flex-col gap-7">
-        <Badge class="badge-glow w-fit">
-          Trading signals & automation
-        </Badge>
-
-        <Heading level="1" class="leading-tight max-w-xl">
-          Professional trading
-          <br />
-          signals & automation
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-7xl">
+      
+      <div class="flex flex-col gap-7 reveal from-bottom slow ease-out">
+        <Badge class="badge-glow w-fit">Trading signals & automation</Badge>
+        
+        <Heading level="1" class="leading-tight max-w-xl text-white">
+          Professional trading <br /> signals & automation
         </Heading>
 
-        <Text class="max-w-xl text-(--color-grey-light)">
-          High-quality market signals and automation,
-          built around risk management and disciplined execution.
+        <Text class="max-w-xl text-slate-300">
+          High-quality market signals and automation, built around risk management.
         </Text>
 
         <div class="flex gap-3 mt-2">
-          <Button variant="primary">
-            Join Telegram
-          </Button>
-
-          <Button variant="secondary">
-            View services
-          </Button>
+          <TelegramButton>
+            Join Us
+          </TelegramButton>
+          <Button 
+          href="/services"
+          variant="secondary">
+          View services
+        </Button>
         </div>
       </div>
 
-      <!-- PHONE DESKTOP -->
-      <div class="hidden lg:flex justify-center">
-        <!-- ⬇️ SOLO ajustado el X para acercarlo al texto -->
-        <div class="translate-x-10 -translate-y-10 scale-[1.05]">
-          <PhoneMockup client:visible />
-        </div>
+      <div class="hidden lg:flex justify-center relative z-30">
+        <PhoneMockup
+        drift="right"
+        />
       </div>
 
     </div>
 
     <!-- PHONE MOBILE -->
-    <!-- ⬇️ MENOS ESPACIO VERTICAL -->
-    <div class="lg:hidden mt-16 flex justify-center scale-90">
-      <PhoneMockup client:visible />
+    <div
+      class="
+        lg:hidden mt-16 flex justify-center scale-90
+        reveal from-bottom blur
+      "
+    >
+      <PhoneMockup 
+      drift="right"
+      client:visible />
     </div>
 
   </Container>
+  
 </Section>

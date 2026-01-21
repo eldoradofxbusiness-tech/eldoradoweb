@@ -1,0 +1,92 @@
+---
+import Button from "./Button.astro";
+import TelegramIcon from "./TelegramIcon.astro";
+
+interface Props {
+  variant?: "primary" | "secondary" | "ghost";
+  type?: "bot" | "channel" | "user" | "custom";
+  username?: string; 
+  startParam?: string; 
+  href?: string; 
+  class?: string;
+  size?: number;
+}
+
+const {
+  variant = "primary",
+  type = "channel",
+  username = "ELDORADOFX",
+  startParam,
+  href,
+  class: className = "",
+  size = 18
+} = Astro.props;
+
+// Lógica de construcción de URL
+let finalHref = "";
+
+if (type === "custom" && href) {
+  finalHref = href;
+} else {
+  const baseUrl = `https://t.me/${username}`;
+  
+  if (type === "bot" && startParam) {
+    finalHref = `${baseUrl}?start=${startParam}`;
+  } else {
+    finalHref = baseUrl;
+  }
+}
+---
+
+<Button 
+  variant={variant} 
+  href={finalHref} 
+  class:list={["group gap-2 overflow-hidden flex items-center justify-center hover:scale-105 transition-transform duration-300", className]}
+>
+  
+  <slot>Join Telegram</slot>
+  <div class="transition-transform duration-300 -translate-y-0.5 group-hover:-translate-y-1 group-hover:translate-x-1">
+    <TelegramIcon size={size} />
+  </div>
+</Button>
+
+
+<!-- A. Para el Canal Principal (Default)
+
+Fragmento de código
+
+<TelegramButton>
+  Join Official Channel
+</TelegramButton>
+B. Para el Bot "Portero" (con n8n)
+
+Fragmento de código
+
+<TelegramButton 
+  type="bot" 
+  username="EldoradoPorteroBot" 
+  startParam="from_hero"
+>
+  Get Free Access
+</TelegramButton>
+C. Para hablar con el Dueño (Soporte)
+
+Fragmento de código
+
+<TelegramButton 
+  variant="secondary" 
+  type="user" 
+  username="EldoradoAdmin"
+>
+  Contact Support
+</TelegramButton>
+D. Link totalmente custom
+
+Fragmento de código
+
+<TelegramButton 
+  type="custom" 
+  href="https://t.me/TuEnlacePrivado"
+>
+  Private Group
+</TelegramButton> -->

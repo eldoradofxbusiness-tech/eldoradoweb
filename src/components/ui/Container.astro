@@ -4,11 +4,13 @@ type ContainerSize = "default" | "narrow" | "wide";
 interface Props {
   size?: ContainerSize;
   class?: string;
+  id?: string;
 }
 
 const {
   size = "default",
   class: extraClass = "",
+  id = "",
 } = Astro.props as Props;
 
 const sizes: Record<ContainerSize, string> = {
@@ -18,6 +20,6 @@ const sizes: Record<ContainerSize, string> = {
 };
 ---
 
-<div class={`${sizes[size]} mx-auto px-6 ${extraClass}`}>
+<div id={`${id}`} class={`${sizes[size]} mx-auto px-6 ${extraClass}`}>
   <slot />
 </div>

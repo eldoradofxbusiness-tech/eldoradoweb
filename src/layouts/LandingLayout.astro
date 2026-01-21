@@ -1,25 +1,32 @@
 ---
 import "../styles/globals.css";
+import TelegramIcon from "../components/ui/TelegramIcon.astro";
+import Logo from "../components/react/Logo";
+import Divider from "../components/ui/Divider.astro";
+interface Props {
+  title?: string;
+  description?: string;
+  ctaText?: string;
+  ctaHref?: string;
+}
 
 const {
-  title = "TradingCompany – Offer",
-  description = "Access our trading solutions.",
+  title = "TradingCompany – Professional Insights",
+  description = "Institutional grade trading setups from London.",
+  ctaText = "JOIN FREE TELEGRAM",
+  ctaHref = "https://t.me/your_link"
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>{title}</title>
     <meta name="description" content={description} />
-
-    <!-- NO SEO para landings -->
     <meta name="robots" content="noindex, nofollow" />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,19 +35,40 @@ const {
     />
   </head>
 
-  <body class="min-h-screen bg-black text-white">
-    <!-- Main -->
+  <body class=" text-white antialiased selection:bg-yellow-500/30">
+    <header class="absolute top-0 left-0 right-0 z-50 py-6">
+      <div class="max-w-7xl mx-auto px-6 flex justify-center md:justify-start">
+       <Logo client:load />
+      </div>
+    </header>
+
     <main>
       <slot />
     </main>
 
-    <!-- Sticky CTA -->
-    <div
-      class="fixed bottom-0 left-0 right-0
-             bg-(--color-gold) text-black
-             py-4 text-center font-semibold"
-    >
-      Call to Action
+    <footer class="py-12">
+      <Divider/>
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <p class="text-[10px] text-white/30 leading-relaxed uppercase tracking-widest">
+          Risk Warning: Trading Forex and Leveraged Financial Instruments involves significant risk and can result in the loss of your invested capital. You should not invest more than you can afford to lose. Past performance does not guarantee future results.
+        </p>
+      </div>
+    </footer>
+
+    <div class="fixed bottom-0 left-0 right-0 z-[100] p-4 md:hidden pointer-events-none">
+      <div class="max-w-md mx-auto pointer-events-auto">
+        <a
+          href={ctaHref}
+          class="flex items-center justify-center gap-3 w-full 
+                 bg-gradient-to-b from-yellow-400 to-yellow-600 
+                 text-black py-4 rounded-2xl font-bold text-lg
+                 shadow-[0_20px_40px_rgba(185,138,37,0.4)]
+                 active:scale-95 transition-transform"
+        >
+          <TelegramIcon size={24} />
+          {ctaText}
+        </a>
+      </div>
     </div>
   </body>
 </html>

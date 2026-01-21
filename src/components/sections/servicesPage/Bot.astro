@@ -1,0 +1,28 @@
+---
+import Section from "../../ui/Section.astro";
+import Container from "../../ui/Container.astro";
+import Badge from "../../ui/Badge.astro";
+import Heading from "../../ui/Heading.astro";
+import Button from "../../ui/Button.astro";
+import TelegramIcon from "../../ui/TelegramIcon.astro";
+---
+<Section class="py-32">
+  <Container class="grid lg:grid-cols-2 gap-20 items-center">
+    <div class="reveal from-left lg:order-1 order-2">
+      <Badge class="mb-4">Automation</Badge>
+      <Heading level={2} class="mb-6">Trading Bot</Heading>
+      <ul class="mb-8 space-y-2 text-sm text-white/70">
+        <li>• Emotion-free execution</li>
+        <li>• Rule-based entries</li>
+        <li>• Set & forget operation</li>
+      </ul>
+      <Button href="https://t.me/ELDORADOFX" variant="secondary" class="gap-2">
+        <TelegramIcon size={18} /> Learn about the bot
+      </Button>
+    </div>
+    <div class="relative h-[380px] rounded-2xl overflow-hidden bg-white/10 lg:order-2 order-1 reveal from-right">
+      <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,215,120,0.25),transparent_60%)]"></div>
+      <div class="absolute inset-0 grid-bg opacity-30"></div>
+    </div>
+  </Container>
+</Section>

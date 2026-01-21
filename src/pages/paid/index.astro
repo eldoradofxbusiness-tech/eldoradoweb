@@ -1,0 +1,185 @@
+---
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import Section from "../../components/ui/Section.astro";
+import Container from "../../components/ui/Container.astro";
+import Heading from "../../components/ui/Heading.astro";
+import Text from "../../components/ui/Text.astro";
+import Button from "../../components/ui/Button.astro";
+import Badge from "../../components/ui/Badge.astro";
+import VideoBackground from "../../components/ui/VideoBackground.astro";
+import TelegramIcon from "../../components/ui/TelegramIcon.astro";
+import Card from "../../components/ui/Card.astro";
+import Divider from "../../components/ui/Divider.astro";
+import CountdownTimer from "../../components/react/CountdownTimer";
+import { AlertTriangle, XCircle, CheckCircle2, TrendingUp, MonitorPlay, Users } from "lucide-react";
+
+// Próxima señal (simulado para urgencia)
+const NEXT_SIGNAL_TIME = "2026-01-21T15:30:00"; 
+---
+
+<LandingLayout 
+  title="ElDoradoFX Premium | Stop Guessing, Start Gaining"
+  description="Get 6-9 precision signals daily on XAUUSD & BTCUSD with expert London commentary."
+  ctaText="JOIN PREMIUM - 50% OFF"
+>
+  <Section class="relative min-h-[90vh] flex items-center bg-black overflow-hidden pt-20">
+    <VideoBackground 
+      src="/hero_video.mp4" 
+      overlayClass="bg-gradient-to-b from-red-950/40 via-black/80 to-black z-10" 
+      videoClass="opacity-20 grayscale"
+    />
+    
+    <Container class="relative z-20 text-center">
+      <Badge variant="danger" class="mb-6 py-2 px-6 border-red-500/30 bg-red-500/10 text-red-400 animate-pulse">
+        <AlertTriangle size={14} class="mr-2" /> TRADING REALITY CHECK
+      </Badge>
+
+      <Heading level={1} class="text-6xl md:text-[100px] mb-8 font-black uppercase italic leading-[0.85] text-white tracking-tighter">
+        TIRED OF LOSING <br/>
+        <span class="text-red-500">MONEY TRADING?</span>
+      </Heading>
+
+      <Text class="text-xl md:text-2xl text-white/60 mb-12 max-w-3xl mx-auto font-light">
+        You’re not alone — but you don’t have to keep guessing. Your account is bleeding, confidence is gone, and the charts look like chaos. <span class="text-white font-bold italic underline decoration-red-500">Sound familiar?</span>
+      </Text>
+
+      <Button variant="secondary" href="#solution" class="px-10 py-4 border-white/20 hover:bg-white/5 uppercase tracking-widest font-bold">
+        See the shortcut to profit
+      </Button>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-black relative border-y border-white/5">
+    <Container>
+      <div class="max-w-4xl mx-auto text-center mb-20">
+        <Heading level={2} class="text-4xl md:text-6xl font-black italic uppercase text-white mb-6">
+          Trading Doesn't Have To Be <br/> <span class="text-red-500">This Hard</span>
+        </Heading>
+        <Text muted>Most traders lose because the system they follow is broken, not their potential.</Text>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          "Relying on hype over strategy",
+          "Copying signals with zero explanation",
+          "Trading without a plan or structure",
+          "Learning from people with no results"
+        ].map(item => (
+          <div class="p-8 rounded-3xl bg-red-500/5 border border-red-500/10 flex flex-col items-center text-center group hover:bg-red-500/10 transition-colors">
+            <XCircle size={32} class="text-red-500 mb-6" />
+            <Text class="text-white font-bold uppercase tracking-tighter text-sm leading-tight">{item}</Text>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-20 p-10 rounded-[3rem] bg-gradient-to-r from-red-950/20 to-transparent border border-red-500/20 text-center">
+        <Text class="text-xl md:text-2xl text-white italic">
+          "You don't have 6 months to learn price action or backtest YouTube strategies. <br/> 
+          <span class="font-black text-white uppercase not-italic">You just want signals that actually work.</span>"
+        </Text>
+      </div>
+    </Container>
+  </Section>
+
+  <Section id="solution" class="py-32 bg-canvas relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-10"></div>
+    <Container>
+      <div class="flex flex-col items-center text-center mb-20">
+        <Badge variant="glow" class="mb-6 border-yellow-500/30 text-yellow-400">WELCOME TO ELDORADOFX PREMIUM</Badge>
+        <Heading level={2} class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white">
+          PRECISION TRADING <br/> <span class="text-yellow-400">MADE SIMPLE</span>
+        </Heading>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="space-y-4">
+          {[
+            { t: "6–9 SIGNALS DAILY", d: "XAUUSD & BTCUSD precision entries only.", icon: TrendingUp },
+            { t: "3 SESSION BREAKDOWNS", d: "Asia, London, & NY session analysis daily.", icon: MonitorPlay },
+            { t: "WEEKLY LIVE SESSIONS", d: "Trade live with Ricardo & MasterKelvin.", icon: Users },
+            { t: "FULL RATIONALE", d: "Commentary + reasoning on every single trade.", icon: CheckCircle2 }
+          ].map(item => (
+            <Card class="bg-white/[0.03] border-white/10 p-6 flex items-center gap-6 group hover:border-yellow-500/40 transition-all">
+              <div class="p-3 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
+                <item.icon size={24} class="text-yellow-500" />
+              </div>
+              <div>
+                <h4 class="text-white font-black italic uppercase tracking-tight">{item.t}</h4>
+                <p class="text-white/40 text-sm">{item.d}</p>
+              </div>
+            </Card>
+          ))}
+        </div>
+
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-yellow-500/20 blur-2xl rounded-[3rem]"></div>
+          <div class="relative h-full bg-white/[0.02] backdrop-blur-3xl border border-yellow-500/30 rounded-[3rem] p-12 flex flex-col items-center text-center justify-center">
+            <Text class="text-white/40 uppercase tracking-[0.3em] font-bold mb-4">PREMIUM ACCESS</Text>
+            <div class="flex items-end gap-2 mb-2">
+              <span class="text-4xl font-bold text-white/40 line-through">£118</span>
+              <span class="text-7xl font-black italic text-yellow-400 tracking-tighter">£59</span>
+              <span class="text-xl text-white font-bold mb-2">/MO</span>
+            </div>
+            <Badge variant="success" class="mb-8 bg-green-500/20 text-green-400 border-green-500/50 uppercase tracking-widest py-2 px-4">50% OFF FIRST MONTH</Badge>
+            
+            <ul class="text-left space-y-4 mb-10 w-full max-w-xs mx-auto">
+              {["Cancel anytime", "Private verified group", "Less than £2/day"].map(li => (
+                <li class="flex items-center gap-3 text-white/70 text-sm font-bold uppercase tracking-tight">
+                  <CheckCircle2 size={14} class="text-yellow-500" /> {li}
+                </li>
+              ))}
+            </ul>
+
+            <Button variant="primary" href="https://t.me/your_link" class="w-full py-8 text-2xl font-black italic tracking-tighter uppercase shadow-[0_0_50px_rgba(185,138,37,0.4)]">
+              JOIN THE PREMIUM GROUP
+            </Button>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-black border-t border-white/5">
+    <Container>
+      <div class="text-center mb-16">
+        <Heading level={2} class="text-4xl md:text-6xl font-black uppercase italic text-white tracking-tighter mb-4">
+          STILL UNSURE? <span class="text-yellow-400">RESULTS SPEAK</span>
+        </Heading>
+        <Text muted>The free group already proves it. The paid group is where the real wins happen.</Text>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+        {[1,2,3,4].map(() => (
+          <div class="aspect-[9/16] bg-neutral-900 border border-white/10 rounded-2xl flex items-center justify-center italic text-[10px] text-white/20 uppercase tracking-widest text-center p-4">
+            Telegram Wins / Testimonial Placeholder
+          </div>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="py-32 bg-canvas relative">
+    <Container size="narrow" class="text-center">
+      <Divider class="mb-20 opacity-20" />
+      <Heading level={2} class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white mb-6 leading-none">
+        IF YOU'RE STILL GUESSING, <br/> <span class="text-red-500">YOU'RE STILL LOSING</span>
+      </Heading>
+      
+      <div class="mb-12 flex flex-col items-center">
+        <Text class="text-lg text-yellow-500 font-bold uppercase tracking-widest mb-6 italic">Next premium signal drops in:</Text>
+        <CountdownTimer client:load targetDate={NEXT_SIGNAL_TIME} title="EXPECTED ENTRY" />
+      </div>
+
+      <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-3xl font-black italic tracking-tighter uppercase w-full mb-8">
+        JOIN ELDORADOFX PREMIUM NOW
+      </Button>
+      
+      <div class="flex flex-col md:flex-row justify-center items-center gap-8 opacity-40">
+        <Text class="text-[10px] font-bold uppercase tracking-[0.3em]">6–9 signals/day</Text>
+        <Text class="text-[10px] font-bold uppercase tracking-[0.3em]">50% OFF first month</Text>
+        <Text class="text-[10px] font-bold uppercase tracking-[0.3em]">Cancel anytime</Text>
+      </div>
+      <Divider class="mt-20 opacity-20" />
+    </Container>
+  </Section>
+</LandingLayout>

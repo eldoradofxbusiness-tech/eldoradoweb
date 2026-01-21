@@ -2,113 +2,117 @@ import { useState } from "react";
 import GlowVisual from "./GlowVisual";
 import { LineChart, UserRound, Bot, Coins, Bitcoin } from "lucide-react";
 
+interface Service {
+  id: string;
+  tab: string;
+  title: string;
+  description: string;
+  icon: string;
+  tabIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  class: string;
+}
 
 const services = [
   {
     id: "signals",
     tab: "Signals",
     title: "Free & Premium Trading Signals",
-    description:
-      "Structured trading signals built around risk management, clarity, and disciplined execution. Free insights for learning, premium access for consistency.",
-    icon: "https://images.pexels.com/photos/186461/pexels-photo-186461.jpeg",
+    description: "Structured trading signals built around risk management, clarity, and disciplined execution. Free insights for learning, premium access for consistency.",
+    icon: "/service-icon1.webp",
     tabIcon: LineChart,
+    class: "from-bottom-delay"
   },
   {
     id: "coaching",
     tab: "1:1 Coaching",
     title: "One-to-One Trading Coaching",
-    description:
-      "Personal guidance focused on mindset, capital protection, and process refinement — adapted to your trading level and objectives.",
-    icon: "https://images.pexels.com/photos/4100653/pexels-photo-4100653.jpeg",
+    description: "Personal guidance focused on mindset, capital protection, and process refinement — adapted to your trading level and objectives.",
+    icon: "/service-icon2.webp",
     tabIcon: UserRound,
+    class: "from-bottom-delay"
   },
   {
     id: "bot",
     tab: "Trading Bot",
-    title: "Premium Automated Trading",
-    description:
-      "Rule-based automated strategies designed to remove emotional bias while respecting strict risk and capital preservation rules.",
-    icon: "https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg",
+    title: "Premium Automated",
+    description: "Rule-based automated strategies designed to remove emotional bias while respecting strict risk and capital preservation rules.",
+    icon: "/service-icon3.webp",
     tabIcon: Bot,
+    class: "from-bottom-delay"
   },
 ];
-
 export default function ServicesTabs() {
   const [active, setActive] = useState(services[0]);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-16 relative z-10">
+    <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-12 lg:gap-32">
 
-      {/* LEFT — TABS + TEXT */}
-      <div className="w-full lg:w-1/2 flex flex-col items-start justify-start gap-4">
+      <div className="flex flex-col flex-1 w-full gap-8">
 
-       <p
-        className="
-            max-w-xl font-bold
-            bg-[linear-gradient(90deg,var(--color-gold),#ffffff)]
-            bg-clip-text text-transparent"
-            >
-                Forex like never before
-        </p>
-        <div className="flex items-center gap-4 text-xs tracking-widest text-white/40 uppercase animate-drift">
-            <span className="flex items-center gap-1">
-                <Coins className="w-3.5 h-3.5 text-(--color-gold)" />
-                XAUUSD
-            </span>
-
+        <div className="space-y-3">
+          <p className="font-bold bg-[linear-gradient(90deg,var(--color-gold),#ffffff)] bg-clip-text text-transparent">
+            Forex like never before
+          </p>
+          <div className="flex items-center gap-4 text-xs tracking-widest text-white/40 uppercase">
+            <span className="flex items-center gap-1"><Coins className="w-3.5 h-3.5 text-(--color-gold)" /> XAUUSD</span>
             <span className="opacity-30">·</span>
-
-            <span className="flex items-center gap-1">
-                <Bitcoin className="w-3.5 h-3.5" />
-                BTC/USD
-            </span>
+            <span className="flex items-center gap-1"><Bitcoin className="w-3.5 h-3.5" /> BTC/USD</span>
+          </div>
         </div>
 
-       <div
-            key={active.id}
-            className="animate-text-enter"
+        <div className="grid grid-cols-1 grid-rows-1">
+          {services.map((s) => (
+            <div 
+              key={s.id}
+              /* Todos ocupan la misma celda de la rejilla (grid-area) */
+              className={`
+                col-start-1 row-start-1 
+                transition-all duration-700 ease-in-out
+                ${active.id === s.id 
+                  ? "opacity-100 blur-0 translate-x-0" 
+                  : "opacity-0 blur-md -translate-x-4 pointer-events-none"}
+              `}
             >
-            <h2 className="text-5xl mb-4 font-semibold">
-                {active.title}
-            </h2>
-
-            <p className="text-(--color-grey-light) max-w-xl">
-                {active.description}
-            </p>
+              <h2 className="text-4xl lg:text-6xl mb-6 font-semibold text-white leading-[1.1] tracking-tight text-balance">
+                {s.title}
+              </h2>
+              <p className="text-(--color-grey-light) max-w-xl text-lg leading-relaxed">
+                {s.description}
+              </p>
+            </div>
+          ))}
         </div>
 
-
-        {/* Tabs */}
-        <div className="flex flex-col gap-3 mb-8 w-3/4">
+        {/* TABS (Botones) */}
+        <div className="flex flex-col gap-3 w-full lg:max-w-md pt-4">
           {services.map((s) => {
             const Icon = s.tabIcon;
-
+            const isActive = active.id === s.id;
             return (
-                <button
+              <button
                 key={s.id}
                 onClick={() => setActive(s)}
                 className={`
-                    px-4 py-2 border rounded-sm border-white/60 text-sm transition font-bold
-                    text-left w-full flex items-center gap-3
-                    ${
-                    active.id === s.id
-                        ? "border border-gold text-white shadow-amber-400/30 shadow-md"
-                        : "text-white/60 hover:text-white hover:border-white/95"
-                    }
+                  flex items-center gap-4 px-6 py-4 border rounded-xl font-bold transition-all duration-300
+                  ${isActive 
+                    ? "border-(--color-gold) text-white bg-white/5 shadow-[0_0_20px_rgba(212,175,55,0.15)] scale-[1.02]" 
+                    : "border-white/10 text-white/40 hover:border-white/30 hover:text-white"
+                  }
                 `}
-                >
-                <Icon className="w-4 h-4" />
-                <span>{s.tab}</span>
-                </button>
+              >
+                <Icon className={`w-5 h-5 transition-colors ${isActive ? "text-(--color-gold)" : ""}`} />
+                <span className="text-base">{s.tab}</span>
+              </button>
             );
-            })}
+          })}
         </div>
       </div>
 
-      {/* RIGHT — VISUAL */}
-      <div className="w-full lg:w-1/2 flex justify-center">
-        <GlowVisual icon={active.icon} />
-      </div>
+
+        
+          <GlowVisual icon={active.icon} />
+        
+      
 
     </div>
   );

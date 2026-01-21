@@ -6,6 +6,6 @@ interface Props {
 const { class: extraClass = "" } = Astro.props as Props;
 ---
 
-<section class={`relative overflow-hidden bg-[#0b0f1a] ${extraClass}`}>
+<section class={`relative overflow-hidden ${extraClass}`}>
   <slot />
 </section>

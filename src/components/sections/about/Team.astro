@@ -6,10 +6,12 @@ import Text from "../../../components/ui/Text.astro";
 import Badge from "../../../components/ui/Badge.astro";
 import Card from "../../../components/ui/Card.astro";
 import TraderCoins from "./../trust/TraderCoins.astro";
+import Divider from "../../../components/ui/Divider.astro";
 ---
   <!-- TEAM SECTION -->
-  <Section class="py-16">
-    <Container class="flex flex-col items-center">
+  <Section class="py-16 bg-(--color-canvas-end) z-2">
+    <Divider class="my-20" />
+    <Container class="flex flex-col items-center reveal fade">
 
       <Badge variant="gold" class="mb-6">
         Our traders
@@ -30,7 +32,7 @@ import TraderCoins from "./../trust/TraderCoins.astro";
       <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-4xl">
 
         <!-- Ricardo -->
-        <Card class="p-8">
+        <Card class="p-8 reveal from-left-scale">
           <Heading level={3} class="text-xl mb-3">
             Ricardo — Scalping
           </Heading>
@@ -42,7 +44,7 @@ import TraderCoins from "./../trust/TraderCoins.astro";
         </Card>
 
         <!-- MasterKelvin -->
-        <Card class="p-8">
+        <Card class="p-8 reveal from-right-scale">
           <Heading level={3} class="text-xl mb-3">
             MasterKelvin — Swing Trading
           </Heading>
@@ -63,4 +65,5 @@ import TraderCoins from "./../trust/TraderCoins.astro";
 
     </Container>
 
+    <Divider class="my-20" />
   </Section>

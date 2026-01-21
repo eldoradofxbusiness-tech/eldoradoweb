@@ -3,12 +3,14 @@ interface Props {
   level?: 1 | 2 | 3;
   accent?: boolean;
   class?: string;
+  id?: string;
 }
 
 const {
   level = 2,
   accent = false,
   class: extraClass = "",
+  id,
 } = Astro.props as Props;
 
 const Tag = `h${level}` as any;
@@ -21,6 +23,7 @@ const sizes = {
 ---
 
 <Tag
+  id={id}
   class={`${sizes[level]} font-bold tracking-tight ${
     accent ? "text-yellow-400" : "text-white"
   } ${extraClass}`}

@@ -1,207 +1,38 @@
 ---
 import CorporateLayout from "../layouts/CorporateLayout.astro";
-import Section from "../components/ui/Section.astro";
-import Container from "../components/ui/Container.astro";
-import Heading from "../components/ui/Heading.astro";
-import Text from "../components/ui/Text.astro";
-import Badge from "../components/ui/Badge.astro";
-import Button from "../components/ui/Button.astro";
-import TelegramIcon from "../components/ui/TelegramIcon.astro";
+import HeroForPages from "../components/sections/HeroForPages.astro";
+import ServicesSignals from "../components/sections/servicesPage/Signals.astro";
+import ServicesBot from "../components/sections/servicesPage/Bot.astro";
+import Masterclass from "../components/sections/servicesPage/Masterclass.astro"; 
+import Approach from "../components/sections/servicesPage/Approach.astro";       
+import FinalCTA from "../components/sections/servicesPage/FinalCTA.astro";       
 ---
 
 <CorporateLayout title="ElDoradoFx - Services">
+  
+  <HeroForPages 
+  badge="Trading Systems"
+  title="Logic over emotion"
+  description="All our services are built around predefined rules, capital protection and disciplined execution."
+  videoSrc="/1_video.mp4"
+  videoClass="opacity-30"
+/>
+  
+  <ServicesSignals />
+  
+  <ServicesBot />
+  
+  <Masterclass />
+  
+  <Approach />
+  
+  <FinalCTA />
 
-  <!-- HERO -->
-  <Section class="pt-40 pb-40 relative overflow-hidden">
-    <div class="absolute inset-0 bg-glow-gold opacity-40"></div>
-
-    <Container class="relative z-10 text-center">
-      <Badge variant="gold" class="mb-6">Trading Systems</Badge>
-      <Heading level={1} class="mb-6">Logic over emotion</Heading>
-      <Text muted class="max-w-2xl mx-auto">
-        All our services are built around predefined rules,
-        capital protection and disciplined execution.
-      </Text>
-    </Container>
-  </Section>
-
-  <!-- SIGNALS -->
-  <Section class="py-32">
-    <Container class="grid lg:grid-cols-2 gap-20 items-center">
-
-      <!-- VISUAL -->
-      <div class="relative h-[380px] rounded-2xl overflow-hidden bg-white/10">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,215,120,0.25),transparent_60%)]"></div>
-        <div class="absolute bottom-6 left-6 right-6 text-sm text-white/80">
-          Live market structure · XAUUSD & BTCUSD
-        </div>
-      </div>
-
-      <!-- CONTENT -->
-      <div>
-        <Badge class="mb-4">Manual execution</Badge>
-        <Heading level={2} class="mb-6">Trading Signals</Heading>
-
-        <Text muted class="mb-6">
-          High-quality manual signals focused on XAUUSD and BTCUSD,
-          executed with strict risk management rules.
-        </Text>
-
-        <ul class="mb-8 space-y-2 text-sm text-white/70">
-          <li>• Clear entry, stop-loss and targets</li>
-          <li>• Capital protection first</li>
-          <li>• No overtrading, no hype</li>
-        </ul>
-
-        <Button
-          href="https://t.me/ELDORADOFX"
-          variant="secondary"
-          class="gap-2"
-        >
-          <TelegramIcon size={18} />
-          Access signals
-        </Button>
-      </div>
-
-    </Container>
-  </Section>
-
-  <!-- TRADING BOT -->
-  <Section class="py-32">
-    <Container class="grid lg:grid-cols-2 gap-20 items-center">
-
-      <!-- CONTENT -->
-      <div>
-        <Badge class="mb-4">Automation</Badge>
-        <Heading level={2} class="mb-6">Trading Bot</Heading>
-
-        <Text muted class="mb-6">
-          Fully automated trading system built on hard-coded logic
-          and predefined risk constraints.
-        </Text>
-
-        <ul class="mb-8 space-y-2 text-sm text-white/70">
-          <li>• Emotion-free execution</li>
-          <li>• Rule-based entries</li>
-          <li>• Set & forget operation</li>
-        </ul>
-
-        <Button
-          href="https://t.me/ELDORADOFX"
-          variant="secondary"
-          class="gap-2"
-        >
-          <TelegramIcon size={18} />
-          Learn about the bot
-        </Button>
-      </div>
-
-      <!-- VISUAL -->
-      <div class="relative h-[380px] rounded-2xl overflow-hidden bg-white/10">
-        <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,215,120,0.25),transparent_60%)]"></div>
-        <div class="absolute inset-0 grid-bg opacity-30"></div>
-      </div>
-
-    </Container>
-  </Section>
-
-  <!-- MASTERCLASS -->
-  <Section class="py-32 relative overflow-hidden">
-    <div class="absolute inset-0 bg-white/5"></div>
-
-    <Container class="relative z-10 max-w-4xl text-center">
-
-      <Badge variant="gold" class="mb-6">Education</Badge>
-      <Heading level={2} class="mb-6">Trading Masterclass</Heading>
-
-      <Text muted class="mb-8">
-        Learn the fundamentals behind our trading framework.
-        Designed to help you understand risk, execution
-        and how to properly follow signals.
-      </Text>
-
-      <div class="grid md:grid-cols-3 gap-6 mb-12 text-sm text-white/70">
-        <div class="p-6 rounded-xl bg-white/5">
-          Risk management 101
-        </div>
-        <div class="p-6 rounded-xl bg-white/5">
-          Market structure basics
-        </div>
-        <div class="p-6 rounded-xl bg-white/5">
-          Signal execution rules
-        </div>
-      </div>
-
-      <Button
-        href="https://t.me/ELDORADOFX"
-        variant="primary"
-        class="gap-2"
-      >
-        <TelegramIcon size={18} />
-        Join the masterclass
-      </Button>
-
-    </Container>
-  </Section>
-
-  <!-- TRADING APPROACH — CONTRAST -->
-<Section class="py-32 relative overflow-hidden">
-  <Container class="grid lg:grid-cols-2 gap-20 items-start">
-
-    <!-- LEFT: WHAT WE DON'T DO -->
-    <div class="p-10 rounded-2xl bg-white/5 border border-white/10">
-      <Badge class="mb-6">Not our style</Badge>
-
-      <Heading level={3} class="mb-6">
-        What we don’t do
-      </Heading>
-
-      <ul class="space-y-4 text-sm text-white/60">
-        <li>• No hype or unrealistic promises</li>
-        <li>• No random entries or overtrading</li>
-        <li>• No signals without defined risk</li>
-        <li>• No emotional decision-making</li>
-      </ul>
-    </div>
-
-    <!-- RIGHT: WHAT WE DO -->
-    <div class="p-10 rounded-2xl bg-white/10 border border-yellow-500/30">
-      <Badge variant="gold" class="mb-6">Our approach</Badge>
-
-      <Heading level={3} class="mb-6">
-        What we focus on
-      </Heading>
-
-      <ul class="space-y-4 text-sm text-white/80">
-        <li>• Capital protection comes first</li>
-        <li>• Rule-based execution only</li>
-        <li>• Fewer trades, higher clarity</li>
-        <li>• Long-term consistency over time</li>
-      </ul>
-    </div>
-
-  </Container>
-</Section>
-
-<!-- FINAL CTA — DECISION -->
-<Section class="pb-40 pt-12">
-  <Container class="flex flex-col items-center text-center">
-
-    <Text class="mb-6 text-white/60 text-sm tracking-wide uppercase">
-      If this approach resonates with you
-    </Text>
-
-    <Button
-      href="https://t.me/ELDORADOFX"
-      variant="primary"
-      class="gap-2"
-    >
-      <TelegramIcon size={18} />
-      Start a conversation on Telegram
-    </Button>
-
-  </Container>
-</Section>
-
+  <script>
+    import { initReveal } from "../helpers/reveal";
+    window.addEventListener("DOMContentLoaded", () => {
+      initReveal();
+    });
+  </script>
 
 </CorporateLayout>

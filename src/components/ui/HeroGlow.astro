@@ -1,5 +1,5 @@
 ---
-
+import VideoBackground from "./VideoBackground.astro"
 ---
 
  <div
@@ -11,17 +11,22 @@
       rotate-[10deg]
       z-0
       bg-[linear-gradient(to_right,transparent_20%,rgba(255,215,120,0.35)_45%,rgba(255,215,120,0.55)_50%,rgba(255,215,120,0.35)_55%,transparent_80%)]
-      blur-[80px]
+      blur-[80px] glow-pulse
     "
-  ></div>
+  >
+</div>
 
-  <!-- GLOW RADIAL -->
+
   <div
     class="
-      absolute w-500 h-[80%]
+      absolute w-500 h-[83%]
       -translate-y-3 -translate-x-80
       rounded-br-[2.5rem]
       z-10
       bg-[radial-gradient(80%_80%_at_100%_100%,rgba(255,215,120,0.45),rgba(255,215,120,0.25)_8%,rgba(185,138,37,0.15)_35%,transparent_90%)]
     "
-  ></div>
+  >
+</div>
+
+
+

@@ -1,0 +1,63 @@
+---
+interface Props {
+  count?: number;
+  color?: string;
+}
+
+const { count = 80, color = "#FFD700" } = Astro.props;
+---
+
+<div class="particles-wrapper">
+  {Array.from({ length: count }).map((_) => (
+    <div 
+      class="particle"
+      style={{
+        "--p-color": color,
+        "--p-size": `${Math.random() * 3 + 1}px`,
+        "--p-left": `${Math.random() * 100}%`,
+        "--p-top": `${Math.random() * 100}%`,
+        "--p-duration": `${Math.random() * 15 + 10}s`,
+        "--p-delay": `${Math.random() * -20}s`,
+      }}
+    ></div>
+  ))}
+</div>
+
+<style>
+  .particles-wrapper {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1; 
+  }
+
+  .particle {
+    position: absolute;
+    width: var(--p-size);
+    height: var(--p-size);
+    background-color: var(--p-color);
+    left: var(--p-left);
+    top: var(--p-top);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--p-color);
+    opacity: 0.4;
+    animation: float var(--p-duration) linear infinite;
+    animation-delay: var(--p-delay);
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    33% {
+      transform: translateY(-20px) translateX(20px);
+    }
+    66% {
+      transform: translateY(20px) translateX(-20px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+</style>

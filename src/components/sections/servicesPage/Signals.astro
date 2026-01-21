@@ -1,0 +1,32 @@
+---
+import Section from "../../ui/Section.astro";
+import Container from "../../ui/Container.astro";
+import Badge from "../../ui/Badge.astro";
+import Heading from "../../ui/Heading.astro";
+import Text from "../../ui/Text.astro";
+import Button from "../../ui/Button.astro";
+import TelegramIcon from "../../ui/TelegramIcon.astro";
+---
+<Section class="py-32">
+  <Container class="grid lg:grid-cols-2 gap-20 items-center">
+    <div class="relative h-[380px] rounded-2xl overflow-hidden bg-white/10 reveal from-left">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,215,120,0.25),transparent_60%)]"></div>
+      <div class="absolute bottom-6 left-6 right-6 text-sm text-white/80">
+        Live market structure · XAUUSD & BTCUSD
+      </div>
+    </div>
+    <div class="reveal from-right">
+      <Badge class="mb-4">Manual execution</Badge>
+      <Heading level={2} class="mb-6">Trading Signals</Heading>
+      <Text muted class="mb-6">High-quality manual signals focused on XAUUSD and BTCUSD, executed with strict risk management rules.</Text>
+      <ul class="mb-8 space-y-2 text-sm text-white/70">
+        <li>• Clear entry, stop-loss and targets</li>
+        <li>• Capital protection first</li>
+        <li>• No overtrading, no hype</li>
+      </ul>
+      <Button href="https://t.me/ELDORADOFX" variant="secondary" class="gap-2">
+        <TelegramIcon size={18} /> Access signals
+      </Button>
+    </div>
+  </Container>
+</Section>

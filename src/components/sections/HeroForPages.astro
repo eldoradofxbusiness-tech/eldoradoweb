@@ -1,0 +1,70 @@
+---
+import Section from "../ui/Section.astro";
+import Container from "../ui/Container.astro";
+import Badge from "../ui/Badge.astro";
+import Heading from "../ui/Heading.astro";
+import Text from "../ui/Text.astro";
+import VideoBackground from "../ui/VideoBackground.astro";
+
+interface Props {
+  badge: string;
+  title: string;
+  description: string;
+  videoSrc: string;
+  overlayColor?: string;
+  videoClass?: string;
+}
+
+const { 
+  badge, 
+  title, 
+  description, 
+  videoSrc, 
+  overlayColor = "bg-slate-950/60", // Un poco de oscuridad por defecto
+  videoClass = "" 
+} = Astro.props;
+---
+
+<Section class="relative pt-48 pb-32 overflow-hidden w-full flex items-center justify-center">
+
+  <VideoBackground
+    src={videoSrc}
+    overlayClass={overlayColor}
+    videoClass={`absolute inset-0 w-full h-full object-cover ${videoClass}`}
+  />
+
+  <div
+    class="
+      pointer-events-none
+      absolute -top-[10%] left-1/2
+      w-[80%] h-[25%]
+      -translate-x-1/2
+      rotate-[10deg]
+      z-0
+      bg-[linear-gradient(to_right,transparent_20%,rgba(255,215,120,0.35)_45%,rgba(255,215,120,0.55)_50%,rgba(255,215,120,0.35)_55%,transparent_80%)]
+      blur-[80px] glow-pulse
+    "
+  >
+</div>
+
+  <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent z-0"></div>
+
+  <Container class="relative z-10 text-center max-w-4xl">
+    <div class="reveal hero">
+      <Badge variant="glow" class="mb-8 uppercase tracking-widest">{badge}</Badge>
+    </div>
+
+    <div class="reveal hero hero-delay-2">
+      <Heading level={1} class="mb-6 text-balance leading-[1.1] tracking-tight text-white drop-shadow-2xl">
+        {title}
+      </Heading>
+    </div>
+
+    <div class="reveal hero hero-delay-3">
+      <Text muted class="text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto text-slate-200">
+        {description}
+      </Text>
+    </div>
+  </Container>
+</Section>
+
