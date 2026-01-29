@@ -4,6 +4,7 @@ import Text from "../../ui/Text.astro";
 import Button from "../../ui/Button.astro";
 import Badge from "../../ui/Badge.astro";
 import { Check, X, Send } from "lucide-react";
+import TelegramButton from "../../ui/TelegramButton.astro";
 
 const { service } = Astro.props;
 ---
@@ -73,20 +74,15 @@ const { service } = Astro.props;
       </li>
     ))}
   </ul>
+ {service.highlighted ? (
+      <TelegramButton>
+        Join VIP Channel
+      </TelegramButton>
+    ) : (
+      <TelegramButton type="user">
+        Get Started
+      </TelegramButton>
+    )}
 
-  <!-- CTA -->
-  <Button
-    href={service.cta.href}
-    target="_blank"
-    variant={service.highlighted ? "primary" : "secondary"}
-    class=" relative z-10 w-full flex items-center justify-center gap-2 group"
-  >
-    <Send
-      className=" w-4 h-4 transition-transform duration-300 group-hover:scale-[1.2]"
-    />
-    <span class="transition-transform duration-300 group-hover:translate-x-1">
-      {service.cta.label}
-    </span>
-  </Button>
 
 </Card>

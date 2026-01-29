@@ -2,16 +2,18 @@
 import Section from "../../ui/Section.astro";
 import Container from "../../ui/Container.astro";
 import Text from "../../ui/Text.astro";
-import Button from "../../ui/Button.astro";
-import TelegramIcon from "../../ui/TelegramIcon.astro";
+import TelegramButton from "../../ui/TelegramButton.astro";
 ---
 <Section class="pb-40 pt-12 bg-(--color-canvas-end) z-2">
   <Container class="flex flex-col items-center text-center reveal up fast">
     <Text class="mb-6 text-white/60 text-sm tracking-wide uppercase">
       If this approach resonates with you
     </Text>
-    <Button href="https://t.me/ELDORADOFX" variant="primary" class="gap-2">
-      <TelegramIcon size={18} /> Start a conversation on Telegram
-    </Button>
+   <TelegramButton 
+      type="channel" 
+      username="RPomaFX"
+    >
+      Talk to us
+    </TelegramButton>
   </Container>
 </Section>

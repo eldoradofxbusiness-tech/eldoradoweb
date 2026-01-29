@@ -166,18 +166,18 @@ const iconClass = "text-yellow-400 mb-4 size-8";
         DON’T JUST TAKE <span class="text-yellow-400">OUR WORD FOR IT</span>
       </Heading>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 opacity-40">
-        {[
-          "Bot Trade Logs Placeholder",
-          "Account Growth Chart Placeholder",
-          "User Reaction Testimonial Placeholder"
-        ].map(p => (
-          <div class="aspect-square bg-neutral-900 border border-white/10 rounded-[2rem] flex items-center justify-center p-8 italic text-[10px] uppercase tracking-widest text-white/30 text-center">
-            {p}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        {[1, 2, 3].map((num) => (
+          <div class="relative aspect-square bg-neutral-900 border border-white/10 rounded-[2rem] overflow-hidden group">
+            <img 
+              src={`/social_images/bot_image_${num}.webp`} 
+              alt={`Trading result ${num}`}
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300"></div>
           </div>
         ))}
       </div>
-
       <Divider class="mb-24 opacity-20" />
       
       <div class="max-w-4xl mx-auto">

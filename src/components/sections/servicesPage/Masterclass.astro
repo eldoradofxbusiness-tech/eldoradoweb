@@ -4,8 +4,7 @@ import Container from "../../ui/Container.astro";
 import Badge from "../../ui/Badge.astro";
 import Heading from "../../ui/Heading.astro";
 import Text from "../../ui/Text.astro";
-import Button from "../../ui/Button.astro";
-import TelegramIcon from "../../ui/TelegramIcon.astro";
+import TelegramButton from "../../ui/TelegramButton.astro";
 ---
 <Section class="py-32 relative overflow-hidden bg-(--color-canvas-end) z-2">
   <div class="absolute inset-0 bg-slate-900/50 z-0"></div>
@@ -20,8 +19,11 @@ import TelegramIcon from "../../ui/TelegramIcon.astro";
       <div class="p-6 rounded-xl bg-white/5 reveal up hero-delay-3 border border-white/5">Signal execution rules</div>
     </div>
 
-    <Button href="https://t.me/ELDORADOFX" variant="primary" class="gap-2">
-      <TelegramIcon size={18} /> Join the masterclass
-    </Button>
+     <TelegramButton 
+      type="channel" 
+      username="RPomaFX"
+    >
+      Learn More
+    </TelegramButton>
   </Container>
 </Section>

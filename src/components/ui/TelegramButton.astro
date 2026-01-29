@@ -22,7 +22,6 @@ const {
   size = 18
 } = Astro.props;
 
-// Lógica de construcción de URL
 let finalHref = "";
 
 if (type === "custom" && href) {
@@ -36,57 +35,32 @@ if (type === "custom" && href) {
     finalHref = baseUrl;
   }
 }
+
+const typeStyles = {
+  channel: "bg-gradient-to-b from-[#e5c46a] to-[var(--color-gold)] text-black border-0 shadow-[0_4px_15px_rgba(185,138,37,0.25)] hover:shadow-[0_4px_20px_rgba(185,138,37,0.35)]",
+  bot: "bg-gradient-to-b from-[#38bdf8] to-[#0284c7] text-white border-0 shadow-[0_4px_15px_rgba(56,189,248,0.25)] hover:shadow-[0_4px_20px_rgba(56,189,248,0.35)]",
+  user: "border border-white/20 bg-white/[0.02] text-white hover:bg-white/[0.08] hover:border-white/30 shadow-none backdrop-blur-md",
+  custom: ""
+};
+
+const activeStyle = type !== "custom" ? typeStyles[type] : "";
+const baseVariant = type === "custom" ? variant : "ghost";
 ---
 
 <Button 
-  variant={variant} 
+  variant={baseVariant} 
   href={finalHref} 
-  class:list={["group gap-2 overflow-hidden flex items-center justify-center hover:scale-105 transition-transform duration-300", className]}
+  class:list={[
+    "group gap-2 overflow-hidden flex items-center justify-center transition-all duration-300 hover:scale-[1.02]",
+    activeStyle,
+    className
+  ]}
 >
+  <slot>
+    {type === 'channel' ? 'Join Channel' : type === 'bot' ? 'Start Bot' : 'Contact Support'}
+  </slot>
   
-  <slot>Join Telegram</slot>
   <div class="transition-transform duration-300 -translate-y-0.5 group-hover:-translate-y-1 group-hover:translate-x-1">
     <TelegramIcon size={size} />
   </div>
 </Button>
-
-
-<!-- A. Para el Canal Principal (Default)
-
-Fragmento de código
-
-<TelegramButton>
-  Join Official Channel
-</TelegramButton>
-B. Para el Bot "Portero" (con n8n)
-
-Fragmento de código
-
-<TelegramButton 
-  type="bot" 
-  username="EldoradoPorteroBot" 
-  startParam="from_hero"
->
-  Get Free Access
-</TelegramButton>
-C. Para hablar con el Dueño (Soporte)
-
-Fragmento de código
-
-<TelegramButton 
-  variant="secondary" 
-  type="user" 
-  username="EldoradoAdmin"
->
-  Contact Support
-</TelegramButton>
-D. Link totalmente custom
-
-Fragmento de código
-
-<TelegramButton 
-  type="custom" 
-  href="https://t.me/TuEnlacePrivado"
->
-  Private Group
-</TelegramButton> -->

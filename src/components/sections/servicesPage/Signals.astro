@@ -4,13 +4,31 @@ import Container from "../../ui/Container.astro";
 import Badge from "../../ui/Badge.astro";
 import Heading from "../../ui/Heading.astro";
 import Text from "../../ui/Text.astro";
-import Button from "../../ui/Button.astro";
-import TelegramIcon from "../../ui/TelegramIcon.astro";
+
+import TelegramButton from "../../ui/TelegramButton.astro";
 ---
 <Section class="py-32">
   <Container class="grid lg:grid-cols-2 gap-20 items-center">
     <div class="relative h-[380px] rounded-2xl overflow-hidden bg-white/10 reveal from-left">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,215,120,0.25),transparent_60%)]"></div>
+    
+       <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,215,120,0.25),transparent_60%)]">
+      
+      <img 
+        src="/social_images/service_image_1.webp" 
+        alt="Trading Bot Interface"
+        class="
+          absolute inset-0 w-full h-full object-cover 
+          opacity-50 mix-blend-overlay
+          transition-transform duration-700 ease-out 
+          group-hover:scale-110
+        "
+      />
+
+      <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,215,120,0.25),transparent_60%)] pointer-events-none"></div>
+      
+      <div class="absolute inset-0 grid-bg opacity-30 pointer-events-none"></div>
+
+    </div>
       <div class="absolute bottom-6 left-6 right-6 text-sm text-white/80">
         Live market structure · XAUUSD & BTCUSD
       </div>
@@ -24,9 +42,14 @@ import TelegramIcon from "../../ui/TelegramIcon.astro";
         <li>• Capital protection first</li>
         <li>• No overtrading, no hype</li>
       </ul>
-      <Button href="https://t.me/ELDORADOFX" variant="secondary" class="gap-2">
-        <TelegramIcon size={18} /> Access signals
-      </Button>
+     <TelegramButton 
+      type="channel" 
+      username="eldoradofxfree"
+    >
+      Access Our Free Signals Group
+    </TelegramButton>
     </div>
+
+     
   </Container>
 </Section>

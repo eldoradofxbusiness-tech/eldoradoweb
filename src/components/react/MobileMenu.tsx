@@ -40,7 +40,7 @@ export default function MobileMenu({ open, onToggle, onClose, links }: Props) {
         className={`
             z-50
             absolute
-            right-1/4
+            -right-1
             mt-4
             w-[90vw]
             max-w-xl

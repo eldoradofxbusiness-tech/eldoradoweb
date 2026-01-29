@@ -3,11 +3,11 @@ import Section from "../../ui/Section.astro";
 import Container from "../../ui/Container.astro";
 import Badge from "../../ui/Badge.astro";
 import Heading from "../../ui/Heading.astro";
-import Button from "../../ui/Button.astro";
-import TelegramIcon from "../../ui/TelegramIcon.astro";
+import TelegramButton from "../../ui/TelegramButton.astro";
 ---
 <Section class="py-32">
   <Container class="grid lg:grid-cols-2 gap-20 items-center">
+    
     <div class="reveal from-left lg:order-1 order-2">
       <Badge class="mb-4">Automation</Badge>
       <Heading level={2} class="mb-6">Trading Bot</Heading>
@@ -16,13 +16,32 @@ import TelegramIcon from "../../ui/TelegramIcon.astro";
         <li>• Rule-based entries</li>
         <li>• Set & forget operation</li>
       </ul>
-      <Button href="https://t.me/ELDORADOFX" variant="secondary" class="gap-2">
-        <TelegramIcon size={18} /> Learn about the bot
-      </Button>
+      <TelegramButton 
+      type="channel" 
+      username="RPomaFX"
+    >
+      Learn More
+    </TelegramButton>
     </div>
-    <div class="relative h-[380px] rounded-2xl overflow-hidden bg-white/10 lg:order-2 order-1 reveal from-right">
-      <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,215,120,0.25),transparent_60%)]"></div>
-      <div class="absolute inset-0 grid-bg opacity-30"></div>
+
+    <div class="relative h-[380px] rounded-2xl overflow-hidden bg-white/10 lg:order-2 order-1 reveal from-right group">
+      
+      <img 
+        src="/social_images/service_image_2.webp" 
+        alt="Trading Bot Interface"
+        class="
+          absolute inset-0 w-full h-full object-cover 
+          opacity-50 mix-blend-overlay
+          transition-transform duration-700 ease-out 
+          group-hover:scale-110
+        "
+      />
+
+      <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,215,120,0.25),transparent_60%)] pointer-events-none"></div>
+      
+      <div class="absolute inset-0 grid-bg opacity-30 pointer-events-none"></div>
+
     </div>
+
   </Container>
 </Section>

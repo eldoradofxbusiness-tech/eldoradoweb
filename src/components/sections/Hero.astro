@@ -14,7 +14,7 @@ import VideoBackground from "../ui/VideoBackground.astro";
 <Section class="relative py-24 lg:py-28 overflow-hidden rounded-br-[2.5rem] bg-transparent">
 
  <VideoBackground
-    src="/hero_video.mp4"
+    src="/hero_videos/index_hero_video.mp4"
     videoClass="w-420 h-[93.3%] rounded-br-[2.5rem] opacity-30"
   />
 
@@ -50,8 +50,8 @@ import VideoBackground from "../ui/VideoBackground.astro";
 
       <div class="hidden lg:flex justify-center relative z-30">
         <PhoneMockup
-        drift="right"
-        />
+        src="hero_videos/hero-phone-video.mp4"
+        drift="right"/>
       </div>
 
     </div>
@@ -64,8 +64,8 @@ import VideoBackground from "../ui/VideoBackground.astro";
       "
     >
       <PhoneMockup 
-      drift="right"
-      client:visible />
+       src="hero_videos/hero-phone-video.mp4"
+      drift="right"/>
     </div>
 
   </Container>

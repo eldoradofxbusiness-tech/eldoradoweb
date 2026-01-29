@@ -1,0 +1,49 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<div class:list={["mt-20 flex flex-wrap justify-center items-center gap-8 md:gap-12", className]}>
+  
+  <span class="text-10 font-bold tracking-[0.2em] text-white/30 uppercase italic">
+    Broker Partners:
+  </span>
+
+  <a 
+    href="https://www.vantagemarkets.com/forex-trading/forex-trading-account/?affid=NzQxNjA=" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="group transition-transform duration-300 hover:scale-105 flex flex-col gap-2 items-center justify-center"
+    aria-label="Open Account with Vantage FX"
+  >
+    <img 
+      src="https://s3-eu-west-1.amazonaws.com/tpd/logos/61d790a38dc21862f692970c/0x0.png" 
+      alt="Vantage FX" 
+      class="h-10 md:h-14 w-auto object-contain opacity-50 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:filter-none brightness-0 invert" 
+    />
+    <span class="text-[12px] font-bold tracking-[0.2em] text-white/30 uppercase italic">
+    Vantage
+  </span>
+  </a>
+
+  <a 
+    href="https://www.puprime.partners/forex-trading-account/?affid=50304" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="group transition-transform duration-300 hover:scale-105 flex flex-col gap-2 items-center justify-center"
+    aria-label="Open Account with PU Prime"
+  >
+    <img 
+      src="https://rentabletrader.com/wp-content/uploads/2025/04/puprime-broker-trading.webp" 
+      alt="PU Prime" 
+      class="h-10 md:h-14 w-auto object-contain opacity-50 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0" 
+    />
+    <span class="text-[12px] font-bold tracking-[0.2em] text-white/30 uppercase italic">
+    PuPrime
+  </span>
+  </a>
+
+</div>

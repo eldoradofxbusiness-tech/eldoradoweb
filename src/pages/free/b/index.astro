@@ -9,29 +9,35 @@ import Badge from "../../../components/ui/Badge.astro";
 import TelegramIcon from "../../../components/ui/TelegramIcon.astro";
 import ParticlesBackground from "../../../components/ui/ParticlesBackground.astro";
 import HeroGlow from "../../../components/ui/HeroGlow.astro";
-import Card from "../../../components/ui/Card.astro";
 import Divider from "../../../components/ui/Divider.astro";
 import CountdownTimer from "../../../components/react/CountdownTimer";
+import TestimonialsCarouselAuto from "../../../components/react/TestimonialsCarouselAuto";
 import { Zap, GraduationCap, TrendingUp, ShieldCheck, Clock } from "lucide-react";
 
-const MASTERCLASS_DISCOUNT_EXPIRY = "2026-01-25T23:59:59"; // Placeholder para lógica evergreen
+const CHANNEL_LINK = "https://t.me/eldoradofxfree";
 ---
 
 <LandingLayout 
   title="Free Signals + 50% Masterclass Discount | ElDoradoFX"
   description="Join our free Telegram and unlock a 50% discount on our Elite Trading Masterclass."
   ctaText="CLAIM YOUR DISCOUNT NOW"
+  ctaHref="https://t.me/eldoradofxfree"
 >
-  <div class="fixed top-0 left-0 right-0 z-[100] bg-yellow-500 py-2 px-4 text-black overflow-hidden shadow-xl">
-    <div class="max-w-7xl mx-auto flex items-center justify-center gap-4">
-      <Clock size={16} class="animate-pulse" />
-      <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
-        50% OFF Masterclass Ends In: <span class="underline">Join Free Telegram to Unlock</span>
-      </p>
+  
+  {/* TOP BANNER FIX */}
+  <a href={CHANNEL_LINK} target="_blank">
+    <div class="fixed top-0 left-0 right-0 z-[100] bg-yellow-500 py-2 px-4 text-black overflow-hidden shadow-xl hover:bg-yellow-400 transition-colors">
+      <div class="max-w-7xl mx-auto flex items-center justify-center gap-4">
+        <Clock size={16} class="animate-pulse" />
+        <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
+          50% OFF Masterclass Ends In: <span class="underline">Join Free Telegram to Unlock</span>
+        </p>
+      </div>
     </div>
-  </div>
+  </a>
 
-  <Section class="relative min-h-screen flex items-center bg-black overflow-hidden pt-28">
+  {/* HERO SECTION */}
+  <Section class="relative min-h-screen flex items-center bg-black overflow-hidden pt-32 pb-20">
     <div class="absolute inset-0 grid-bg opacity-20 mask-circle"></div>
     <HeroGlow />
     <ParticlesBackground count={30} color="#B98A25" />
@@ -51,7 +57,17 @@ const MASTERCLASS_DISCOUNT_EXPIRY = "2026-01-25T23:59:59"; // Placeholder para l
           Join <span class="text-white font-bold">ElDoradoFX – Gratis</span>, trusted by 1,000+ traders for XAUUSD & BTCUSD signals — and get insider access to a 50% discount on our elite masterclass.
         </Text>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 w-full max-w-4xl">
+        {/* SOCIAL PROOF IMAGE */}
+        <div class="flex justify-center mb-8">
+          <img 
+            src="/social_images/total_subscribers.jpeg" 
+            alt="Total Subscribers"
+            class="h-20 w-auto rounded-lg border border-[#B98A25]/50 shadow-[0_0_30px_-5px_rgba(185,138,37,0.3)]" 
+          />
+        </div>
+
+        {/* FEATURES GRID */}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 w-full max-w-2xl">
           {[
             { t: "2–3 SIGNALS/DAY", icon: TrendingUp },
             { t: "87% WIN RATE", icon: Zap },
@@ -64,7 +80,7 @@ const MASTERCLASS_DISCOUNT_EXPIRY = "2026-01-25T23:59:59"; // Placeholder para l
           ))}
         </div>
 
-        <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
+        <Button variant="primary" href={CHANNEL_LINK} class="px-14 py-6 text-xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
           <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
           JOIN THE FREE GROUP & CLAIM DISCOUNT
         </Button>
@@ -73,9 +89,12 @@ const MASTERCLASS_DISCOUNT_EXPIRY = "2026-01-25T23:59:59"; // Placeholder para l
     </Container>
   </Section>
 
+  {/* VALUE & MENTORS SECTION */}
   <Section class="py-32 bg-canvas relative border-y border-white/5">
     <Container>
       <div class="grid lg:grid-cols-2 gap-20 items-center">
+        
+        {/* Left Column: Value Prop */}
         <div>
           <Badge variant="gold" class="mb-6">WHY THIS GROUP IS DIFFERENT</Badge>
           <Heading level={2} class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white mb-10">
@@ -105,25 +124,46 @@ const MASTERCLASS_DISCOUNT_EXPIRY = "2026-01-25T23:59:59"; // Placeholder para l
              </div>
              <Text muted class="italic leading-relaxed">Available only to group members. We don't just drop signals — we teach you the "why" behind every institutional move.</Text>
           </div>
+           <Button variant="primary" href={CHANNEL_LINK} class="px-6 mt-12 py-6 text-sm font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
+            <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
+            JOIN THE FREE GROUP & CLAIM DISCOUNT
+          </Button>
         </div>
 
-        <div class="relative bg-white/[0.02] border border-white/10 rounded-[3rem] p-12 shadow-2xl overflow-hidden aspect-square flex flex-col justify-center text-center">
-           <div class="absolute inset-0 grid-bg opacity-10"></div>
-           <Heading level={3} class="text-white text-3xl mb-4 italic uppercase">Meet the Mentors</Heading>
-           <Divider class="my-8 opacity-20" />
-           <div class="space-y-4">
-              <Text class="text-white font-bold">Ricardo – Master Scalper</Text>
-              <Text class="text-white font-bold">MasterKelvin – Swing Specialist</Text>
-           </div>
-           <Text muted class="mt-8 text-sm tracking-widest uppercase">Latinos based in London. <br/> 6+ Years Consistent Profit.</Text>
-           <div class="mt-8 h-48 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 italic text-[10px] text-white/20 uppercase tracking-[0.3em]">
-             Mentor Introduction Video Placeholder
-           </div>
+       {/* Right Column: Mentors Card */}
+       <div class="relative bg-white/[0.02] border border-white/10 rounded-[3rem] p-12 shadow-2xl overflow-hidden aspect-square flex flex-col justify-between text-center">
+   
+          <div class="absolute inset-0 grid-bg opacity-10 pointer-events-none"></div>
+          
+          <div class="relative z-10 mt-4">
+              <Heading level={3} class="text-white text-3xl mb-4 italic uppercase">Meet the Mentors</Heading>
+              <Divider class="my-6 opacity-20" />
+              <div class="space-y-2">
+                <Text class="text-white font-bold">Ricardo – Master Scalper</Text>
+                <Text class="text-white font-bold">MasterKelvin – Swing Specialist</Text>
+              </div>
+              <Text muted class="mt-6 text-sm tracking-widest uppercase">Latinos based in London. <br/> 6+ Years Consistent Profit.</Text>
+          </div>
+
+          <div class="relative w-full h-48 mt-6 bg-white/5 rounded-2xl overflow-hidden border border-white/10 group">
+            <img 
+                src="/us_traders.webp" 
+                alt="Traders Team" 
+                class="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+
+          
         </div>
+        
       </div>
     </Container>
+         
   </Section>
 
+  <TestimonialsCarouselAuto/>
+
+  {/* FINAL CTA SECTION */}
   <Section class="py-32 bg-black relative">
     <Container size="narrow" class="text-center">
       <Heading level={2} class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white mb-6">
@@ -132,7 +172,7 @@ const MASTERCLASS_DISCOUNT_EXPIRY = "2026-01-25T23:59:59"; // Placeholder para l
       <Text class="text-lg text-white/60 mb-12 uppercase tracking-widest font-bold">Your 50% Masterclass Discount Expires in:</Text>
       
       <div class="mb-16">
-        <CountdownTimer client:load targetDate={MASTERCLASS_DISCOUNT_EXPIRY} />
+        <CountdownTimer client:load  />
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 text-left mb-16">
@@ -149,7 +189,7 @@ const MASTERCLASS_DISCOUNT_EXPIRY = "2026-01-25T23:59:59"; // Placeholder para l
         ))}
       </div>
 
-      <Button variant="primary" href="https://t.me/your_link" class="w-full px-16 py-8 text-2xl font-black italic tracking-tighter uppercase shadow-[0_0_60px_rgba(185,138,37,0.3)]">
+      <Button variant="primary" href={CHANNEL_LINK} class="w-full px-16 py-8 text-2xl font-black italic tracking-tighter uppercase shadow-[0_0_60px_rgba(185,138,37,0.3)] hover:shadow-[0_0_80px_rgba(185,138,37,0.5)] transition-all">
         JOIN THE FREE TELEGRAM GROUP NOW
       </Button>
       
@@ -159,4 +199,5 @@ const MASTERCLASS_DISCOUNT_EXPIRY = "2026-01-25T23:59:59"; // Placeholder para l
       </p>
     </Container>
   </Section>
+
 </LandingLayout>

@@ -1,89 +1,49 @@
 ---
-import Card from "../../ui/Card.astro";
-import Heading from "../../ui/Heading.astro";
-import Text from "../../ui/Text.astro";
+// src/components/PhilosophyBento.astro
+import BentoCard from "./BentoPhilosophyCard.astro"
+import Container from "../../ui/Container.astro";
 ---
 
-<div class="lg:w-2/3 grid grid-cols-1 gap-8 lg:grid-cols-6 lg:grid-rows-2">
+<Container size="default" class="">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    
+    <BentoCard 
+      isLarge
+      title="Master one market. Ignore the noise."
+      label="Strategic Core"
+      image="/Philosophy-Image1.webp"
+      description="We don’t chase signals in every corner of the forex world. We specialize. XAUUSD is our main focus, with BTC in the mix when it matters. Simplicity is a strategy."
+      class="md:col-span-2 reveal scale shadow-lg"
+    />
 
-  <!-- TOP CARD -->
-  <Card class="card-glow-hover card-transparent relative overflow-hidden lg:col-span-6 min-h-[360px] reveal from-bottom slow ease-out">
-    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 h-full">
-      <div class="flex flex-col justify-center px-8 py-10 max-w-xl">
-        <Heading level={3} class="mb-3 text-2xl">
-          Risk-first mindset
-        </Heading>
 
-        <Text muted class="text-sm lg:text-base leading-relaxed">
-          Cada decisión parte del riesgo asumido, no del beneficio esperado.
-          Si el riesgo no está perfectamente definido, la operación no existe.
-          El control del riesgo es el origen de todo.
-        </Text>
-      </div>
+    <BentoCard 
+      title="Protect your capital at all costs"
+      label="Security"
+      image="/Philosophy-Image3.webp"
+      description="No capital, no game. Preservation is priority #1. We use tight, non-negotiable stop losses and focus on consistency over flashy wins. Small pips. Big discipline."
+      class="reveal scale delay-150"
+    />
 
-      <div class="relative h-full">
-        <img
-          src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg"
-          alt=""
-          class="absolute inset-0 w-full h-full object-cover opacity-15"
-        />
-      </div>
-    </div>
-  </Card>
 
-  <!-- BOTTOM LEFT -->
-  <Card class="card-glow-hover card-transparent relative overflow-hidden lg:col-span-4 min-h-[300px] flex flex-col reveal from-left slow ease-out">
-    <div class="relative z-10 px-6 py-6">
-      <Heading level={3} class="mb-2 text-xl">
-        Capital preservation
-      </Heading>
+   <BentoCard 
+      title="Price action leads. Indicators confirm."
+      label="Execution"
+      image="/Philosophy-Image2.webp"
+      description="We trade based on what the charts say first—clean technical analysis. Indicators come second, only to confirm the story the price is already telling."
+      class="reveal scale delay-300"
+    />
 
-      <Text muted class="text-sm leading-relaxed">
-        Proteger el capital es siempre la prioridad.
-        Sin capital no existe operativa.
-        La consistencia a largo plazo importa más que cualquier resultado aislado.
-      </Text>
-    </div>
 
-    <div class="relative flex-1">
-      <img
-        src="https://images.pexels.com/photos/4386366/pexels-photo-4386366.jpeg"
-        alt=""
-        class="absolute inset-0 w-full h-full object-cover opacity-15"
-      />
-    </div>
-  </Card>
-
-  <!-- BOTTOM RIGHT -->
-  <Card class="card-glow-hover card-transparent relative overflow-hidden lg:col-span-2 min-h-[300px] flex flex-col reveal from-right slow ease-out">
-    <div class="relative z-10 px-6 py-6">
-      <Heading level={3} class="mb-2 text-xl">
-        Process-driven trading
-      </Heading>
-
-      <Text muted class="text-sm leading-relaxed">
-        Operamos procesos definidos, no emociones.
-        El sistema manda siempre, independientemente del resultado individual.
-      </Text>
-    </div>
-
-    <div class="relative flex-1">
-      <img
-        src="https://images.pexels.com/photos/6801874/pexels-photo-6801874.jpeg"
-        alt=""
-        class="absolute inset-0 w-full h-full object-cover opacity-15"
-      />
-    </div>
-  </Card>
-
-</div>
-
+  </div>
+</Container>
 <script is:inline>
-  document.querySelectorAll(".card-glow-hover").forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
+  const updateGlow = (e) => {
+    for (const card of document.querySelectorAll(".card-glow-hover")) {
       const rect = card.getBoundingClientRect();
       card.style.setProperty("--x", `${e.clientX - rect.left}px`);
       card.style.setProperty("--y", `${e.clientY - rect.top}px`);
-    });
-  });
+    }
+  };
+  window.addEventListener("mousemove", updateGlow);
 </script>

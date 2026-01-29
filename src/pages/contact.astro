@@ -9,37 +9,51 @@ import Telegram from "../components/sections/social-media/Telegram.astro";
 
 <CorporateLayout title="ElDoradoFx — Our Channels">
 
-  <HeroForPages 
+<HeroForPages 
   badge="Our channels"
   title="Where we share our work"
   description=" Each platform has a clear role — education, community and updates. We don't cross-post noise. We use each channel intentionally."
-  videoSrc="/1_video.mp4"
+  videoSrc="/hero_videos/social_hero.mp4"
   videoClass="opacity-30"
 />
 
-  <!-- YOUTUBE -->
-  <Youtube
-    videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
-    channelUrl="https://www.youtube.com/@eldoradofx"
-  />
+<Youtube
+  videoUrl="https://www.youtube.com/embed/Jfk3nkg-kMo"
+  channelUrl="https://www.youtube.com/@ElDoradoFX-TradingGroup-u4u"
+/>
 
-  <!-- INSTAGRAM -->
-  <MediaBento
-    badge="Instagram"
-    title="Daily market snapshots"
-    description="Short-form insights, execution context and market observations shared daily."
-    mainLabel="@eldoradofx"
-    icon="yes"
-    images={[
-      "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg",
-      "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg",
-      "https://images.pexels.com/photos/6801874/pexels-photo-6801874.jpeg",
-      "https://images.pexels.com/photos/6801639/pexels-photo-6801639.jpeg",
-      "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg"
-    ]}
-  />
+<MediaBento
+  badge="Social Feed"
+  title="Follow the Journey"
+  description="Daily market snapshots, lifestyle behind the charts, and rapid-fire execution updates."
+  mainLabel="@eldoradofx"
+  icon="ig"
+  images={[
+    {
+      src: "social_images/ig_image_4.webp", 
+      link: "https://www.instagram.com/eldoradofx_tg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      badge: "ig"
+    },
+     {
+      src: "social_images/ig_image_2.webp", 
+      link: "https://www.instagram.com/reel/DQzH6c_jHqY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      badge: "ig"
+    }, {
+      src: "social_images/ig_image_3.webp", 
+      link: "https://www.instagram.com/p/DTfBGfFDPkA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      badge: "ig"
+    }, {
+      src: "social_images/ig_image_1.webp", 
+      link: "https://www.instagram.com/reel/DNgUmZOMnUF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      badge: "ig"
+    }, {
+      src: "social_images/ig_image_5.webp", 
+      link: "https://www.instagram.com/reel/DM8xhZhsw0H/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      badge: "ig"
+    },
+  ]}
+/>
 
-  <!-- TELEGRAM -->
   <Telegram />
 
 </CorporateLayout>

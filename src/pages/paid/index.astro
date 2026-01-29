@@ -11,10 +11,8 @@ import TelegramIcon from "../../components/ui/TelegramIcon.astro";
 import Card from "../../components/ui/Card.astro";
 import Divider from "../../components/ui/Divider.astro";
 import CountdownTimer from "../../components/react/CountdownTimer";
+import TestimonialsCarouselAuto from "../../components/react/TestimonialsCarouselAuto";
 import { AlertTriangle, XCircle, CheckCircle2, TrendingUp, MonitorPlay, Users } from "lucide-react";
-
-// Próxima señal (simulado para urgencia)
-const NEXT_SIGNAL_TIME = "2026-01-21T15:30:00"; 
 ---
 
 <LandingLayout 
@@ -147,14 +145,10 @@ const NEXT_SIGNAL_TIME = "2026-01-21T15:30:00";
         </Heading>
         <Text muted>The free group already proves it. The paid group is where the real wins happen.</Text>
       </div>
-      
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-        {[1,2,3,4].map(() => (
-          <div class="aspect-[9/16] bg-neutral-900 border border-white/10 rounded-2xl flex items-center justify-center italic text-[10px] text-white/20 uppercase tracking-widest text-center p-4">
-            Telegram Wins / Testimonial Placeholder
-          </div>
-        ))}
+      <div class="-translate-x-20">
+      <TestimonialsCarouselAuto client:load/>
       </div>
+     
     </Container>
   </Section>
 
@@ -167,7 +161,7 @@ const NEXT_SIGNAL_TIME = "2026-01-21T15:30:00";
       
       <div class="mb-12 flex flex-col items-center">
         <Text class="text-lg text-yellow-500 font-bold uppercase tracking-widest mb-6 italic">Next premium signal drops in:</Text>
-        <CountdownTimer client:load targetDate={NEXT_SIGNAL_TIME} title="EXPECTED ENTRY" />
+        <CountdownTimer client:load />
       </div>
 
       <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-3xl font-black italic tracking-tighter uppercase w-full mb-8">

@@ -7,6 +7,7 @@ import Badge from "../../ui/Badge.astro";
 import Button from "../../ui/Button.astro";
 import PhoneMockup from "../../react/PhoneMockup";
 import TelegramIcon from "../../ui/TelegramIcon.astro";
+import TelegramButton from "../../ui/TelegramButton.astro";
 ---
 
 <Section class="relative py-28 overflow-hidden reveal fade">
@@ -33,7 +34,10 @@ import TelegramIcon from "../../ui/TelegramIcon.astro";
       
       <div class="flex justify-center lg:justify-start reveal from-left">
         <div class="relative translate-x-4">
-          <PhoneMockup client:visible />
+          <PhoneMockup 
+          src="/telegram_video.mp4"
+          poster="/social_images/tl_image_7.webp"
+          client:visible />
         </div>
       </div>
 
@@ -61,13 +65,13 @@ import TelegramIcon from "../../ui/TelegramIcon.astro";
           No guarantees. No signals without context.
         </Text>
 
-        <div class="pt-4">
-          <Button
-            href="https://t.me/ELDORADOFX"
-            target="_blank"
+        <div class="pt-4 w-1/2">
+          <TelegramButton 
+            type="channel" 
+            username="eldoradofxfree"
           >
-            Open Telegram Channel →
-          </Button>
+            Access Our Free Signals Group
+          </TelegramButton>
         </div>
 
       </div>

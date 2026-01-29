@@ -7,7 +7,7 @@ interface PhoneMockupProps {
 }
 
 export default function PhoneMockup({
-  src = "/hero-phone-video.mp4", 
+  src = "hero_videos/hero-phone-video.mp4", 
   poster = "/hero-phone-cover.webp",
   drift = "left"
 }: PhoneMockupProps) {

@@ -29,6 +29,7 @@ export default function Navbar({ lang }: Props) {
 
       <NavbarDesktop 
         links={links}
+        lang={lang}
       />
     </div>
   );

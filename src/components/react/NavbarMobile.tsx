@@ -1,5 +1,6 @@
+
+import LanguageSwitcher from "./LanguageSwitcher";
 import Logo from "./Logo";
-import ContactButton from "./ContactButton";
 import MobileMenu from "./MobileMenu";
 
 type Props = {
@@ -7,17 +8,18 @@ type Props = {
   onToggle: () => void;
   onClose: () => void;
   links: { label: string; href: string }[];
+  lang: "en" | "es";
 };
 
-export default function NavbarMobile({ open, onToggle, onClose, links }: Props) {
+export default function NavbarMobile({ open, onToggle, onClose, links, lang }: Props) {
   return (
-    <div className="flex items-center justify-between p-8 md:hidden">
+    <div className="flex items-center justify-between p-6 md:hidden relative z-50">
       {/* LEFT */}
-      <Logo size="xl" />
+      <Logo size="lg" />
 
       {/* RIGHT */}
-      <div className="flex items-center justify-center gap-4">
-        <ContactButton size="sm" />
+      <div className="flex items-center gap-4">
+        <LanguageSwitcher currentLang={lang} />
         <MobileMenu open={open} onToggle={onToggle} onClose={onClose} links={links} />
       </div>
     </div>

@@ -13,17 +13,20 @@ import Card from "../../../components/ui/Card.astro";
 import Divider from "../../../components/ui/Divider.astro";
 import CountdownTimer from "../../../components/react/CountdownTimer";
 import { Clock, Zap, MonitorPlay, BrainCircuit, CheckCircle2, ArrowRight } from "lucide-react";
+import TestimonialsCarouselAuto from "../../../components/react/TestimonialsCarouselAuto";
+import Brokers from "../../../components/ui/Brokers.astro"
 
-const OFFER_EXPIRY = "2026-01-23T23:59:59"; // Evergreen 48h logic
 ---
 
 <LandingLayout 
   title="50% OFF Premium Signals | ElDoradoFX Limited Offer"
   ctaText="CLAIM 50% DISCOUNT"
 >
+<a href="https://t.me/RPomaFX">
   <div class="fixed top-0 left-0 right-0 z-[110] bg-(--color-gold) py-2 text-black font-black text-center text-[10px] tracking-[0.3em] uppercase">
     🕒 50% OFF ELDORADOFX PREMIUM — OFFER ENDS IN: <span class="underline italic">JOIN NOW</span>
   </div>
+</a>
 
   <Section class="relative min-h-screen flex items-center bg-black overflow-hidden pt-28">
     <div class="absolute inset-0 grid-bg opacity-20 mask-circle"></div>
@@ -41,7 +44,7 @@ const OFFER_EXPIRY = "2026-01-23T23:59:59"; // Evergreen 48h logic
       </Heading>
       
       <div class="mb-12 max-w-3xl mx-auto">
-        <CountdownTimer client:load targetDate={OFFER_EXPIRY} title="DISCOUNT EXPIRES IN:" />
+        <CountdownTimer client:load />
       </div>
 
       <Text class="text-xl md:text-2xl text-white/70 mb-10 max-w-2xl mx-auto leading-tight italic">
@@ -145,19 +148,9 @@ const OFFER_EXPIRY = "2026-01-23T23:59:59"; // Evergreen 48h logic
         </Heading>
       </div>
       
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-        {[1,2,3,4].map(() => (
-          <div class="aspect-video bg-neutral-900 border border-white/10 rounded-2xl flex items-center justify-center italic text-[10px] text-white/20 uppercase tracking-widest p-6 text-center">
-            Premium Wins / Mentors in Action Placeholder
-          </div>
-        ))}
-      </div>
+     <TestimonialsCarouselAuto client:load/>
 
-      <div class="mt-20 flex flex-wrap justify-center items-center gap-12 opacity-30">
-        <span class="text-[10px] font-bold tracking-widest text-white uppercase italic">Broker Partners:</span>
-        <div class="h-8 w-32 bg-white/10 rounded flex items-center justify-center font-black text-xs">VANTAGE</div>
-        <div class="h-8 w-32 bg-white/10 rounded flex items-center justify-center font-black text-xs uppercase tracking-tighter">PU PRIME</div>
-      </div>
+    <Brokers/>
     </Container>
   </Section>
 
@@ -170,10 +163,10 @@ const OFFER_EXPIRY = "2026-01-23T23:59:59"; // Evergreen 48h logic
       
       <div class="mb-12">
         <Text class="text-xl text-white/40 mb-10 uppercase tracking-widest font-bold">This is your window. Next signal's already on the way.</Text>
-        <CountdownTimer client:load targetDate={OFFER_EXPIRY} />
+        <CountdownTimer client:load />
       </div>
 
-      <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-3xl font-black italic tracking-tighter uppercase w-full">
+      <Button variant="primary" href="https://t.me/RPomaFX" class="px-16 py-8 text-3xl font-black italic tracking-tighter uppercase w-full">
         JOIN NOW & GET 50% OFF
       </Button>
       <Divider class="mt-20 opacity-20" />

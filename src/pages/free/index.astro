@@ -9,17 +9,19 @@ import Badge from "../../components/ui/Badge.astro";
 import TelegramIcon from "../../components/ui/TelegramIcon.astro";
 import ParticlesBackground from "../../components/ui/ParticlesBackground.astro";
 import HeroGlow from "../../components/ui/HeroGlow.astro";
-import Card from "../../components/ui/Card.astro";
+import CountdownTimmer from "../../components/react/CountdownTimer"
 import Divider from "../../components/ui/Divider.astro";
+import TestimonialsCarousel from "../../components/react/TestimonialsCarousel";
 import { CheckCircle2, TrendingUp, Users, ShieldCheck, Zap, BarChart3 } from "lucide-react";
 
-const TARGET_DATE = "2026-02-01T00:00:00"; // Placeholder para el countdown
+const TARGET_DATE = "2026-02-01T00:00:00"; 
 ---
 
 <LandingLayout 
   title="ElDoradoFX – Gratis | 87% Win Rate Free Signals"
   description="Join 1,000+ traders profiting from real daily signals on XAUUSD & BTCUSD."
   ctaText="GET FREE SIGNALS NOW"
+  ctaHref="https://t.me/eldoradofxfree"
 >
   <Section class="relative min-h-screen flex items-center bg-black overflow-hidden pt-20">
     <div class="absolute inset-0 grid-bg opacity-20 mask-circle"></div>
@@ -53,53 +55,92 @@ const TARGET_DATE = "2026-02-01T00:00:00"; // Placeholder para el countdown
           ))}
         </div>
 
-        <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
+        <Button variant="primary" href="https://t.me/eldoradofxfree" class="px-16 py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
           <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
           GET FREE SIGNALS NOW
         </Button>
         <p class="mt-4 text-[10px] tracking-[0.3em] text-white/40 font-bold uppercase">Instant access. No payment. No pitch.</p>
 
-        <div class="mt-20 w-full max-w-4xl relative group">
-          <div class="absolute -inset-1 bg-yellow-500/20 blur-2xl opacity-30"></div>
-          <div class="relative rounded-[2rem] border border-white/10 overflow-hidden bg-white/5 p-4 backdrop-blur-md">
-            <div class="aspect-video bg-neutral-900 flex items-center justify-center rounded-xl overflow-hidden">
-               <BarChart3 size={64} class="text-white/10" />
-               <span class="absolute text-[10px] uppercase tracking-widest text-white/20 font-bold">Live Signals Visualization Placeholder</span>
-            </div>
-          </div>
-        </div>
       </div>
     </Container>
   </Section>
 
   <Section class="py-32 bg-canvas relative overflow-hidden">
-    <Container>
-      <div class="max-w-4xl mx-auto mb-20 text-center">
-        <Badge variant="gold" class="mb-4">THE VALUE</Badge>
-        <Heading level={2} class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white">
-          What You Get <span class="text-yellow-400">Inside The Group</span>
-        </Heading>
-      </div>
+      <Container>
+        <div class="max-w-4xl mx-auto mb-20 text-center">
+          <Badge variant="gold" class="mb-4">THE VALUE</Badge>
+          <Heading level={2} class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white">
+            What You Get <span class="text-yellow-400">Inside The Group</span>
+          </Heading>
+        </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { t: "DAILY SIGNALS", d: "2–3 high-quality signals every single day (XAUUSD + BTCUSD only).", icon: TrendingUp },
-          { t: "MARKET INSIGHTS", d: "Daily market insights + expert commentary directly from our London desk.", icon: Zap },
-          { t: "MASTERCLASS ACCESS", d: "Priority access to discounted trading masterclasses and educational events.", icon: ShieldCheck },
-          { t: "PARTNER OFFERS", d: "Special broker offers from Vantage & PU Prime for our community members.", icon: BarChart3 },
-          { t: "REAL COMMUNITY", d: "A real, engaged community — not bots or spam. Latin traders based in London.", icon: Users }
-        ].map(item => (
-          <Card class="bg-white/[0.03] border-white/10 p-8 hover:border-yellow-500/30 transition-all duration-500 group">
-            <item.icon size={32} class="text-yellow-500 mb-6 group-hover:scale-110 transition-transform" />
-            <h3 class="text-xl font-bold text-white mb-3 font-heading italic uppercase tracking-tight">{item.t}</h3>
-            <p class="text-white/50 text-sm leading-relaxed">{item.d}</p>
-          </Card>
-        ))}
-      </div>
-    </Container>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { 
+              t: "DAILY SIGNALS", 
+              d: "2–3 high-quality signals every single day (XAUUSD + BTCUSD only).", 
+              icon: TrendingUp,
+              img: "social_images/tl_image_6.webp" 
+            },
+            { 
+              t: "MARKET INSIGHTS", 
+              d: "Daily market insights + expert commentary directly from our London desk.", 
+              icon: Zap,
+              img: "social_images/tl_image_7.webp" 
+            },
+            { 
+              t: "MASTERCLASS ACCESS", 
+              d: "Priority access to discounted trading masterclasses and educational events.", 
+              icon: ShieldCheck,
+              img: "social_images/tl_image_12.webp" 
+            },
+            { 
+              t: "PARTNER OFFERS", 
+              d: "Special broker offers from Vantage & PU Prime for our community members.", 
+              icon: BarChart3,
+              img: "social_images/brokers.png" 
+            },
+            { 
+              t: "REAL COMMUNITY", 
+              d: "A real, engaged community — not bots or spam. Latin traders based in London.", 
+              icon: Users,
+              img: "social_images/tl_image_13.webp" 
+            }
+          ].map(item => (
+            <div class="group relative h-80 rounded-3xl overflow-hidden border border-white/10 bg-white/[0.02]">
+              
+              <img 
+                src={item.img} 
+                alt={item.t} 
+                class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+              
+          
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
+
+             
+              <div class="relative z-10 h-full p-8 flex flex-col justify-end">
+                
+                {/* Icono flotante con brillo */}
+                <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 backdrop-blur-md group-hover:bg-yellow-500/20 transition-colors">
+                  <item.icon size={24} class="text-yellow-400" />
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-2 font-heading italic uppercase tracking-tight group-hover:text-yellow-400 transition-colors">
+                  {item.t}
+                </h3>
+                
+                <p class="text-white/60 text-sm leading-relaxed">
+                  {item.d}
+                </p>
+              </div>
+
+            </div>
+          ))}
+        </div>
+      </Container>
   </Section>
-
-  <Section class="py-32 bg-black relative">
+ <Section class="py-32 bg-black relative">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
     <Container>
       <div class="grid lg:grid-cols-2 gap-20 items-center">
@@ -135,13 +176,8 @@ const TARGET_DATE = "2026-02-01T00:00:00"; // Placeholder para el countdown
           </div>
         </div>
 
-        <div class="relative">
-          <div class="relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] p-4 shadow-2xl overflow-hidden aspect-[4/5] flex items-center justify-center">
-             <div class="text-center">
-                <Users size={48} class="text-white/5 mx-auto mb-4" />
-                <span class="text-[10px] uppercase tracking-widest text-white/20 font-bold block">Carousel: Telegram Signals & Testimonials Placeholder</span>
-             </div>
-          </div>
+        <div class="relative group">
+        <TestimonialsCarousel client:load />
         </div>
       </div>
     </Container>
@@ -156,19 +192,19 @@ const TARGET_DATE = "2026-02-01T00:00:00"; // Placeholder para el countdown
       </Heading>
       <Text class="text-xl text-white/60 mb-12 uppercase tracking-[0.2em] font-bold">No spam. No fees. Just signals.</Text>
 
-      <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-3xl font-black italic tracking-tighter uppercase w-full">
-        JOIN THE FREE TELEGRAM GROUP NOW
-      </Button>
+        <Button variant="primary" href="https://t.me/eldoradofxfree" class="px-16 py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
+          <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
+          GET FREE SIGNALS NOW
+        </Button>
       
       <p class="mt-8 text-white/40 text-sm font-bold uppercase tracking-widest">You'll be inside in 10 seconds or less.</p>
       
-      <div class="mt-12 flex items-center justify-center gap-3">
-        <div class="flex -space-x-2">
-          {[1,2,3,4].map(() => (
-            <div class="h-8 w-8 rounded-full border-2 border-black bg-neutral-800 flex items-center justify-center text-[8px] font-bold">U</div>
-          ))}
-        </div>
+      <div class="mt-12 flex flex-col items-center justify-center gap-3">
         <p class="text-[10px] text-yellow-500 font-bold tracking-[0.3em] uppercase">Thousands already inside</p>
+        <div class="flex -space-x-2">
+          <img src="/social_images/total_subscribers.jpeg" class="w-96 h-25 rounded-md  border-[#B98A25] shadow-[0_0_50px_-10px_rgba(185,138,37,0.35)]">
+        </div>
+        
       </div>
       <Divider class="mt-20 opacity-20" />
     </Container>
