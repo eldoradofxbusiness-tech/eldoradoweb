@@ -7,6 +7,10 @@ import Badge from "../../../components/ui/Badge.astro";
 import Card from "../../../components/ui/Card.astro";
 import TraderCoins from "./../trust/TraderCoins.astro";
 import Divider from "../../../components/ui/Divider.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
   <!-- TEAM SECTION -->
   <Section class="py-16 bg-(--color-canvas-end) z-2">
@@ -14,17 +18,15 @@ import Divider from "../../../components/ui/Divider.astro";
     <Container class="flex flex-col items-center reveal fade">
 
       <Badge variant="gold" class="mb-6">
-        Our traders
+        {t("team.badge")}
       </Badge>
 
       <Heading level={2} class="mb-6 text-center">
-        Two Traders, Two Strategies
+        {t("team.title")}
       </Heading>
 
       <Text muted class="max-w-3xl text-center mb-12">
-        Two professional traders with distinct execution styles.
-        One scalps shorter timeframes. One trades swing setups.
-        Both follow the same risk-first mindset.
+        {t("team.description")}
       </Text>
 
       <TraderCoins />
@@ -34,33 +36,27 @@ import Divider from "../../../components/ui/Divider.astro";
         <!-- Ricardo -->
         <Card class="p-8 reveal from-left-scale">
           <Heading level={3} class="text-xl mb-3">
-            Ricardo — Scalping
+            {t("team.ricardo")}
           </Heading>
           <Text muted class="text-sm leading-relaxed">
-            Operates on shorter timeframes with quick entries and exits.
-            Focused on precision, speed, and tight risk control.
-            Every trade follows the same execution rules.
+            {t("team.ricardoDescription")}
           </Text>
         </Card>
 
         <!-- MasterKelvin -->
         <Card class="p-8 reveal from-right-scale">
           <Heading level={3} class="text-xl mb-3">
-            MasterKelvin — Swing Trading
+            {t("team.masterKelvin")}
           </Heading>
           <Text muted class="text-sm leading-relaxed">
-            Focuses on multi-day positions based on higher timeframe structure.
-            Less frequent, more patient. Risk is always defined before entry.
-            Process over impulse.
+            {t("team.masterKelvinDescription")}
           </Text>
         </Card>
 
       </div>
 
       <Text muted class="mt-12 text-center max-w-2xl text-sm">
-        Two styles allow flexibility across market conditions.
-        When scalping conditions weaken, swing setups may be clearer — and vice versa.
-        This isn't about hedging. It's about structural adaptability.
+        {t("team.adaptability")}
       </Text>
 
     </Container>

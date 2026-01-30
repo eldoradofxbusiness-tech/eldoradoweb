@@ -9,6 +9,10 @@ import TelegramButton from "../ui/TelegramButton.astro";
 import PhoneMockup from "../../components/PhoneMockup.astro";
 import HeroGlow from "../ui/HeroGlow.astro";
 import VideoBackground from "../ui/VideoBackground.astro";
+import { useTranslations, getLanguageFromPath } from "../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 
 <Section class="relative py-24 lg:py-28 overflow-hidden rounded-br-[2.5rem] bg-transparent">
@@ -26,24 +30,24 @@ import VideoBackground from "../ui/VideoBackground.astro";
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-7xl">
       
       <div class="flex flex-col gap-7 reveal from-bottom slow ease-out">
-        <Badge class="badge-glow w-fit">Trading signals & automation</Badge>
-        
-        <Heading level="1" class="leading-tight max-w-xl text-white">
-          Professional trading <br /> signals & automation
+        <Badge class="badge-glow w-fit">{t("hero.badge")}</Badge>
+
+        <Heading level={1} class="leading-tight max-w-xl text-white">
+          <Fragment set:html={t("hero.title")} />
         </Heading>
 
         <Text class="max-w-xl text-slate-300">
-          High-quality market signals and automation, built around risk management.
+          {t("hero.description")}
         </Text>
 
         <div class="flex gap-3 mt-2">
           <TelegramButton>
-            Join Us
+            {t("hero.joinUs")}
           </TelegramButton>
-          <Button 
-          href="/services"
+          <Button
+          href={`${lang === "es" ? "/es" : ""}/services`}
           variant="secondary">
-          View services
+          {t("hero.viewServices")}
         </Button>
         </div>
       </div>

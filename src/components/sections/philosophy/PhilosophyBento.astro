@@ -1,40 +1,42 @@
 ---
-// src/components/PhilosophyBento.astro
 import BentoCard from "./BentoPhilosophyCard.astro"
 import Container from "../../ui/Container.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 
 <Container size="default" class="">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     
-    <BentoCard 
+    <BentoCard
       isLarge
-      title="Master one market. Ignore the noise."
-      label="Strategic Core"
+      title={t("philosophy.bento.masterOneMarket")}
+      label={t("philosophy.bento.strategicCore")}
       image="/Philosophy-Image1.webp"
-      description="We don’t chase signals in every corner of the forex world. We specialize. XAUUSD is our main focus, with BTC in the mix when it matters. Simplicity is a strategy."
+      description={t("philosophy.bento.masterOneMarketDescription")}
       class="md:col-span-2 reveal scale shadow-lg"
     />
 
 
-    <BentoCard 
-      title="Protect your capital at all costs"
-      label="Security"
+    <BentoCard
+      title={t("philosophy.bento.protectCapital")}
+      label={t("philosophy.bento.security")}
       image="/Philosophy-Image3.webp"
-      description="No capital, no game. Preservation is priority #1. We use tight, non-negotiable stop losses and focus on consistency over flashy wins. Small pips. Big discipline."
+      description={t("philosophy.bento.protectCapitalDescription")}
       class="reveal scale delay-150"
     />
 
 
-   <BentoCard 
-      title="Price action leads. Indicators confirm."
-      label="Execution"
+   <BentoCard
+      title={t("philosophy.bento.priceActionLeads")}
+      label={t("philosophy.bento.execution")}
       image="/Philosophy-Image2.webp"
-      description="We trade based on what the charts say first—clean technical analysis. Indicators come second, only to confirm the story the price is already telling."
+      description={t("philosophy.bento.priceActionLeadsDescription")}
       class="reveal scale delay-300"
     />
-
-
+    
   </div>
 </Container>
 <script is:inline>

@@ -8,37 +8,41 @@ import {
   ZapOff,
   TrendingUp
 } from "lucide-react";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 
 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 reveal scale">
 
   <PhilosophyPrincipleItem
-    text="Defined risk on every trade"
+    text={t("philosophy.principles.definedRisk")}
     Icon={ShieldCheck}
   />
 
   <PhilosophyPrincipleItem
-    text="No overexposure, ever"
+    text={t("philosophy.principles.noOverexposure")}
     Icon={Scale}
   />
 
   <PhilosophyPrincipleItem
-    text="Transparent logic and rules"
+    text={t("philosophy.principles.transparentLogic")}
     Icon={Eye}
   />
 
   <PhilosophyPrincipleItem
-    text="Consistency over frequency"
+    text={t("philosophy.principles.consistencyOverFrequency")}
     Icon={Repeat}
   />
 
   <PhilosophyPrincipleItem
-    text="Execution without impulse"
+    text={t("philosophy.principles.executionWithoutImpulse")}
     Icon={ZapOff}
   />
 
   <PhilosophyPrincipleItem
-    text="Long-term mindset"
+    text={t("philosophy.principles.longTermMindset")}
     Icon={TrendingUp}
   />
 

@@ -6,6 +6,10 @@ import Heading from "../../../components/ui/Heading.astro";
 import Text from "../../../components/ui/Text.astro";
 import Button from "../../../components/ui/Button.astro";
 import YouTubeIcon from "../../../components/ui/YoutubeIcon.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 
 const {
   videoUrl = "https://www.youtube.com/embed/Jfk3nkg-kMo",
@@ -41,13 +45,11 @@ const {
         </Badge>
 
         <Heading level={2}>
-          Market breakdowns & execution logic
+          {t("contact.youtube.title")}
         </Heading>
 
         <Text muted>
-          We use YouTube to explain how we analyze markets,
-          how trades are structured, and why risk management comes first.
-          No hype — just process and reasoning.
+          {t("contact.youtube.description")}
         </Text>
 
         <!-- IMAGE STRIP -->

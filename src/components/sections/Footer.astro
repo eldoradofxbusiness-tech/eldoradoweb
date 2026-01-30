@@ -2,6 +2,10 @@
 import TelegramIcon from "../../components/ui/TelegramIcon.astro";
 import InstagramIcon from "../../components/ui/InstagramIcon.astro";
 import YoutubeIcon from "../../components/ui/YoutubeIcon.astro";
+import { useTranslations, getLanguageFromPath } from "../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 
 <footer class="border-t border-white/10 reveal from-bottom fade">
@@ -21,8 +25,7 @@ import YoutubeIcon from "../../components/ui/YoutubeIcon.astro";
         </div>
 
         <p class="text-sm text-white/50 max-w-xs">
-          Structured trading, risk-first mindset.
-          No promises. No shortcuts.
+          {t("footer.description")}
         </p>
 
 
@@ -62,20 +65,20 @@ import YoutubeIcon from "../../components/ui/YoutubeIcon.astro";
    
       <div class="flex flex-col gap-4">
         <span class="text-xs uppercase tracking-wide text-white/40">
-          Navigation
+          {t("footer.navigation")}
         </span>
 
         <div class="flex flex-col gap-3 text-sm">
-          <a href="/about" class="text-white/70 hover:text-white transition">
-            About
+          <a href={`${lang === "es" ? "/es" : ""}/about`} class="text-white/70 hover:text-white transition">
+            {t("navbar.about")}
           </a>
-          <a href="/services" class="text-white/70 hover:text-white transition">
-            Services
+          <a href={`${lang === "es" ? "/es" : ""}/services`} class="text-white/70 hover:text-white transition">
+            {t("navbar.services")}
           </a>
-          <a href="/contact" class="text-white/70 hover:text-white transition">
-            Contact
+          <a href={`${lang === "es" ? "/es" : ""}/contact`} class="text-white/70 hover:text-white transition">
+            {t("navbar.contact")}
           </a>
-          <a href="/disclaimer" class="text-white/70 hover:text-white transition">
+          <a href={`${lang === "es" ? "/es" : ""}/disclaimer`} class="text-white/70 hover:text-white transition">
             Risk Disclosure
           </a>
         </div>
@@ -84,21 +87,19 @@ import YoutubeIcon from "../../components/ui/YoutubeIcon.astro";
     
       <div class="flex flex-col gap-4">
         <span class="text-xs uppercase tracking-wide text-white/40">
-          Legal
+          {t("footer.legal")}
         </span>
 
         <p class="text-xs leading-relaxed text-white/40">
-          Trading leveraged products involves a high level of risk and may not
-          be suitable for all investors. Past performance is not indicative of
-          future results.
+          {t("footer.disclaimer")}
         </p>
 
         <div class="flex gap-4 text-xs">
-          <a href="/terms" class="hover:text-white transition">
-            Terms
+          <a href={`${lang === "es" ? "/es" : ""}/terms`} class="hover:text-white transition">
+            {t("footer.terms")}
           </a>
-          <a href="/privacy" class="hover:text-white transition">
-            Privacy
+          <a href={`${lang === "es" ? "/es" : ""}/privacy`} class="hover:text-white transition">
+            {t("footer.privacy")}
           </a>
         </div>
       </div>
@@ -109,7 +110,7 @@ import YoutubeIcon from "../../components/ui/YoutubeIcon.astro";
     <div class="mt-16 flex flex-col gap-6 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
 
       <span class="text-xs text-white/40">
-        © {new Date().getFullYear()} ElDoradoFx. All rights reserved.
+        {t("footer.copyright").replace("{year}", new Date().getFullYear().toString())}
       </span>
 
       <a
@@ -118,7 +119,7 @@ import YoutubeIcon from "../../components/ui/YoutubeIcon.astro";
         rel="noopener"
         class="text-xs text-white/30 hover:text-white transition"
       >
-        Developed by David López
+        {t("footer.developedBy")}
       </a>
 
     </div>

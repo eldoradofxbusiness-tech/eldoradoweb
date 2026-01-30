@@ -5,31 +5,31 @@ import { LineChart, UserRound, Bot, Coins, Bitcoin } from "lucide-react";
 const services = [
   {
     id: "signals",
-    tab: "Signals",
-    title: "Free & Premium Trading Signals",
-    description: "Structured trading signals built around risk management, clarity, and disciplined execution. Free insights for learning, premium access for consistency.",
+    tab: "Señales",
+    title: "Señales de Trading Gratis y Premium",
+    description: "Señales estructuradas basadas en la gestión de riesgo, claridad y ejecución disciplinada. Análisis gratuitos para aprender, acceso premium para la consistencia.",
     icon: "/service-icon1.webp",
     tabIcon: LineChart,
   },
   {
     id: "coaching",
-    tab: "1:1 Coaching",
-    title: "One-to-One Trading Coaching",
-    description: "Personal guidance focused on mindset, capital protection, and process refinement — adapted to your trading level and objectives.",
+    tab: "Coaching 1:1",
+    title: "Mentoría de Trading Personalizada",
+    description: "Guía personal enfocada en la mentalidad, protección de capital y refinamiento de procesos — adaptada a tu nivel de trading y objetivos.",
     icon: "/service-icon2.webp",
     tabIcon: UserRound,
   },
   {
     id: "bot",
-    tab: "Trading Bot",
-    title: "Premium Automated",
-    description: "Rule-based automated strategies designed to remove emotional bias while respecting strict risk and capital preservation rules.",
+    tab: "Bot de Trading",
+    title: "Automatización Premium",
+    description: "Estrategias automatizadas basadas en reglas, diseñadas para eliminar el sesgo emocional respetando reglas estrictas de riesgo y capital.",
     icon: "/service-icon3.webp",
     tabIcon: Bot,
   },
 ];
 
-export default function ServicesTabsEN() {
+export default function ServicesTabsES() {
   const [active, setActive] = useState(services[0]);
 
   return (
@@ -37,7 +37,7 @@ export default function ServicesTabsEN() {
       <div className="flex flex-col flex-1 w-full gap-8">
         <div className="space-y-3">
           <p className="font-bold bg-[linear-gradient(90deg,var(--color-gold),#ffffff)] bg-clip-text text-transparent">
-            Forex like never before
+            Forex como nunca antes
           </p>
           <div className="flex items-center gap-4 text-xs tracking-widest text-white/40 uppercase">
             <span className="flex items-center gap-1"><Coins className="w-3.5 h-3.5 text-(--color-gold)" /> XAUUSD</span>

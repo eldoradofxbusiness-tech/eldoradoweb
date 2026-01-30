@@ -6,8 +6,8 @@ import Text from "../../components/ui/Text.astro";
 import Badge from "../../components/ui/Badge.astro";
 import InstagramIcon from "../ui/InstagramIcon.astro";
 import TelegramIcon from "../ui/TelegramIcon.astro";
-// Importamos el nuevo componente
-import BentoCard from "../../components/ui/BentoCard.astro"; 
+import BentoCard from "../../components/ui/BentoCard.astro";
+import { useTranslations, getLanguageFromPath } from "../../i18n/utils";
 
 interface ImageItem {
   src: string;
@@ -25,17 +25,19 @@ interface Props {
   icon?: "ig" | "tl" | null;
 }
 
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
+
 const {
-  badge = "Community",
+  badge = t("contact.socialFeed"),
   title,
   description,
-  images = [], 
+  images = [],
   mainLabel,
   disclaimer,
   icon = null
 } = Astro.props;
 
-// Separamos datos limpiamente
 const [mainItem, ...smallItems] = images;
 ---
 

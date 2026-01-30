@@ -3,47 +3,47 @@ import "../styles/globals.css";
 import Navbar from "../components/react/Navbar";
 import Footer from "../components/sections/Footer.astro";
 import ParticlesBackground from "../components/ui/ParticlesBackground.astro";
+import { useTranslations, getLanguageFromPath } from "../i18n/utils";
+import { LanguageProvider } from "../components/react/LanguageContext";
+import { ui } from "../i18n/ui";
+
 const {
   title = "El DoradoFx - Trading Solutions",
   description = "Professional trading solutions and market insights.",
 } = Astro.props;
 
 const pathName = Astro.url.pathname;
-
 const isEspanol = pathName.startsWith("/es") || pathName.startsWith("/es/");
-
 const lang = isEspanol ? "es" : "en";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
 
   <body class="min-h-screen bg-canvas antialiased">
-    <!-- HEADER -->
-    <header class="">
-      <Navbar client:load lang={lang}/>
-    </header>
+    <LanguageProvider lang={lang} translations={ui[lang]} client:load>
+      <header class="relative z-[1000]">
+        <Navbar client:load lang={lang as "en" | "es"} translations={ui[lang]} />
+      </header>
 
-    <!-- MAIN -->
-  <main class="relative z-10">
-     <ParticlesBackground count={80} color="#FFD700" />
-    <slot />
-  </main>
+      <main class="relative z-10">
+        <ParticlesBackground count={80} color="#FFD700" />
+        <slot />
+      </main>
 
-    <Footer />
-
+      <Footer />
+    </LanguageProvider>
+    <script>
+      import { initReveal } from "../helpers/reveal";
+      window.addEventListener("DOMContentLoaded", () => {
+        initReveal();
+      });
+    </script>
   </body>
-  <script>
-    import { initReveal } from "../helpers/reveal";
-    window.addEventListener("DOMContentLoaded", () => {
-      initReveal();
-    });
-  </script>
 </html>

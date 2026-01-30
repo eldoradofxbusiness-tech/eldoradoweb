@@ -8,6 +8,10 @@ import Button from "../../ui/Button.astro";
 import PhoneMockup from "../../react/PhoneMockup";
 import TelegramIcon from "../../ui/TelegramIcon.astro";
 import TelegramButton from "../../ui/TelegramButton.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 
 <Section class="relative py-28 overflow-hidden reveal fade">
@@ -19,12 +23,11 @@ import TelegramButton from "../../ui/TelegramButton.astro";
       </Badge>
 
       <Heading level={2} class="mb-4">
-        Where the work actually happens
+        {t("contact.telegram.title")}
       </Heading>
 
       <Text muted class="max-w-2xl mx-auto">
-        Telegram is not support. It’s not marketing.
-        It’s where analysis, execution logic and real-time context live.
+        {t("contact.telegram.description")}
       </Text>
     </div>
 
@@ -45,32 +48,29 @@ import TelegramButton from "../../ui/TelegramButton.astro";
       <div class="flex flex-col gap-6 max-w-xl reveal from-right">
 
         <Heading level={3}>
-          One channel. Clear structure.
+          {t("contact.telegram.oneChannel")}
         </Heading>
 
         <Text muted>
-          We use Telegram as a real working environment.
-          Market context, execution notes and updates are shared openly,
-          without promises or artificial urgency.
+          {t("contact.telegram.oneChannelDescription")}
         </Text>
 
         <ul class="text-sm text-white/70 space-y-2">
-          <li>• Market context & structure</li>
-          <li>• Execution reasoning</li>
-          <li>• Free & premium environments</li>
+          <li>{t("contact.telegram.marketContext")}</li>
+          <li>{t("contact.telegram.executionReasoning")}</li>
+          <li>{t("contact.telegram.freePremium")}</li>
         </ul>
 
         <Text muted class="text-xs">
-          Access to groups is managed from the main channel.
-          No guarantees. No signals without context.
+          {t("contact.telegram.accessWarning")}
         </Text>
 
         <div class="pt-4 w-1/2">
-          <TelegramButton 
-            type="channel" 
+          <TelegramButton
+            type="channel"
             username="eldoradofxfree"
           >
-            Access Our Free Signals Group
+            {t("contact.telegram.accessFreeSignals")}
           </TelegramButton>
         </div>
 

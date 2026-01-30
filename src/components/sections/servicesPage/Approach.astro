@@ -3,28 +3,32 @@ import Section from "../../ui/Section.astro";
 import Container from "../../ui/Container.astro";
 import Badge from "../../ui/Badge.astro";
 import Heading from "../../ui/Heading.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 <Section class="py-32 relative overflow-hidden">
   <Container class="grid lg:grid-cols-2 gap-20 items-start">
     <div class="p-10 rounded-2xl bg-white/5 border border-white/10 reveal from-left">
-      <Badge class="mb-6">Not our style</Badge>
-      <Heading level={3} class="mb-6 text-white">What we don’t do</Heading>
+      <Badge class="mb-6">{t("approach.notOurStyle")}</Badge>
+      <Heading level={3} class="mb-6 text-white">{t("approach.whatWeDontDo")}</Heading>
       <ul class="space-y-4 text-sm text-white/60">
-        <li>• No hype or unrealistic promises</li>
-        <li>• No random entries or overtrading</li>
-        <li>• No signals without defined risk</li>
-        <li>• No emotional decision-making</li>
+        <li>{t("approach.noHype")}</li>
+        <li>{t("approach.noRandom")}</li>
+        <li>{t("approach.noUndefinedRisk")}</li>
+        <li>{t("approach.noEmotional")}</li>
       </ul>
     </div>
 
     <div class="p-10 rounded-2xl bg-white/10 border border-yellow-500/30 reveal from-right">
-      <Badge variant="gold" class="mb-6">Our approach</Badge>
-      <Heading level={3} class="mb-6 text-white">What we focus on</Heading>
+      <Badge variant="gold" class="mb-6">{t("approach.ourApproach")}</Badge>
+      <Heading level={3} class="mb-6 text-white">{t("approach.whatWeFocusOn")}</Heading>
       <ul class="space-y-4 text-sm text-white/80">
-        <li>• Capital protection comes first</li>
-        <li>• Rule-based execution only</li>
-        <li>• Fewer trades, higher clarity</li>
-        <li>• Long-term consistency over time</li>
+        <li>{t("approach.capitalProtection")}</li>
+        <li>{t("approach.ruleBased")}</li>
+        <li>{t("approach.fewerTrades")}</li>
+        <li>{t("approach.longTermConsistency")}</li>
       </ul>
     </div>
   </Container>

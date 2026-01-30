@@ -1,71 +1,78 @@
 ---
 import ServiceCard from "./ServiceCard.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
 
-export const services = [
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
+
+export const getServices = (t: (key: string) => string) => [
   {
     id: "free",
-    badge: "Free",
-    title: "Free Signals",
-    subtitle: "Public access · No commitment",
+    badge: t("servicesGrid.free.badge"),
+    title: t("servicesGrid.free.title"),
+    subtitle: t("servicesGrid.free.subtitle"),
     highlighted: false,
     conditions: [
-      { label: "XAUUSD · BTCUSD", ok: true },
-      { label: "Manual execution", ok: true },
-      { label: "Basic risk rules", ok: true },
-      { label: "Trade explanations", ok: false },
-      { label: "Education included", ok: false },
-      { label: "Customization", ok: false },
-      { label: "Private access", ok: false },
-      { label: "No payment", ok: true },
+      { label: t("servicesGrid.free.xaubtc"), ok: true },
+      { label: t("servicesGrid.free.manualExecution"), ok: true },
+      { label: t("servicesGrid.free.basicRisk"), ok: true },
+      { label: t("servicesGrid.free.tradeExplanations"), ok: false },
+      { label: t("servicesGrid.free.educationIncluded"), ok: false },
+      { label: t("servicesGrid.free.customization"), ok: false },
+      { label: t("servicesGrid.free.privateAccess"), ok: false },
+      { label: t("servicesGrid.free.noPayment"), ok: true },
     ],
     cta: {
-      label: "Learn more",
+      label: t("servicesGrid.free.learnMore"),
       href: "https://t.me/ELDORADOFX?text=Hi%20I%20want%20Free%20Signals",
     },
   },
   {
     id: "premium",
-    badge: "Recommended",
-    title: "Premium Signals",
-    subtitle: "Structured · Explained · Disciplined",
+    badge: t("servicesGrid.premium.badge"),
+    title: t("servicesGrid.premium.title"),
+    subtitle: t("servicesGrid.premium.subtitle"),
     highlighted: true,
     conditions: [
-      { label: "XAUUSD · BTCUSD", ok: true },
-      { label: "Manual execution", ok: true },
-      { label: "Advanced risk framework", ok: true },
-      { label: "Trade explanations", ok: true },
-      { label: "Education included", ok: true },
-      { label: "Ongoing support", ok: true },
-      { label: "Private access", ok: true },
-      { label: "Monthly / Yearly", ok: true },
+      { label: t("servicesGrid.premium.xaubtc"), ok: true },
+      { label: t("servicesGrid.premium.manualExecution"), ok: true },
+      { label: t("servicesGrid.premium.advancedRisk"), ok: true },
+      { label: t("servicesGrid.premium.tradeExplanations"), ok: true },
+      { label: t("servicesGrid.premium.educationIncluded"), ok: true },
+      { label: t("servicesGrid.premium.ongoingSupport"), ok: true },
+      { label: t("servicesGrid.premium.privateAccess"), ok: true },
+      { label: t("servicesGrid.premium.monthlyYearly"), ok: true },
     ],
+
     cta: {
-      label: "Learn more",
+      label: t("servicesGrid.premium.learnMore"),
       href: "https://t.me/ELDORADOFX?text=Hi%20I%20want%20Premium%20Signals",
     },
   },
   {
     id: "bot",
-    badge: "Automation",
-    title: "Trading Bot",
-    subtitle: "Fully automated · Logic-driven",
+    badge: t("servicesGrid.bot.badge"),
+    title: t("servicesGrid.bot.title"),
+    subtitle: t("servicesGrid.bot.subtitle"),
     highlighted: false,
     conditions: [
-      { label: "XAUUSD only", ok: true },
-      { label: "Automated execution", ok: true },
-      { label: "Hard-coded risk rules", ok: true },
-      { label: "Logic-based entries", ok: true },
-      { label: "Emotional-free trading", ok: true },
-      { label: "Set & forget", ok: true },
-      { label: "Education included", ok: false },
-      { label: "One-time payment", ok: true },
+      { label: t("servicesGrid.bot.xaubtc"), ok: true },
+      { label: t("servicesGrid.bot.automatedExecution"), ok: true },
+      { label: t("servicesGrid.bot.hardcodedRisk"), ok: true },
+      { label: t("servicesGrid.bot.logicBased"), ok: true },
+      { label: t("servicesGrid.bot.emotionalFree"), ok: true },
+      { label: t("servicesGrid.bot.setForget"), ok: true },
+      { label: t("servicesGrid.bot.educationIncluded"), ok: false },
+      { label: t("servicesGrid.bot.oneTimePayment"), ok: true },
     ],
     cta: {
-      label: "Learn more",
+      label: t("servicesGrid.bot.learnMore"),
       href: "https://t.me/ELDORADOFX?text=Hi%20I%20want%20the%20Trading%20Bot",
     },
   },
 ];
+
+const services = getServices(t);
 ---
 
 <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 items-end reveal from-bottom">

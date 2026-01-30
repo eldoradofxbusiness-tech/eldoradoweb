@@ -1,15 +1,62 @@
 ---
 import CorporateLayout from "../../layouts/CorporateLayout.astro";
+import HowWeGotHere from "../../components/sections/about/HowWeGotHere.astro";
+import Team from "../../components/sections/about/Team.astro";
+import MediaBento from "../../components/sections/MediaBento.astro";
+import HeroForPages from "../../components/sections/HeroForPages.astro";
 ---
 
-<CorporateLayout title="El DoradoFx - Trading Solutions">
-  <section class="py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <h1 class="text-3xl font-bold mb-4">Sobre Nosotros</h1>
-      <p class="text-(--color-grey-light)">
-        Aquí explicaremos quiénes somos,
-        nuestra visión y filosofía de trading.
-      </p>
-    </div>
-  </section>
+<CorporateLayout title="ElDoradoFx — About">
+
+<HeroForPages 
+  badge="Sistemas de Trading"
+  title="Lógica sobre emoción"
+  description="Todos nuestros servicios están construidos en torno a reglas predefinidas, protección de capital y ejecución disciplinada."
+  videoSrc="/hero_videos/about_hero.mp4"
+  videoClass="opacity-30"
+/>
+
+<HowWeGotHere />
+
+
+<Team />
+
+
+<MediaBento
+  badge="Ecosistema Telegram"
+  title="Inteligencia en Tiempo Real"
+  description="Acceso directo a nuestra sala de trading. Únete al canal VIP, utiliza nuestro bot de señales y chatea con la comunidad."
+  mainLabel="ACCESO AL CANAL VIP"
+  icon="tl"
+  images={[
+    {
+      
+      src: "/social_images/tl_image_7.webp", 
+      link: "https://t.me/RPomaFx",
+      badge: "tl"
+    },
+    {
+      src: "/social_images/tl_image_8.webp",
+      link: "https://t.me/RPomaFx",
+      badge: "tl"
+    },
+    {
+      
+      src: "/social_images/tl_image_10.jpg",
+      
+      
+    },
+    {
+     src: "/social_images/tl_image_9.webp",
+      link: "https://t.me/RPomaFx",
+      badge: "tl"
+    },
+    {
+      src: "/social_images/tl_image_5.webp",
+      link: "https://t.me/RPomaFx",
+      badge: "tl"
+    }
+  ]}
+/>
+
 </CorporateLayout>

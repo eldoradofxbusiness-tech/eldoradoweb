@@ -1,15 +1,22 @@
 ---
 import CorporateLayout from "../../layouts/CorporateLayout.astro";
+import Hero from "../../components/sections/Hero.astro";
+import PhilosophySection from "../../components/sections/philosophy/PhilosophySection.astro";
+import TrustSection from "../../components/sections/trust/TrustSection.astro";
+import ServicesComparison from "../../components/sections/services/ServicesComparison.astro";
+import ServicesSectionES from "../../components/sections/ServicesSectionES.astro";
 ---
 
-<CorporateLayout title="El DoradoFx - Trading Solutions">
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <h1 class="text-4xl font-bold mb-4">Inicio</h1>
-      <p class="text-(--color-grey-light)">
-        Esta es la home corporativa en español.
-        Aquí irá el resumen del proyecto y los CTAs principales.
-      </p>
-    </div>
-  </section>
+<CorporateLayout title="El DoradoFx - Home">
+
+  <Hero />
+ 
+  <ServicesSectionES />
+
+  <PhilosophySection />
+  
+  <TrustSection />
+
+  <ServicesComparison />
+
 </CorporateLayout>

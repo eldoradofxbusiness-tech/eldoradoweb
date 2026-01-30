@@ -1,7 +1,7 @@
 ---
 import Section from "../ui/Section.astro";
 import Container from "../ui/Container.astro";
-import ServicesTabs from "../react/ServicesTabs.tsx";
+import ServicesTabsES from "../react/ServicesTabsEs.tsx";
 import Badge from "../ui/Badge.astro";
 import { useTranslations, getLanguageFromPath } from "../../i18n/utils";
 
@@ -24,7 +24,7 @@ const t = useTranslations(lang);
       id="services-tabs"
       class="reveal scale slow ease-out w-full"
     >
-      <ServicesTabs client:load />
+      <ServicesTabsES client:load />
     </div>
   </Container>
   

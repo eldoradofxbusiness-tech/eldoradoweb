@@ -4,23 +4,27 @@ import Container from "../../ui/Container.astro";
 import Badge from "../../ui/Badge.astro";
 import Heading from "../../ui/Heading.astro";
 import TelegramButton from "../../ui/TelegramButton.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 <Section class="py-32">
   <Container class="grid lg:grid-cols-2 gap-20 items-center">
     
     <div class="reveal from-left lg:order-1 order-2">
-      <Badge class="mb-4">Automation</Badge>
-      <Heading level={2} class="mb-6">Trading Bot</Heading>
+      <Badge class="mb-4">{t("bot.badge")}</Badge>
+      <Heading level={2} class="mb-6">{t("bot.title")}</Heading>
       <ul class="mb-8 space-y-2 text-sm text-white/70">
-        <li>• Emotion-free execution</li>
-        <li>• Rule-based entries</li>
-        <li>• Set & forget operation</li>
+        <li>{t("bot.emotionFree")}</li>
+        <li>{t("bot.ruleBased")}</li>
+        <li>{t("bot.setForget")}</li>
       </ul>
-      <TelegramButton 
-      type="channel" 
+      <TelegramButton
+      type="channel"
       username="RPomaFX"
     >
-      Learn More
+      {t("bot.learnMore")}
     </TelegramButton>
     </div>
 

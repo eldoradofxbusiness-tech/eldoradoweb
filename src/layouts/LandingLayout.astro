@@ -3,6 +3,10 @@ import "../styles/globals.css";
 import TelegramIcon from "../components/ui/TelegramIcon.astro";
 import Logo from "../components/react/Logo";
 import Divider from "../components/ui/Divider.astro";
+import { useTranslations, getLanguageFromPath } from "../i18n/utils";
+import { LanguageProvider } from "../components/react/LanguageContext";
+import { ui } from "../i18n/ui";
+
 interface Props {
   title?: string;
   description?: string;
@@ -16,6 +20,9 @@ const {
   ctaText = "JOIN FREE TELEGRAM",
   ctaHref = "https://t.me/your_link"
 } = Astro.props;
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 
 <!DOCTYPE html>
@@ -36,6 +43,7 @@ const {
   </head>
 
   <body class=" text-white antialiased selection:bg-yellow-500/30">
+    <LanguageProvider lang={lang} translations={ui[lang]} client:load>
     <header class="absolute top-0 left-0 right-0 z-50 py-6">
       <div class="max-w-7xl mx-auto px-6 flex justify-center md:justify-start">
        <Logo client:load />
@@ -50,7 +58,7 @@ const {
       <Divider/>
       <div class="max-w-5xl mx-auto px-6 text-center">
         <p class="text-[10px] text-white/30 leading-relaxed uppercase tracking-widest">
-          Risk Warning: Trading Forex and Leveraged Financial Instruments involves significant risk and can result in the loss of your invested capital. You should not invest more than you can afford to lose. Past performance does not guarantee future results.
+          {t("footer.riskWarning")}
         </p>
       </div>
     </footer>
@@ -70,5 +78,6 @@ const {
         </a>
       </div>
     </div>
+    </LanguageProvider>
   </body>
 </html>

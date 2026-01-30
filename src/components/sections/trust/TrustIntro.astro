@@ -3,22 +3,23 @@ import Heading from "../../ui/Heading.astro";
 import Text from "../../ui/Text.astro";
 import TraderCoins from "./TraderCoins.astro";
 import Badge from "../../ui/Badge.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
 
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 <div class="w-full py-10 px-6 lg:px-0 flex flex-col items-center gap-8 reveal from bottom reveal fade">
 
    <Badge variant="gold" class="mb-4">
-        Our traders
+        {t("trust.badge")}
     </Badge>
 
     <Heading level={2} >
-      Trusted by disciplined traders
+      {t("trust.title")}
     </Heading>
 
     <Text muted class="text-base lg:text-lg leading-relaxed max-w-3xl mx-auto">
-      Two professional traders. Two distinct strategies.
-      A single focus: disciplined risk management, clarity,
-      and long-term consistency across changing market conditions.
+      {t("trust.description")}
     </Text>
 
     <div class="flex justify-center">
@@ -26,10 +27,10 @@ import Badge from "../../ui/Badge.astro";
     </div>
 
     <a
-      href="/about"
+      href={`${lang === "es" ? "/es" : ""}/about`}
       class="inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition mt-10 reveal from-bottom"
     >
-      Learn more about our approach →
+      {t("trust.learnMore")}
     </a>
 
 </div>

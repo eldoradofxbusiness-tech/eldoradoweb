@@ -5,14 +5,18 @@ import HeroForPages from "../components/sections/HeroForPages.astro";
 import Youtube from "../components/sections/social-media/Youtube.astro";
 import MediaBento from "../components/sections/MediaBento.astro";
 import Telegram from "../components/sections/social-media/Telegram.astro";
+import { useTranslations, getLanguageFromPath } from "../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 
 <CorporateLayout title="ElDoradoFx — Our Channels">
 
-<HeroForPages 
-  badge="Our channels"
-  title="Where we share our work"
-  description=" Each platform has a clear role — education, community and updates. We don't cross-post noise. We use each channel intentionally."
+<HeroForPages
+  badge={t("contact.badge")}
+  title={t("contact.title")}
+  description={t("contact.description")}
   videoSrc="/hero_videos/social_hero.mp4"
   videoClass="opacity-30"
 />
@@ -23,31 +27,31 @@ import Telegram from "../components/sections/social-media/Telegram.astro";
 />
 
 <MediaBento
-  badge="Social Feed"
-  title="Follow the Journey"
-  description="Daily market snapshots, lifestyle behind the charts, and rapid-fire execution updates."
+  badge={t("contact.socialFeed")}
+  title={t("contact.followJourney")}
+  description={t("contact.followJourneyDescription")}
   mainLabel="@eldoradofx"
   icon="ig"
   images={[
     {
-      src: "social_images/ig_image_4.webp", 
+      src: "social_images/ig_image_4.webp",
       link: "https://www.instagram.com/eldoradofx_tg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       badge: "ig"
     },
      {
-      src: "social_images/ig_image_2.webp", 
+      src: "social_images/ig_image_2.webp",
       link: "https://www.instagram.com/reel/DQzH6c_jHqY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       badge: "ig"
     }, {
-      src: "social_images/ig_image_3.webp", 
+      src: "social_images/ig_image_3.webp",
       link: "https://www.instagram.com/p/DTfBGfFDPkA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       badge: "ig"
     }, {
-      src: "social_images/ig_image_1.webp", 
+      src: "social_images/ig_image_1.webp",
       link: "https://www.instagram.com/reel/DNgUmZOMnUF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       badge: "ig"
     }, {
-      src: "social_images/ig_image_5.webp", 
+      src: "social_images/ig_image_5.webp",
       link: "https://www.instagram.com/reel/DM8xhZhsw0H/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       badge: "ig"
     },

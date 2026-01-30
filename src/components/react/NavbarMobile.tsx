@@ -14,10 +14,8 @@ type Props = {
 export default function NavbarMobile({ open, onToggle, onClose, links, lang }: Props) {
   return (
     <div className="flex items-center justify-between p-6 md:hidden relative z-50">
-      {/* LEFT */}
-      <Logo size="lg" />
+      <Logo size="md" />
 
-      {/* RIGHT */}
       <div className="flex items-center gap-4">
         <LanguageSwitcher currentLang={lang} />
         <MobileMenu open={open} onToggle={onToggle} onClose={onClose} links={links} />

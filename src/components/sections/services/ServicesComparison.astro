@@ -5,33 +5,37 @@ import Heading from "../../ui/Heading.astro";
 import Text from "../../ui/Text.astro";
 import Badge from "../../ui/Badge.astro";
 import ServicesGrid from "./ServicesGrid.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
+
+const disclaimerPath = lang === "es" ? "/es/disclaimer" : "/disclaimer";
 ---
 
-<Section class="w-full bg-(--color-canvas-end) z-2">
+<Section class="w-full bg-(--color-canvas-end) z-2 p-8">
   <Container class="flex items-center justify-center flex-col w-full reveal fade-in">
 
-    <!-- Header -->
     <div class="max-w-2xl mb-20 flex flex-col items-center text-center">
-      <Badge variant="gold">Access</Badge>
+      <Badge variant="gold">{t("servicesPage.badge")}</Badge>
       <Heading level={2} class="mt-4 mb-4">
-        Services & access
+        {t("servicesPage.title")}
       </Heading>
       <Text muted>
-        Choose based on structure, automation level and risk framework.
+        {t("servicesPage.description")}
       </Text>
     </div>
 
     <ServicesGrid />
 
-    <!-- Legal -->
     <div class="mt-20 mb-20 text-right">
       <Text muted class="text-xs">
-        Trading involves risk.
+        {t("servicesPage.riskShort")}
         <a
-          href="/disclaimer"
+          href={disclaimerPath}
           class="ml-1 underline underline-offset-4 hover:text-white transition"
         >
-          Read full risk disclosure
+          {t("servicesPage.readFullDisclosure")}
         </a>
       </Text>
     </div>

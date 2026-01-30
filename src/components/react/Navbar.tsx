@@ -4,18 +4,34 @@ import NavbarMobile from "./NavbarMobile";
 
 type Props = {
   lang: "en" | "es";
+  translations: any;
 };
 
-export default function Navbar({ lang }: Props) {
+export default function Navbar({ lang, translations }: Props) {
   const [open, setOpen] = useState(false);
+
+  const t = (key: string): string => {
+    const keys = key.split(".");
+    let value: any = translations;
+
+    for (const k of keys) {
+      if (value && typeof value === "object" && k in value) {
+        value = value[k];
+      } else {
+        return key;
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
 
   const prefix = lang === "es" ? "/es" : "";
 
   const links = [
-    { label: lang === "es" ? "Inicio" : "Home", href: `${prefix}/` },
-    { label: lang === "es" ? "Servicios" : "Services", href: `${prefix}/services` },
-    { label: lang === "es" ? "Sobre nosotros" : "About", href: `${prefix}/about` },
-    { label: lang === "es" ? "Contacto" : "Contact", href: `${prefix}/contact` },
+    { label: t("navbar.home"), href: `${prefix}/` },
+    { label: t("navbar.services"), href: `${prefix}/services` },
+    { label: t("navbar.about"), href: `${prefix}/about` },
+    { label: t("navbar.contact"), href: `${prefix}/contact` },
   ];
 
   return (
@@ -25,11 +41,13 @@ export default function Navbar({ lang }: Props) {
         open={open}
         onToggle={() => setOpen(!open)}
         onClose={() => setOpen(false)}
+        lang={lang}
       />
 
-      <NavbarDesktop 
+      <NavbarDesktop
         links={links}
         lang={lang}
+        translations={translations}
       />
     </div>
   );

@@ -6,6 +6,10 @@ import Heading from "../../ui/Heading.astro";
 import Text from "../../ui/Text.astro";
 
 import TelegramButton from "../../ui/TelegramButton.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 <Section class="py-32">
   <Container class="grid lg:grid-cols-2 gap-20 items-center">
@@ -30,23 +34,23 @@ import TelegramButton from "../../ui/TelegramButton.astro";
 
     </div>
       <div class="absolute bottom-6 left-6 right-6 text-sm text-white/80">
-        Live market structure · XAUUSD & BTCUSD
+        {t("hero.liveMarketStructure")}
       </div>
     </div>
     <div class="reveal from-right">
-      <Badge class="mb-4">Manual execution</Badge>
-      <Heading level={2} class="mb-6">Trading Signals</Heading>
-      <Text muted class="mb-6">High-quality manual signals focused on XAUUSD and BTCUSD, executed with strict risk management rules.</Text>
+      <Badge class="mb-4">{t("signals.badge")}</Badge>
+      <Heading level={2} class="mb-6">{t("signals.title")}</Heading>
+      <Text muted class="mb-6">{t("signals.description")}</Text>
       <ul class="mb-8 space-y-2 text-sm text-white/70">
-        <li>• Clear entry, stop-loss and targets</li>
-        <li>• Capital protection first</li>
-        <li>• No overtrading, no hype</li>
+        <li>{t("signals.entryStopTargets")}</li>
+        <li>{t("signals.capitalProtection")}</li>
+        <li>{t("signals.noOvertrading")}</li>
       </ul>
-     <TelegramButton 
-      type="channel" 
+     <TelegramButton
+      type="channel"
       username="eldoradofxfree"
     >
-      Access Our Free Signals Group
+      {t("signals.accessFreeSignals")}
     </TelegramButton>
     </div>
 

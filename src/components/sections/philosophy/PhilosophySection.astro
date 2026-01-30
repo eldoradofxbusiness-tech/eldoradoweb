@@ -8,22 +8,25 @@ import Divider from "../../ui/Divider.astro";
 
 import PhilosophyBento from "./PhilosophyBento.astro";
 import PhilosophyPrinciples from "./PhilosophyPrinciples.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 
 <Section class="relative p-16 overflow-hidden flex flex-col items-center justify-center gap-12 bg-grey-300 bg-(--color-canvas-end) z-2">
 
     <div class="max-w-2xl flex flex-col items-center reveal fade-in">
       <Badge variant="glow" class="mb-8 reveal up fast">
-        Nuestra filosofía
+        {t("philosophy.badge")}
       </Badge>
 
       <Heading level={2} class="mb-4">
-        Cómo entendemos el trading
+        {t("philosophy.title")}
       </Heading>
 
       <Text muted>
-        No prometemos resultados. Definimos un marco claro de cómo
-        operamos, gestionamos el riesgo y tomamos decisiones.
+        {t("philosophy.description")}
       </Text>
     </div>
 

@@ -1,15 +1,32 @@
 ---
 import CorporateLayout from "../../layouts/CorporateLayout.astro";
+import HeroForPages from "../../components/sections/HeroForPages.astro";
+import ServicesSignals from "../../components/sections/servicesPage/Signals.astro";
+import ServicesBot from "../../components/sections/servicesPage/Bot.astro";
+import Masterclass from "../../components/sections/servicesPage/Masterclass.astro"; 
+import Approach from "../../components/sections/servicesPage/Approach.astro";       
+import FinalCTA from "../../components/sections/servicesPage/FinalCTA.astro";       
 ---
 
-<CorporateLayout title="El DoradoFx - Trading Solutions">
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <h1 class="text-3xl font-bold mb-4">Servicios</h1>
-      <p class="text-(--color-grey-light)">
-        Aquí se mostrarán los servicios:
-        señales, suscripciones y bots automáticos.
-      </p>
-    </div>
-  </section>
+<CorporateLayout title="ElDoradoFx - Services">
+  
+ <HeroForPages 
+  badge="Sistemas de Trading"
+  title="Lógica sobre emoción"
+  description="Todos nuestros servicios están construidos en torno a reglas predefinidas, protección de capital y ejecución disciplinada."
+  videoSrc="/hero_videos/services_hero.mp4"
+  videoClass="opacity-30"
+/>
+  
+  <ServicesSignals />
+  
+  <ServicesBot />
+  
+  <Masterclass />
+  
+  <Approach />
+  
+  <FinalCTA />
+
+
 </CorporateLayout>

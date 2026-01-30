@@ -6,7 +6,26 @@ interface TimeLeft {
   seconds: number;
 }
 
-const EvergreenTimer: React.FC = () => {
+interface Props {
+  translations: any;
+}
+
+const EvergreenTimer: React.FC<Props> = ({ translations }) => {
+  const t = (key: string): string => {
+    const keys = key.split(".");
+    let value: any = translations;
+
+    for (const k of keys) {
+      if (value && typeof value === "object" && k in value) {
+        value = value[k];
+      } else {
+        return key;
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
+
   const calculateTimeLeft = (): TimeLeft => {
     const now = new Date();
     const endOfDay = new Date();
@@ -21,7 +40,7 @@ const EvergreenTimer: React.FC = () => {
         seconds: Math.floor((difference / 1000) % 60),
       };
     }
-    
+
     return { hours: 23, minutes: 59, seconds: 59 };
   };
 
@@ -42,9 +61,9 @@ const EvergreenTimer: React.FC = () => {
   if (!isMounted) return null;
 
   const timeUnits = [
-    { label: "HRS", value: timeLeft.hours },
-    { label: "MIN", value: timeLeft.minutes },
-    { label: "SEG", value: timeLeft.seconds },
+    { label: t("countdown.hrs"), value: timeLeft.hours },
+    { label: t("countdown.min"), value: timeLeft.minutes },
+    { label: t("countdown.sec"), value: timeLeft.seconds },
   ];
 
   return (

@@ -5,6 +5,10 @@ import Badge from "../../ui/Badge.astro";
 import Heading from "../../ui/Heading.astro";
 import Text from "../../ui/Text.astro";
 import ScrollImage from "../../react/ScrollImage";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+
+const lang = getLanguageFromPath(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 
 <Section class="relative py-28 overflow-hidden reveal fade">
@@ -27,25 +31,19 @@ import ScrollImage from "../../react/ScrollImage";
       <div class="flex flex-col gap-6 max-w-xl">
 
         <Badge class="w-fit">
-          Our path
+          {t("howWeGotHere.badge")}
         </Badge>
 
         <Heading level={2}>
-          How we got here
+          {t("howWeGotHere.title")}
         </Heading>
 
         <Text muted class="leading-relaxed">
-          ElDoradoFx wasn’t built overnight.
-          It’s the result of years spent observing markets,
-          making mistakes, refining execution,
-          and understanding that survival always comes before profit.
+          {t("howWeGotHere.firstParagraph")}
         </Text>
 
         <Text muted class="leading-relaxed">
-          We’ve traded through different market cycles,
-          different conditions, and different emotional states.
-          What remained constant was the need for structure,
-          discipline, and defined risk.
+          {t("howWeGotHere.secondParagraph")}
         </Text>
 
       </div>

@@ -5,7 +5,10 @@ import TrustIntro from "./TrustIntro.astro";
 import TrustMetrics from "./TrustMetrics.astro";
 import TestimonialsCarousel from "../../react/TestimonialsCarousel.tsx";
 import TraderCoins from "./TraderCoins.astro";
+import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
+import { ui } from "../../../i18n/ui";
 
+const lang = getLanguageFromPath(Astro.url.pathname);
 ---
 
 <Section class="relative py-8 overflow-hidden ">
@@ -16,7 +19,7 @@ import TraderCoins from "./TraderCoins.astro";
         
       <TrustMetrics />
    
-      <TestimonialsCarousel client:load />
+      <TestimonialsCarousel client:load lang={lang as "en" | "es"} translations={ui[lang]} />
 
     </div>
   </Container>
