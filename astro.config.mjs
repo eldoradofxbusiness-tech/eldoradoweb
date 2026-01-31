@@ -11,5 +11,10 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
+  prefetch: {
+    prefetchAll: false, 
+    defaultStrategy: 'viewport'
+  },
+
   integrations: [react()]
 });
