@@ -35,8 +35,8 @@ const Tag = link ? "a" : "div";
   <img
     src={src}
     alt={label || ""}
-    loading="lazy"
     decoding="async"
+    loading="eager" 
     class="w-full h-full object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-110"
   />
 
