@@ -1,6 +1,7 @@
 ---
 import InstagramIcon from "./InstagramIcon.astro";
 import TelegramIcon from "./TelegramIcon.astro";
+import { Image } from 'astro:assets';
 
 interface Props {
   src: string;
@@ -32,11 +33,11 @@ const Tag = link ? "a" : "div";
   ]}
 >
  
-  <img
+  <Image
     src={src}
-    alt={label || ""}
-    loading="lazy"
-    decoding="async"
+    alt={label || "Social Image"}
+    width={800} 
+    height={800}
     class="w-full h-full object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-110"
   />
 
