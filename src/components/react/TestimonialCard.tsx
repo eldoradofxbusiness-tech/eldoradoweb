@@ -58,6 +58,8 @@ const TestimonialCard = forwardRef<HTMLDivElement, Props>(({ testimonial, active
           src={testimonial.image}
           alt="Trading Result"
           className="relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+          loading="lazy"
+          decoding="async"
         />
         
         <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#0b0f1a]/40 via-transparent to-transparent opacity-60 pointer-events-none" />
