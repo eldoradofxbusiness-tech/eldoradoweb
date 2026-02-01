@@ -61,9 +61,9 @@ const EvergreenTimer: React.FC<Props> = ({ translations }) => {
   if (!isMounted) return null;
 
   const timeUnits = [
-    { label: t("countdown.hrs"), value: timeLeft.hours },
-    { label: t("countdown.min"), value: timeLeft.minutes },
-    { label: t("countdown.sec"), value: timeLeft.seconds },
+    { label: "hrs", value: timeLeft.hours },
+    { label: "min", value: timeLeft.minutes },
+    { label: "sec", value: timeLeft.seconds },
   ];
 
   return (

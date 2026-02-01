@@ -6,9 +6,8 @@ import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
 const lang = getLanguageFromPath(Astro.url.pathname);
 const t = useTranslations(lang);
 ---
-
-<Container size="default" class="">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<Container size="default" class="px-4 md:px-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
     
     <BentoCard
       isLarge
@@ -16,25 +15,23 @@ const t = useTranslations(lang);
       label={t("philosophy.bento.strategicCore")}
       image="/Philosophy-Image1.webp"
       description={t("philosophy.bento.masterOneMarketDescription")}
-      class="md:col-span-2 reveal scale shadow-lg"
+      class="sm:col-span-2 reveal scale shadow-lg"
     />
-
 
     <BentoCard
       title={t("philosophy.bento.protectCapital")}
       label={t("philosophy.bento.security")}
       image="/Philosophy-Image3.webp"
       description={t("philosophy.bento.protectCapitalDescription")}
-      class="reveal scale delay-150"
+      class="col-span-1 reveal scale delay-150"
     />
 
-
-   <BentoCard
+    <BentoCard
       title={t("philosophy.bento.priceActionLeads")}
       label={t("philosophy.bento.execution")}
       image="/Philosophy-Image2.webp"
       description={t("philosophy.bento.priceActionLeadsDescription")}
-      class="reveal scale delay-300"
+      class="col-span-1 reveal scale delay-300"
     />
     
   </div>

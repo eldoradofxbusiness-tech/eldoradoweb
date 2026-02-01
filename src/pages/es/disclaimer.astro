@@ -1,0 +1,69 @@
+---
+import CorporateLayout from "../../layouts/CorporateLayout.astro";
+import Section from "../../components/ui/Section.astro";
+import Container from "../../components/ui/Container.astro";
+import Heading from "../../components/ui/Heading.astro";
+import Text from "../../components/ui/Text.astro";
+import Badge from "../../components/ui/Badge.astro";
+import { useTranslations, getLanguageFromPath } from "../../i18n/utils";
+import { ui } from "../../i18n/ui"; 
+
+const lang = getLanguageFromPath(Astro.url.pathname) as "en" | "es";
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+const rawSections = ui[lang].riskDisclosure.sections;
+const sections = Object.entries(rawSections);
+---
+
+<CorporateLayout title={`Risk Disclosure | ElDorado FX`}>
+  <Section class="relative pt-32 pb-20 overflow-hidden bg-[#0b0f1a]">
+    
+    <div class="absolute inset-0 grid-bg opacity-[0.05] pointer-events-none"></div>
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-yellow-400/10 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-yellow-400/5 blur-[100px] rounded-full"></div>
+
+    <Container size="default" class="relative z-10">
+      
+      <div class="flex flex-col items-center text-center mb-16">
+        <Badge variant="glow" class="mb-6 uppercase tracking-widest text-[10px]">
+          {t("riskDisclosure.badge")}
+        </Badge>
+        <Heading level={1} class="mb-4 uppercase tracking-tighter" set:html={t("riskDisclosure.title")} />
+        <Text muted class="max-w-xl mx-auto">
+          {t("riskDisclosure.description")}
+        </Text>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-4">
+        {sections.map(([key, section]) => (
+          <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d121f]/50 p-6 md:p-8 transition-all duration-300 hover:bg-[#0d121f] hover:border-yellow-400/30">
+            
+            <div class="flex flex-col md:flex-row md:items-start gap-6">
+              <span class="text-4xl font-black text-white/5 group-hover:text-yellow-400/20 transition-colors duration-500">
+                {section.number}
+              </span>
+              
+              <div class="flex-1">
+                <Heading level={3} class="text-lg md:text-xl uppercase mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                  {section.title}
+                </Heading>
+                <Text muted class="text-sm md:text-base border-l-2 border-yellow-400/20 pl-4 leading-relaxed italic">
+                  {section.text}
+                </Text>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-20 flex flex-col items-center gap-6">
+        <div class="w-full max-w-xs h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        <Text muted class="text-[10px] uppercase tracking-[0.3em] text-center">
+          {t("riskDisclosure.footer").replace("{year}", year.toString())}
+        </Text>
+      </div>
+
+    </Container>
+  </Section>
+</CorporateLayout>
+

@@ -31,7 +31,7 @@ export default function Navbar({ lang, translations }: Props) {
     { label: t("navbar.home"), href: `${prefix}/` },
     { label: t("navbar.services"), href: `${prefix}/services` },
     { label: t("navbar.about"), href: `${prefix}/about` },
-    { label: t("navbar.contact"), href: `${prefix}/contact` },
+    { label: t("navbar.contact"), href: `${prefix}/channels` },
   ];
 
   return (

@@ -74,15 +74,28 @@ const { service } = Astro.props;
       </li>
     ))}
   </ul>
- {service.highlighted ? (
-      <TelegramButton>
-        Join VIP Channel
-      </TelegramButton>
-    ) : (
-      <TelegramButton type="user">
-        Get Started
-      </TelegramButton>
-    )}
+{service.id === "free" ? (
+    <TelegramButton 
+      type="user" 
+      username="eldoradofxfree"
+    >
+      Join Free Channel
+    </TelegramButton>
+  ) : service.highlighted ? (
+    <TelegramButton
+      type="channel"
+      username="RPomaFX"
+    >
+      Join VIP Channel
+    </TelegramButton>
+  ) : (
+    <TelegramButton 
+      type="user"
+      username="RPomaFX"
+    >
+      Get Started
+    </TelegramButton>
+  )}
 
 
 </Card>

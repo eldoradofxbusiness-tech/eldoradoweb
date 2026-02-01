@@ -1,4 +1,5 @@
 ---
+// IMPORTS
 import LandingLayout from "../../layouts/LandingLayout.astro";
 import Section from "../../components/ui/Section.astro";
 import Container from "../../components/ui/Container.astro";
@@ -19,9 +20,11 @@ const iconClass = "text-yellow-400 mb-4 size-8";
 
 <LandingLayout 
   title="ElDoradoFX AutoBot | Hands-Free Institutional Trading"
-  description="Stop manual trading stress. Plug into our battle-tested XAUUSD automated strategy."
+  description="Ditch emotional trades. Plug into our rule-based, fully automated XAUUSD strategy."
   ctaText="REQUEST BOT ACCESS"
 >
+
+  <!-- HERO -->
   <Section class="relative min-h-screen flex items-center bg-black overflow-hidden pt-20">
     <VideoBackground 
       src="/bot_tech_bg.mp4" 
@@ -41,7 +44,8 @@ const iconClass = "text-yellow-400 mb-4 size-8";
       </Heading>
 
       <Text class="text-xl md:text-2xl text-white/60 mb-12 max-w-3xl mx-auto font-light leading-tight">
-        Charts all day. Missed entries. Emotional exits. You're trying to trade like a robot — but you're only human. <span class="text-yellow-400 font-bold italic">What if the machine just did it for you?</span>
+        Charts all day. Missed setups. Emotional exits. You’re trying to trade like a robot — but you’re not one.  
+        <span class="text-yellow-400 font-bold italic">Let the machine handle the rules, the risk, and the execution — 24/7.</span>
       </Text>
 
       <Button variant="primary" href="https://t.me/your_link" class="px-12 py-6 text-xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
@@ -51,6 +55,7 @@ const iconClass = "text-yellow-400 mb-4 size-8";
     </Container>
   </Section>
 
+  <!-- PAIN POINTS SECTION -->
   <Section class="py-32 bg-black relative border-y border-white/5">
     <div class="absolute inset-0 grid-bg opacity-5"></div>
     <Container>
@@ -63,10 +68,10 @@ const iconClass = "text-yellow-400 mb-4 size-8";
           
           <div class="space-y-6 mb-12">
             {[
-              "You’re not a full-time trader — you have a life.",
-              "You’ve already lost time and money trying to learn.",
-              "Every mistake feels more expensive than the last.",
-              "Trading isn't just strategy — it's discipline and timing."
+              "You’re not a full-time trader — you’ve got a life.",
+              "You’ve already lost money trying to ‘figure it out’ alone.",
+              "You second-guess every entry — and it’s costing you.",
+              "Discipline isn’t your problem. Time is."
             ].map(point => (
               <div class="flex items-center gap-4 group">
                 <Ban size={20} class="text-red-500 shrink-0" />
@@ -74,9 +79,12 @@ const iconClass = "text-yellow-400 mb-4 size-8";
               </div>
             ))}
           </div>
-          <Text muted class="italic border-l-2 border-red-500 pl-6">Most people fail not because they’re lazy… but because they’re not robots. We built one for you.</Text>
+          <Text muted class="italic border-l-2 border-red-500 pl-6">
+            Most traders fail because they trade emotionally. This bot doesn’t.
+          </Text>
         </div>
 
+        <!-- BOT VS MANUAL -->
         <div class="relative bg-white/[0.02] border border-white/10 rounded-[3rem] p-12 backdrop-blur-3xl overflow-hidden shadow-2xl">
           <div class="space-y-8">
              <div class="flex justify-between items-center opacity-30">
@@ -84,7 +92,7 @@ const iconClass = "text-yellow-400 mb-4 size-8";
                 <div class="h-px flex-1 mx-4 bg-white/10"></div>
                 <XCircle size={16} class="text-red-500" />
              </div>
-             <Heading level={3} class="text-2xl text-white/20 italic uppercase tracking-tighter">Emotional • Tired • Inconsistent</Heading>
+             <Heading level={3} class="text-2xl text-white/20 italic uppercase tracking-tighter">Emotional • Inconsistent • Tired</Heading>
              
              <Divider class="opacity-10" />
 
@@ -102,6 +110,7 @@ const iconClass = "text-yellow-400 mb-4 size-8";
     </Container>
   </Section>
 
+  <!-- FEATURES -->
   <Section class="py-32 bg-canvas relative overflow-hidden">
     <ParticlesBackground count={50} color="#B98A25" />
     <Container>
@@ -114,12 +123,12 @@ const iconClass = "text-yellow-400 mb-4 size-8";
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { t: "XAUUSD SPECIALIST", d: "Uses our exact scalping & swing strategies automatically.", icon: Target },
-          { t: "SECURE VM SETUP", d: "Runs on your account via MT4. We handle the technical install.", icon: Cpu },
-          { t: "100% AUTOMATED", d: "Emotion-free entries and exits. No need to touch anything.", icon: Zap },
-          { t: "CONSISTENT ROI", d: "Real performance history: 13–20% ROI monthly.", icon: TrendingUp },
-          { t: "PLUG & PLAY", d: "We install it for you. Hands-free. Stress-free.", icon: Timer },
-          { t: "REAL PERFORMANCE", d: "Built by real traders — for people who want results.", icon: ShieldCheck }
+          { t: "XAUUSD SPECIALIST", d: "Automates our proven scalping & swing strategies.", icon: Target },
+          { t: "SECURE VM SETUP", d: "Runs inside your MT4 account. We install and manage it for you.", icon: Cpu },
+          { t: "100% AUTOMATED", d: "No charts. No stress. Just clean, rule-based execution.", icon: Zap },
+          { t: "CONSISTENT ROI", d: "13–20% ROI monthly — real results, no hype.", icon: TrendingUp },
+          { t: "PLUG & PLAY", d: "We do the tech. You sit back and let it trade.", icon: Timer },
+          { t: "BUILT BY TRADERS", d: "This isn’t theory — it’s the system we use daily.", icon: ShieldCheck }
         ].map(item => (
           <Card class="bg-white/[0.03] border-white/10 p-8 hover:border-yellow-500/30 transition-all duration-500 group">
             <item.icon size={32} class="text-yellow-500 mb-6 group-hover:scale-110 transition-transform" />
@@ -131,6 +140,7 @@ const iconClass = "text-yellow-400 mb-4 size-8";
     </Container>
   </Section>
 
+  <!-- FINAL CTA -->
   <Section class="py-32 bg-black relative">
     <Container size="narrow">
       <div class="relative bg-white/[0.02] border border-white/10 rounded-[3rem] p-12 md:p-20 shadow-2xl overflow-hidden text-center">
@@ -142,7 +152,7 @@ const iconClass = "text-yellow-400 mb-4 size-8";
         </Heading>
 
         <ul class="text-left max-w-md mx-auto space-y-4 mb-12">
-          {["Managed for you via secure VM setup", "No setup stress — we handle everything", "Price is not public — serious clients only"].map(li => (
+          {["Managed setup via secure VM", "Fully installed for you — no tech needed", "Price shared privately via Telegram only"].map(li => (
             <li class="flex items-center gap-4 text-white font-bold uppercase tracking-tight text-xs">
               <CheckCircle size={16} class="text-yellow-500 shrink-0" /> {li}
             </li>
@@ -154,12 +164,13 @@ const iconClass = "text-yellow-400 mb-4 size-8";
           REQUEST ACCESS VIA TELEGRAM
         </Button>
         <p class="mt-6 text-red-500 text-[10px] tracking-[0.4em] font-black uppercase italic animate-pulse">
-          ⚠️ Limited installs available. Only a few bots per cycle.
+          ⚠️ Limited slots per install cycle. First come, first funded.
         </p>
       </div>
     </Container>
   </Section>
 
+  <!-- SOCIAL PROOF -->
   <Section class="py-32 bg-canvas relative text-center">
     <Container>
       <Heading level={2} class="text-4xl md:text-6xl font-black uppercase italic text-white tracking-tighter mb-16">
@@ -184,7 +195,7 @@ const iconClass = "text-yellow-400 mb-4 size-8";
         <Heading level={2} class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white mb-8 leading-tight">
           TRADING MANUALLY <br/> <span class="text-yellow-400">IS OPTIONAL NOW</span>
         </Heading>
-        <Text class="text-xl text-white/50 mb-12 uppercase tracking-widest font-bold">Zero stress. Real performance. Fully managed.</Text>
+        <Text class="text-xl text-white/50 mb-12 uppercase tracking-widest font-bold">Zero stress. Real results. Fully automated.</Text>
         
         <Button variant="primary" href="https://t.me/your_link" class="px-16 py-8 text-3xl font-black italic tracking-tighter uppercase w-full max-w-2xl">
           JOIN THE TELEGRAM TO REQUEST ACCESS
@@ -192,10 +203,10 @@ const iconClass = "text-yellow-400 mb-4 size-8";
       </div>
     </Container>
   </Section>
+
 </LandingLayout>
 
 <style>
-  /* [cite: 1, 3] Forzamos la textura de cuadrícula en el fondo para este estilo técnico */
   .grid-bg {
     background-image:
       linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),

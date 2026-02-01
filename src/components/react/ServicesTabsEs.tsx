@@ -14,19 +14,20 @@ const services = [
   {
     id: "coaching",
     tab: "Coaching 1:1",
-    title: "Mentoría de Trading Personalizada",
-    description: "Guía personal enfocada en la mentalidad, protección de capital y refinamiento de procesos — adaptada a tu nivel de trading y objetivos.",
+    title: "Mentoría Privada con Traders Reales",
+    description: "Corrige tus errores, mejora tu enfoque y construye una estrategia rentable con acompañamiento directo. Personalizado según tu experiencia, tiempo y objetivos.",
     icon: "/service-icon2.webp",
     tabIcon: UserRound,
   },
   {
     id: "bot",
     tab: "Bot de Trading",
-    title: "Automatización Premium",
-    description: "Estrategias automatizadas basadas en reglas, diseñadas para eliminar el sesgo emocional respetando reglas estrictas de riesgo y capital.",
+    title: "Delega el Trading. Mantén el Control.",
+    description: "Conecta el bot a tu cuenta y deja que opere por ti con reglas claras, sin emociones y con protección de capital integrada. Operación 100% automática.",
     icon: "/service-icon3.webp",
     tabIcon: Bot,
-  },
+  }
+
 ];
 
 export default function ServicesTabsES() {

@@ -16,21 +16,20 @@ import { Zap, GraduationCap, TrendingUp, ShieldCheck, Clock } from "lucide-react
 
 const CHANNEL_LINK = "https://t.me/eldoradofxfree";
 ---
-
 <LandingLayout 
-  title="Free Signals + 50% Masterclass Discount | ElDoradoFX"
-  description="Join our free Telegram and unlock a 50% discount on our Elite Trading Masterclass."
-  ctaText="CLAIM YOUR DISCOUNT NOW"
+  title="Señales Gratis + 50% en Masterclass | ElDoradoFX"
+  description="Únete gratis a nuestro canal y desbloquea un 50% de descuento en nuestra Masterclass Elite de Trading."
+  ctaText="RECLAMA TU DESCUENTO"
   ctaHref="https://t.me/eldoradofxfree"
 >
-  
-  {/* TOP BANNER FIX */}
+
+  {/* BANNER FIJO */}
   <a href={CHANNEL_LINK} target="_blank">
     <div class="fixed top-0 left-0 right-0 z-[100] bg-yellow-500 py-2 px-4 text-black overflow-hidden shadow-xl hover:bg-yellow-400 transition-colors">
       <div class="max-w-7xl mx-auto flex items-center justify-center gap-4">
         <Clock size={16} class="animate-pulse" />
         <p class="text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
-          50% OFF Masterclass Ends In: <span class="underline">Join Free Telegram to Unlock</span>
+          50% OFF Masterclass termina pronto <span class="underline">Únete al canal gratis</span>
         </p>
       </div>
     </div>
@@ -45,19 +44,18 @@ const CHANNEL_LINK = "https://t.me/eldoradofxfree";
     <Container class="relative z-20">
       <div class="flex flex-col items-center text-center max-w-5xl mx-auto">
         <Badge variant="glow" class="mb-8 py-2 px-8 border-yellow-500/30 bg-black/50 text-yellow-400 backdrop-blur-xl tracking-[0.3em]">
-          EXCLUSIVE EDUCATION OFFER INSIDE
+          OFERTA EXCLUSIVA DE EDUCACIÓN
         </Badge>
         
         <Heading level={1} class="text-5xl md:text-[90px] mb-8 font-black uppercase italic leading-[0.85] text-white tracking-tighter">
-          GET FREE DAILY SIGNALS — <br/>
-          <span class="text-yellow-400 drop-shadow-[0_0_40px_rgba(185,138,37,0.5)]">AND UNLOCK 50% OFF OUR MASTERCLASS</span>
+          RECIBE SEÑALES GRATIS CADA DÍA <br/>
+          <span class="text-yellow-400 drop-shadow-[0_0_40px_rgba(185,138,37,0.5)]">Y DESBLOQUEA 50% EN LA MASTERCLASS</span>
         </Heading>
         
         <Text class="text-xl md:text-2xl text-white/70 mb-12 max-w-4xl leading-tight">
-          Join <span class="text-white font-bold">ElDoradoFX – Gratis</span>, trusted by 1,000+ traders for XAUUSD & BTCUSD signals — and get insider access to a 50% discount on our elite masterclass.
+          Únete a <span class="text-white font-bold">ElDoradoFX – Gratis</span>, el canal donde más de 1,000 traders confían en nuestras señales XAUUSD y BTCUSD — y desbloquea acceso exclusivo con 50% de descuento en nuestra Masterclass.
         </Text>
 
-        {/* SOCIAL PROOF IMAGE */}
         <div class="flex justify-center mb-8">
           <img 
             src="/social_images/total_subscribers.jpeg" 
@@ -66,12 +64,11 @@ const CHANNEL_LINK = "https://t.me/eldoradofxfree";
           />
         </div>
 
-        {/* FEATURES GRID */}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 w-full max-w-2xl">
           {[
-            { t: "2–3 SIGNALS/DAY", icon: TrendingUp },
-            { t: "87% WIN RATE", icon: Zap },
-            { t: "EXCLUSIVE EDUCATION", icon: GraduationCap }
+            { t: "2–3 SEÑALES DIARIAS", icon: TrendingUp },
+            { t: "87% EFECTIVIDAD", icon: Zap },
+            { t: "EDUCACIÓN PREMIUM", icon: GraduationCap }
           ].map(item => (
             <div class="flex flex-col items-center gap-3 p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-sm">
               <item.icon size={24} class="text-yellow-500" />
@@ -82,31 +79,30 @@ const CHANNEL_LINK = "https://t.me/eldoradofxfree";
 
         <Button variant="primary" href={CHANNEL_LINK} class="px-14 py-6 text-xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
           <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
-          JOIN THE FREE GROUP & CLAIM DISCOUNT
+          ENTRA AL GRUPO GRATIS Y RECLAMA TU DESCUENTO
         </Button>
-        <p class="mt-6 text-[10px] tracking-[0.4em] text-white/40 font-bold uppercase">No forms. No spam. Just free value.</p>
+        <p class="mt-6 text-[10px] tracking-[0.4em] text-white/40 font-bold uppercase">Sin formularios. Sin spam. Solo valor real.</p>
       </div>
     </Container>
   </Section>
 
-  {/* VALUE & MENTORS SECTION */}
+  {/* SECCIÓN DE VALOR */}
   <Section class="py-32 bg-canvas relative border-y border-white/5">
     <Container>
       <div class="grid lg:grid-cols-2 gap-20 items-center">
         
-        {/* Left Column: Value Prop */}
         <div>
-          <Badge variant="gold" class="mb-6">WHY THIS GROUP IS DIFFERENT</Badge>
+          <Badge variant="gold" class="mb-6">POR QUÉ ESTE GRUPO ES DIFERENTE</Badge>
           <Heading level={2} class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white mb-10">
-            More Than Just <br/> <span class="text-yellow-400 font-normal">A Teaser Group</span>
+            Mucho más que <br/> <span class="text-yellow-400 font-normal">un grupo gratuito</span>
           </Heading>
           
           <div class="space-y-6">
             {[
-              "Daily signals with precision entries (XAUUSD & BTCUSD only)",
-              "Market insights from two pro traders with 6+ years experience",
-              "Broker bonuses + exclusive partner offers",
-              "100% free — no strings attached"
+              "Señales diarias con entradas de precisión (solo XAUUSD y BTCUSD)",
+              "Análisis directo de dos traders con más de 6 años de experiencia",
+              "Bonos de brokers y beneficios exclusivos para la comunidad",
+              "100% gratis — sin condiciones ni letra pequeña"
             ].map(point => (
               <div class="flex items-center gap-4 group">
                 <div class="h-6 w-6 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center shrink-0 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
@@ -120,67 +116,59 @@ const CHANNEL_LINK = "https://t.me/eldoradofxfree";
           <div class="mt-12 p-8 rounded-3xl bg-yellow-500/10 border border-yellow-500/20">
              <div class="flex items-center gap-4 mb-4">
                 <GraduationCap class="text-yellow-500" size={32} />
-                <h3 class="text-2xl font-black italic text-white uppercase tracking-tighter">PLUS: 50% OFF MASTERCLASS</h3>
+                <h3 class="text-2xl font-black italic text-white uppercase tracking-tighter">ADEMÁS: 50% EN LA MASTERCLASS</h3>
              </div>
-             <Text muted class="italic leading-relaxed">Available only to group members. We don't just drop signals — we teach you the "why" behind every institutional move.</Text>
+             <Text muted class="italic leading-relaxed">Solo para miembros del grupo. No solo damos señales — te enseñamos la lógica institucional detrás de cada movimiento.</Text>
           </div>
            <Button variant="primary" href={CHANNEL_LINK} class="px-6 mt-12 py-6 text-sm font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
             <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
-            JOIN THE FREE GROUP & CLAIM DISCOUNT
+            ENTRA AL GRUPO Y RECLAMA TU DESCUENTO
           </Button>
         </div>
 
-       {/* Right Column: Mentors Card */}
-       <div class="relative bg-white/[0.02] border border-white/10 rounded-[3rem] p-12 shadow-2xl overflow-hidden aspect-square flex flex-col justify-between text-center">
-   
+        {/* Mentores */}
+        <div class="relative bg-white/[0.02] border border-white/10 rounded-[3rem] p-12 shadow-2xl overflow-hidden aspect-square flex flex-col justify-between text-center">
           <div class="absolute inset-0 grid-bg opacity-10 pointer-events-none"></div>
           
           <div class="relative z-10 mt-4">
-              <Heading level={3} class="text-white text-3xl mb-4 italic uppercase">Meet the Mentors</Heading>
+              <Heading level={3} class="text-white text-3xl mb-4 italic uppercase">Conoce a los Mentores</Heading>
               <Divider class="my-6 opacity-20" />
               <div class="space-y-2">
-                <Text class="text-white font-bold">Ricardo – Master Scalper</Text>
-                <Text class="text-white font-bold">MasterKelvin – Swing Specialist</Text>
+                <Text class="text-white font-bold">Ricardo – Experto en Scalping</Text>
+                <Text class="text-white font-bold">MasterKelvin – Especialista en Swing</Text>
               </div>
-              <Text muted class="mt-6 text-sm tracking-widest uppercase">Latinos based in London. <br/> 6+ Years Consistent Profit.</Text>
+              <Text muted class="mt-6 text-sm tracking-widest uppercase">Latinos en Londres. <br/> 6+ años de rentabilidad consistente.</Text>
           </div>
 
           <div class="relative w-full h-48 mt-6 bg-white/5 rounded-2xl overflow-hidden border border-white/10 group">
-            <img 
-                src="/us_traders.webp" 
-                alt="Traders Team" 
-                class="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
-            />
+            <img src="/us_traders.webp" alt="Traders Team" class="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105" />
           </div>
-
-          
         </div>
         
       </div>
     </Container>
-         
   </Section>
 
   <TestimonialsCarouselAuto/>
 
-  {/* FINAL CTA SECTION */}
+  {/* CTA FINAL */}
   <Section class="py-32 bg-black relative">
     <Container size="narrow" class="text-center">
       <Heading level={2} class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white mb-6">
-        Serious About <span class="text-yellow-400 italic font-black">Learning to Trade?</span>
+        ¿En serio quieres <span class="text-yellow-400 italic font-black">aprender a tradear?</span>
       </Heading>
-      <Text class="text-lg text-white/60 mb-12 uppercase tracking-widest font-bold">Your 50% Masterclass Discount Expires in:</Text>
+      <Text class="text-lg text-white/60 mb-12 uppercase tracking-widest font-bold">Tu descuento del 50% expira en:</Text>
       
       <div class="mb-16">
-        <CountdownTimer client:load  />
+        <CountdownTimer  client:load  />
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 text-left mb-16">
         {[
-          "XAUUSD & BTCUSD session breakdown",
-          "Exact risk/reward setups & sniper entries",
-          "Spot high-probability trades daily",
-          "Perfect for side hustlers & beginners"
+          "Desglose completo de sesiones XAUUSD y BTCUSD",
+          "Setups de riesgo/recompensa con precisión",
+          "Identifica oportunidades reales cada día",
+          "Ideal para principiantes y traders de medio tiempo"
         ].map(point => (
           <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-4">
             <ShieldCheck class="text-yellow-500 shrink-0" />
@@ -190,12 +178,12 @@ const CHANNEL_LINK = "https://t.me/eldoradofxfree";
       </div>
 
       <Button variant="primary" href={CHANNEL_LINK} class="w-full px-16 py-8 text-2xl font-black italic tracking-tighter uppercase shadow-[0_0_60px_rgba(185,138,37,0.3)] hover:shadow-[0_0_80px_rgba(185,138,37,0.5)] transition-all">
-        JOIN THE FREE TELEGRAM GROUP NOW
+        ENTRA AL GRUPO DE TELEGRAM GRATIS AHORA
       </Button>
       
       <p class="mt-8 text-white/30 text-xs font-bold uppercase tracking-[0.4em] italic leading-loose">
-        Thousands are already inside, profiting daily. <br/>
-        Get signals, get smarter, and save big — all from your phone.
+        Miles ya están dentro, ganando a diario. <br/>
+        Recibe señales, aprende más y ahorra — todo desde tu celular.
       </p>
     </Container>
   </Section>

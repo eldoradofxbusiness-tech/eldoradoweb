@@ -17,9 +17,11 @@ import { AlertTriangle, XCircle, CheckCircle2, TrendingUp, MonitorPlay, Users } 
 
 <LandingLayout 
   title="ElDoradoFX Premium | Stop Guessing, Start Gaining"
-  description="Get 6-9 precision signals daily on XAUUSD & BTCUSD with expert London commentary."
-  ctaText="JOIN PREMIUM - 50% OFF"
+  description="Get 6–9 precision signals daily on XAUUSD & BTCUSD, plus expert breakdowns and live sessions."
+  ctaText="JOIN PREMIUM – 50% OFF"
 >
+
+  {/* HERO SECTION */}
   <Section class="relative min-h-[90vh] flex items-center bg-black overflow-hidden pt-20">
     <VideoBackground 
       src="/hero_video.mp4" 
@@ -38,7 +40,8 @@ import { AlertTriangle, XCircle, CheckCircle2, TrendingUp, MonitorPlay, Users } 
       </Heading>
 
       <Text class="text-xl md:text-2xl text-white/60 mb-12 max-w-3xl mx-auto font-light">
-        You’re not alone — but you don’t have to keep guessing. Your account is bleeding, confidence is gone, and the charts look like chaos. <span class="text-white font-bold italic underline decoration-red-500">Sound familiar?</span>
+        You’re not alone. Your account is bleeding, confidence is gone, and the charts make zero sense. 
+        <span class="text-white font-bold italic underline decoration-red-500"> Sound familiar?</span>
       </Text>
 
       <Button variant="secondary" href="#solution" class="px-10 py-4 border-white/20 hover:bg-white/5 uppercase tracking-widest font-bold">
@@ -47,21 +50,22 @@ import { AlertTriangle, XCircle, CheckCircle2, TrendingUp, MonitorPlay, Users } 
     </Container>
   </Section>
 
+  {/* PROBLEMS SECTION */}
   <Section class="py-32 bg-black relative border-y border-white/5">
     <Container>
       <div class="max-w-4xl mx-auto text-center mb-20">
         <Heading level={2} class="text-4xl md:text-6xl font-black italic uppercase text-white mb-6">
-          Trading Doesn't Have To Be <br/> <span class="text-red-500">This Hard</span>
+          Trading Shouldn't Be <br/> <span class="text-red-500">This Hard</span>
         </Heading>
-        <Text muted>Most traders lose because the system they follow is broken, not their potential.</Text>
+        <Text muted>Most traders fail not because they’re bad — but because the system they follow is.</Text>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          "Relying on hype over strategy",
-          "Copying signals with zero explanation",
-          "Trading without a plan or structure",
-          "Learning from people with no results"
+          "Chasing hype instead of strategy",
+          "Blindly copying signals with no context",
+          "Trading without structure or plan",
+          "Learning from amateurs with no results"
         ].map(item => (
           <div class="p-8 rounded-3xl bg-red-500/5 border border-red-500/10 flex flex-col items-center text-center group hover:bg-red-500/10 transition-colors">
             <XCircle size={32} class="text-red-500 mb-6" />
@@ -72,30 +76,31 @@ import { AlertTriangle, XCircle, CheckCircle2, TrendingUp, MonitorPlay, Users } 
 
       <div class="mt-20 p-10 rounded-[3rem] bg-gradient-to-r from-red-950/20 to-transparent border border-red-500/20 text-center">
         <Text class="text-xl md:text-2xl text-white italic">
-          "You don't have 6 months to learn price action or backtest YouTube strategies. <br/> 
+          "You don’t have 6 months to master price action or test 20 strategies. <br/> 
           <span class="font-black text-white uppercase not-italic">You just want signals that actually work.</span>"
         </Text>
       </div>
     </Container>
   </Section>
 
+  {/* SOLUTION SECTION */}
   <Section id="solution" class="py-32 bg-canvas relative overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-10"></div>
     <Container>
       <div class="flex flex-col items-center text-center mb-20">
-        <Badge variant="glow" class="mb-6 border-yellow-500/30 text-yellow-400">WELCOME TO ELDORADOFX PREMIUM</Badge>
+        <Badge variant="glow" class="mb-6 border-yellow-500/30 text-yellow-400">INTRODUCING: ELDORADOFX PREMIUM</Badge>
         <Heading level={2} class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white">
-          PRECISION TRADING <br/> <span class="text-yellow-400">MADE SIMPLE</span>
+          HIGH-ACCURACY TRADING <br/> <span class="text-yellow-400">WITHOUT THE HEADACHE</span>
         </Heading>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12">
         <div class="space-y-4">
           {[
-            { t: "6–9 SIGNALS DAILY", d: "XAUUSD & BTCUSD precision entries only.", icon: TrendingUp },
-            { t: "3 SESSION BREAKDOWNS", d: "Asia, London, & NY session analysis daily.", icon: MonitorPlay },
+            { t: "6–9 SIGNALS PER DAY", d: "Only XAUUSD & BTCUSD precision setups.", icon: TrendingUp },
+            { t: "DAILY SESSION BREAKDOWNS", d: "Asia, London, NY — all explained clearly.", icon: MonitorPlay },
             { t: "WEEKLY LIVE SESSIONS", d: "Trade live with Ricardo & MasterKelvin.", icon: Users },
-            { t: "FULL RATIONALE", d: "Commentary + reasoning on every single trade.", icon: CheckCircle2 }
+            { t: "DETAILED COMMENTARY", d: "Understand the reasoning behind every entry.", icon: CheckCircle2 }
           ].map(item => (
             <Card class="bg-white/[0.03] border-white/10 p-6 flex items-center gap-6 group hover:border-yellow-500/40 transition-all">
               <div class="p-3 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
@@ -109,10 +114,11 @@ import { AlertTriangle, XCircle, CheckCircle2, TrendingUp, MonitorPlay, Users } 
           ))}
         </div>
 
+        {/* PRICING CARD */}
         <div class="relative group">
           <div class="absolute -inset-1 bg-yellow-500/20 blur-2xl rounded-[3rem]"></div>
           <div class="relative h-full bg-white/[0.02] backdrop-blur-3xl border border-yellow-500/30 rounded-[3rem] p-12 flex flex-col items-center text-center justify-center">
-            <Text class="text-white/40 uppercase tracking-[0.3em] font-bold mb-4">PREMIUM ACCESS</Text>
+            <Text class="text-white/40 uppercase tracking-[0.3em] font-bold mb-4">PREMIUM MEMBERSHIP</Text>
             <div class="flex items-end gap-2 mb-2">
               <span class="text-4xl font-bold text-white/40 line-through">£118</span>
               <span class="text-7xl font-black italic text-yellow-400 tracking-tighter">£59</span>
@@ -137,26 +143,27 @@ import { AlertTriangle, XCircle, CheckCircle2, TrendingUp, MonitorPlay, Users } 
     </Container>
   </Section>
 
+  {/* TESTIMONIALS */}
   <Section class="py-32 bg-black border-t border-white/5">
     <Container>
       <div class="text-center mb-16">
         <Heading level={2} class="text-4xl md:text-6xl font-black uppercase italic text-white tracking-tighter mb-4">
-          STILL UNSURE? <span class="text-yellow-400">RESULTS SPEAK</span>
+          STILL UNSURE? <span class="text-yellow-400">LET RESULTS DECIDE</span>
         </Heading>
-        <Text muted>The free group already proves it. The paid group is where the real wins happen.</Text>
+        <Text muted>The free group proves it. But Premium is where the real wins happen.</Text>
       </div>
       <div class="-translate-x-20">
-      <TestimonialsCarouselAuto client:load/>
+        <TestimonialsCarouselAuto client:load/>
       </div>
-     
     </Container>
   </Section>
 
+  {/* FINAL CTA */}
   <Section class="py-32 bg-canvas relative">
     <Container size="narrow" class="text-center">
       <Divider class="mb-20 opacity-20" />
       <Heading level={2} class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white mb-6 leading-none">
-        IF YOU'RE STILL GUESSING, <br/> <span class="text-red-500">YOU'RE STILL LOSING</span>
+        STILL GUESSING? <br/> <span class="text-red-500">THEN YOU'RE STILL LOSING</span>
       </Heading>
       
       <div class="mb-12 flex flex-col items-center">
@@ -176,4 +183,5 @@ import { AlertTriangle, XCircle, CheckCircle2, TrendingUp, MonitorPlay, Users } 
       <Divider class="mt-20 opacity-20" />
     </Container>
   </Section>
+
 </LandingLayout>

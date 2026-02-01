@@ -4,230 +4,250 @@ export const ui = {
       home: "Home",
       services: "Services",
       about: "About",
-      contact: "Contact",
+      contact: "Channels",
       ariaLabel: "Change language"
     },
     hero: {
-      badge: "Trading signals & automation",
-      title: "Professional trading <br /> signals & automation",
-      description: "High-quality market signals and automation, built around risk management.",
-      joinUs: "Join Us",
-      viewServices: "View services",
-      liveMarketStructure: "Live market structure · XAUUSD & BTCUSD"
+      badge: "Expert Signals · Auto-Trading · Real Results",
+      title: "Let the Pros Trade <br />While You Profit",
+      description: "Daily XAUUSD & BTCUSD signals from verified experts or go fully hands-free with our auto-trading bot. No stress. No guesswork. Just consistent gains.",
+      joinUs: "Join the Free Group",
+      viewServices: "See How It Works",
+      liveMarketStructure: "Live market insights · Real trades · 6+ years of experience"
     },
     servicesPage: {
-      badge: "Access",
-      title: "Services & access",
-      description: "Choose based on structure, automation level and risk framework.",
-      riskShort: "Trading involves risk.",
-      readFullDisclosure: "Read full risk disclosure"
+      badge: "Your Trading, Your Way",
+      title: "Choose Your Path to Profits",
+      description: "Whether you want to trade like a pro, follow signals, or let the bot do it all for you we’ve got the setup that fits your schedule and risk level.",
+      riskShort: "Yes, trading involves risk  but so does staying broke.",
+      readFullDisclosure: "Read our full risk disclosure"
     },
     servicesSection: {
-      badge: "This is what we do"
-    },servicesTabs: {
-        forexTitle: "Forex like never before",
-        signals: {
-          tab: "Signals",
-          title: "Free & Premium Trading Signals",
-          description: "Structured trading signals built around risk management, clarity, and disciplined execution. Free insights for learning, premium access for consistency."
-        },
-        coaching: {
-          tab: "1:1 Coaching",
-          title: "One-to-One Trading Coaching",
-          description: "Personal guidance focused on mindset, capital protection, and process refinement — adapted to your trading level and objectives."
-        },
-        bot: {
-          tab: "Trading Bot",
-          title: "Premium Automated",
-          description: "Rule-based automated strategies designed to remove emotional bias while respecting strict risk and capital preservation rules."
-        }
+      badge: "This is what we do best"
+    },
+    servicesTabs: {
+      forexTitle: "Forex That Fits Your Life",
+      signals: {
+        tab: "Signals",
+        title: "Free & VIP Trading Signals",
+        description: "Get clear, high-accuracy XAUUSD and BTCUSD trades with entry, stop loss, and targets. Just copy to take action, or study the setup to improve your skills. You choose how deep you go."
       },
+      coaching: {
+        tab: "1:1 Coaching",
+        title: "Private Coaching for Traders",
+        description: "Level up your trading with personal mentorship from real pros. Fix your mindset, sharpen your strategy, and protect your capital like a veteran."
+      },
+      bot: {
+        tab: "Auto-Trading",
+        title: "Plug & Play Trading Bot",
+        description: "Let our bot do the heavy lifting rule-based, emotion-free, and fully managed. Just connect your MT4 account and let it work while you live."
+      }
+    },
     footer: {
-      description: "Structured trading, risk-first mindset. No promises. No shortcuts.",
-      navigation: "Navigation",
+      description: "Smart trading starts with structure. Our signals, coaching, and automation are built on one thing: risk-first execution. No hype. No shortcuts.",
+      navigation: "Quick Links",
       legal: "Legal",
-      disclaimer: "Trading leveraged products involves a high level of risk and may not be suitable for all investors. Past performance is not indicative of future results.",
-      terms: "Terms",
-      privacy: "Privacy",
-      copyright: "© {year} ElDoradoFx. All rights reserved.",
-      developedBy: "Developed by David López",
-      riskWarning: "Risk Warning: Trading Forex and Leveraged Financial Instruments involves significant risk and can result in the loss of your invested capital. You should not invest more than you can afford to lose. Past performance does not guarantee future results."
+      disclaimer: "Trading leveraged products like Forex carries significant risk and may not be suitable for all investors. Always trade responsibly. Past performance does not guarantee future results.",
+      terms: "Terms of Service",
+      privacy: "Privacy Policy",
+      copyright: "© {year} ElDorado FX. All rights reserved.",
+      developedBy: "Site developed by David López",
+      riskWarning: "Risk Warning: Trading Forex and leveraged financial instruments involves a high level of risk and can lead to loss of capital. Only trade with money you can afford to lose. Historical returns are not guarantees of future performance."
     },
     team: {
-      badge: "Our traders",
-      title: "Two Traders, Two Strategies",
-      description: "Two professional traders with distinct execution styles. One scalps shorter timeframes. One trades swing setups. Both follow the same risk-first mindset.",
-      ricardo: "Ricardo — Scalping",
-      ricardoDescription: "Operates on shorter timeframes with quick entries and exits. Focused on precision, speed, and tight risk control. Every trade follows the same execution rules.",
-      masterKelvin: "MasterKelvin — Swing Trading",
-      masterKelvinDescription: "Focuses on multi-day positions based on higher timeframe structure. Less frequent, more patient. Risk is always defined before entry. Process over impulse.",
-      adaptability: "Two styles allow flexibility across market conditions. When scalping conditions weaken, swing setups may be clearer — and vice versa. This isn't about hedging. It's about structural adaptability."
+      badge: "Meet Your Traders",
+      title: "Two Traders. Two Styles. One Mission.",
+      description: "One’s a scalper. One’s a swing trader. Together, they bring over 6 years of Forex mastery with a shared focus: consistency, discipline, and risk-first execution.",
+      ricardo: "Ricardo The Scalper",
+      ricardoDescription: "Moves fast, thinks faster. Ricardo dominates lower timeframes with surgical entries and exits. Every trade is timed with precision and built around tight risk control.",
+      masterKelvin: "MasterKelvin The Swing Strategist",
+      masterKelvinDescription: "Plays the long game with sniper-level patience. Kelvin finds multi-day setups on higher timeframes slow, deliberate, and structured around risk-defined entries.",
+      adaptability: "Two traders. Two timeframes. One edge. This isn’t about hedging bets it’s about adapting to any market condition. When short-term noise takes over, swing setups speak louder and vice versa."
     },
     signals: {
-      badge: "Manual execution",
-      title: "Trading Signals",
-      description: "High-quality manual signals focused on XAUUSD and BTCUSD, executed with strict risk management rules.",
-      entryStopTargets: "• Clear entry, stop-loss and targets",
-      capitalProtection: "• Capital protection first",
-      noOvertrading: "• No overtrading, no hype",
-      accessFreeSignals: "Access Our Free Signals Group"
+      badge: "Manual Execution",
+      title: "Premium Trading Signals No Guesswork",
+      description: "Get hand-picked XAUUSD and BTCUSD setups from seasoned traders with a strict risk-first approach. No spam. No hype. Just clean, actionable trades.",
+      entryStopTargets: "• Clear entries, stop-losses, and target levels",
+      capitalProtection: "• Built around capital protection and risk control",
+      noOvertrading: "• No overtrading, no FOMO pure structure",
+      accessFreeSignals: "Join the Free Signals Group"
     },
     bot: {
       badge: "Automation",
-      title: "Trading Bot",
-      emotionFree: "• Emotion-free execution",
-      ruleBased: "• Rule-based entries",
-      setForget: "• Set & forget operation",
-      learnMore: "Learn More"
+      title: "Hands-Free Trading with Our Bot",
+      emotionFree: "• Trades based on logic, not emotion",
+      ruleBased: "• Fully rule-based entries and exits",
+      setForget: "• Set it up once, let it trade for you",
+      learnMore: "See How the Bot Works"
     },
     masterclass: {
       badge: "Education",
-      title: "Trading Masterclass",
-      description: "Learn the fundamentals behind our trading framework.",
-      riskManagement: "Risk management 101",
-      marketStructure: "Market structure basics",
-      signalExecution: "Signal execution rules",
-      learnMore: "Learn More"
+      title: "The Trading Masterclass",
+      description: "Learn how we actually trade  from structure to execution. No fluff, no theory dumps. Just the strategy behind our real signals.",
+      riskManagement: "Risk management fundamentals",
+      marketStructure: "How to read market structure like a pro",
+      signalExecution: "When and why we pull the trigger on trades",
+      learnMore: "Start Learning"
     },
     philosophy: {
-      badge: "Our philosophy",
-      title: "How we understand trading",
-      description: "We don't promise results. We define a clear framework of how we operate, manage risk and make decisions.",
+      badge: "Our Philosophy",
+      title: "The Way We Trade And Why It Works",
+      description: "We don’t make wild promises. We follow a strict framework rooted in discipline, structure, and long-term thinking. This is trading with purpose.",
       principles: {
-        definedRisk: "Defined risk on every trade",
-        noOverexposure: "No overexposure, ever",
-        transparentLogic: "Transparent logic and rules",
-        consistencyOverFrequency: "Consistency over frequency",
-        executionWithoutImpulse: "Execution without impulse",
-        longTermMindset: "Long-term mindset"
+        definedRisk: "Every trade has a clearly defined risk",
+        noOverexposure: "We never risk more than we can lose",
+        transparentLogic: "Our logic is clean, repeatable, and transparent",
+        consistencyOverFrequency: "We value consistent results over constant action",
+        executionWithoutImpulse: "No emotional trades, ever",
+        longTermMindset: "We play the long game — growth over gimmicks"
       },
       bento: {
         strategicCore: "Strategic Core",
-        masterOneMarket: "Master one market. Ignore the noise.",
-        masterOneMarketDescription: "We don't chase signals in every corner of the forex world. We specialize. XAUUSD is our main focus, with BTC in the mix when it matters. Simplicity is a strategy.",
-        security: "Security",
-        protectCapital: "Protect your capital at all costs",
-        protectCapitalDescription: "No capital, no game. Preservation is priority #1. We use tight, non-negotiable stop losses and focus on consistency over flashy wins. Small pips. Big discipline.",
-        execution: "Execution",
-        priceActionLeads: "Price action leads. Indicators confirm.",
-        priceActionLeadsDescription: "We trade based on what the charts say first—clean technical analysis. Indicators come second, only to confirm the story the price is already telling."
+        masterOneMarket: "Specialize. Don’t Chase.",
+        masterOneMarketDescription: "We master one market XAUUSD. Sometimes BTC. That’s it. No noise, no distractions. We go deep, not wide. Simplicity is strategy.",
+        security: "Capital Protection",
+        protectCapital: "Don't Burn Your Capital, Preserve It.",
+        protectCapitalDescription: "No capital, no game. We use tight stop-losses, clear structure, and never let greed override risk. This isn’t about big wins it’s about staying in the game.",
+        execution: "Execution Style",
+        priceActionLeads: "Price Action First, Indicators Second.",
+        priceActionLeadsDescription: "We trade what the chart *actually* says clean, readable market structure. Indicators only confirm what price action already told us."
       }
     },
     trust: {
-      badge: "Our traders",
-      title: "Trusted by disciplined traders",
-      description: "Two professional traders. Two distinct strategies. A single focus: disciplined risk management, clarity, and long-term consistency across changing market conditions.",
-      learnMore: "Learn more about our approach →",
+      badge: "Why Traders Trust Us",
+      title: "Trusted by Traders Who Take It Seriously",
+      description: "Two pros. Two styles. One shared mindset: disciplined risk, clear structure, and long-term consistency no matter the market conditions.",
+      learnMore: "See how we trade →",
       metrics: {
-        yearsExperience: "Years experience",
-        marketsCovered: "Markets covered",
-        signalsLastYear: "Signals last year",
-        masterclasses: "Masterclasses"
+        yearsExperience: "Years of Experience",
+        marketsCovered: "Markets Focused",
+        signalsLastYear: "Winning (Last Year)",
+        masterclasses: "Masterclasses Taught"
       },
-      liveResults: "Live Results"
+      liveResults: "View Real Results"
     },
     howWeGotHere: {
-      badge: "Our path",
-      title: "How we got here",
-      firstParagraph: "ElDoradoFx wasn't built overnight. It's the result of years spent observing markets, making mistakes, refining execution, and understanding that survival always comes before profit.",
-      secondParagraph: "We've traded through different market cycles, different conditions, and different emotional states. What remained constant was the need for structure, discipline, and defined risk."
+      badge: "Our Path",
+      title: "How ElDoradoFX Was Built",
+      firstParagraph: "ElDoradoFX didn’t appear overnight. It came from years of screen time, losses, self-reflection, and slow, deliberate growth. Profit came only after discipline.",
+      secondParagraph: "We’ve traded through chaos and calm. We’ve seen winning streaks and losing seasons. But what never changed? Structure, risk control, and execution with intent."
     },
     contact: {
-      badge: "Our channels",
-      title: "Where we share our work",
-      description: "Each platform has a clear role — education, community and updates. We don't cross-post noise. We use each channel intentionally.",
+      badge: "Our Channels",
+      title: "Where We Actually Trade & Teach",
+      description: "We don’t post noise. We don’t chase engagement. Every platform we use has one purpose: to bring you closer to how real traders operate.",
       socialFeed: "Social Feed",
       followJourney: "Follow the Journey",
-      followJourneyDescription: "Daily market snapshots, lifestyle behind the charts, and rapid-fire execution updates.",
+      followJourneyDescription: "Daily market snapshots. Behind-the-scenes from real traders. Live execution insights without the influencer fluff.",
       youtube: {
-        title: "Market breakdowns & execution logic",
-        description: "We use YouTube to explain how we analyze markets, how trades are structured, and why risk management comes first. No hype — just process and reasoning."
+        title: "Breakdowns That Actually Teach",
+        description: "Our YouTube is where we explain what we’re seeing in the market, how trades are structured, and what to expect for the following day."
       },
       telegram: {
-        title: "Where the work actually happens",
-        description: "Telegram is not support. It's not marketing. It's where analysis, execution logic and real-time context live.",
-        oneChannel: "One channel. Clear structure.",
-        oneChannelDescription: "We use Telegram as a real working environment. Market context, execution notes and updates are shared openly, without promises or artificial urgency.",
-        marketContext: "• Market context & structure",
-        executionReasoning: "• Execution reasoning",
-        freePremium: "• Free & premium environments",
-        accessWarning: "Access to groups is managed from the main channel. No guarantees. No signals without context.",
-        accessFreeSignals: "Access Our Free Signals Group"
+        title: "Where the Real Work Happens",
+        description: "Telegram is our live workspace. No support fluff. No fake urgency. Just structured market insight and execution updates — in real time.",
+        oneChannel: "One Channel. Total Focus.",
+        oneChannelDescription: "We treat Telegram like a trading floor. Market context, logic behind every trade, and real-time feedback. No recycled signals. No random spam.",
+        marketContext: "• Market structure & real-time context",
+        executionReasoning: "• The 'why' behind every trade",
+        freePremium: "• Free group & VIP channel access",
+        accessWarning: "Access is managed directly through our main Telegram. No fake countdowns. No signals without structure.",
+        accessFreeSignals: "Join Our Free Signals Group"
       },
       telegramEcosystem: {
         badge: "Telegram Ecosystem",
-        title: "Real-time Intelligence",
-        description: "Direct access to our trading floor. Join the VIP channel, use our signals bot, and chat with the community."
+        title: "Real-Time Market Intelligence",
+        description: "This isn’t just chat. It’s direct access to our full system VIP signals, live analysis, automation tools, and a focused community of traders."
       }
     },
     approach: {
-      notOurStyle: "Not our style",
-      whatWeDontDo: "What we don't do",
-      noHype: "• No hype or unrealistic promises",
-      noRandom: "• No random entries or overtrading",
-      noUndefinedRisk: "• No signals without defined risk",
-      noEmotional: "• No emotional decision-making",
-      ourApproach: "Our approach",
-      whatWeFocusOn: "What we focus on",
-      capitalProtection: "• Capital protection comes first",
-      ruleBased: "• Rule-based execution only",
-      fewerTrades: "• Fewer trades, higher clarity",
-      longTermConsistency: "• Long-term consistency over time"
+      notOurStyle: "What We Don’t Do",
+      whatWeDontDo: "We’re not here for hype or chaos. Here’s what you won’t find at ElDorado FX:",
+      noHype: "• No hype, no fake promises",
+      noRandom: "• No random entries or FOMO trades",
+      noUndefinedRisk: "• No setups without clear risk parameters",
+      noEmotional: "• No emotion-driven decisions",
+      ourApproach: "What We Do Instead",
+      whatWeFocusOn: "This is the framework that’s helped us and our members stay consistent:",
+      capitalProtection: "• Protect capital above all else",
+      ruleBased: "• Execute only on rule-based setups",
+      fewerTrades: "• Trade less, trade better",
+      longTermConsistency: "• Focus on long-term compounding, not quick wins"
     },
     finalCta: {
-      ifThisResonates: "If this approach resonates with you",
-      talkToUs: "Talk to us"
-    },
-    heroForPages: {
-      tradingSystems: "Trading Systems",
-      logicOverEmotion: "Logic over emotion",
-      logicOverEmotionDescription: "All our services are built around predefined rules, capital protection and disciplined execution."
+      ifThisResonates: "If this feels like your kind of trading…",
+      talkToUs: "Let’s talk."
     },
     servicesGrid: {
       free: {
         badge: "Free",
-        title: "Free Signals",
-        subtitle: "Public access · No commitment",
+        title: "Free Signals Group",
+        subtitle: "No cost · No commitment",
         xaubtc: "XAUUSD · BTCUSD",
-        manualExecution: "Manual execution",
-        basicRisk: "Basic risk rules",
-        tradeExplanations: "Trade explanations",
-        educationIncluded: "Education included",
-        customization: "Customization",
-        privateAccess: "Private access",
-        noPayment: "No payment",
-        learnMore: "Learn more"
+        manualExecution: "Manual trades you can follow",
+        basicRisk: "Basic risk rules always included",
+        tradeExplanations: "No live trading",
+        educationIncluded: "No Market Analysis",
+        customization: "Public channel access",
+        privateAccess: "No private coaching",
+        noPayment: "Completely free, forever",
+        learnMore: "See what's inside"
       },
       premium: {
         badge: "Recommended",
-        title: "Premium Signals",
-        subtitle: "Structured · Explained · Disciplined",
-        advancedRisk: "Advanced risk framework",
-        ongoingSupport: "Ongoing support",
-        monthlyYearly: "Monthly / Yearly",
+        title: "Premium Signals Access",
+        subtitle: "More structure · More clarity",
         xaubtc: "XAUUSD · BTCUSD",
-        manualExecution: "Manual execution",
-        basicRisk: "Basic risk rules",
-        tradeExplanations: "Trade explanations",
-        educationIncluded: "Education included",
-        customization: "Customization",
-        privateAccess: "Private access",
-        noPayment: "No payment",
-        learnMore: "Learn more"
+        manualExecution: "Trade with real-time guidance",
+        advancedRisk: "Advanced risk management framework",
+        ongoingSupport: "Ongoing mentorship & updates",
+        monthlyYearly: "Monthly or yearly access",
+        tradeExplanations: "Live trading sessions",
+        educationIncluded: "Masterclasses Discount",
+        customization: "Private group environment",
+        privateAccess: "Direct access to the team",
+        noPayment: "No hidden fees",
+        learnMore: "Explore Premium Access"
       },
       bot: {
         badge: "Automation",
-        title: "Trading Bot",
-        subtitle: "Fully automated · Logic-driven",
+        title: "Auto-Trading Bot",
+        subtitle: "Hands-free · Logic-first",
         xaubtc: "XAUUSD only",
-        automatedExecution: "Automated execution",
-        hardcodedRisk: "Hard-coded risk rules",
-        logicBased: "Logic-based entries",
-        emotionalFree: "Emotional-free trading",
-        setForget: "Set & forget",
-        oneTimePayment: "One-time payment"
+        automatedExecution: "Fully automated trades",
+        hardcodedRisk: "Risk parameters are hard-coded",
+        logicBased: "Rules-based decision making",
+        emotionalFree: "No emotional trading",
+        setForget: "Set it up once, let it run",
+        oneTimePayment: "One-time payment only"
       }
     },
+
+    riskDisclosure: {
+        badge: "Legal Compliance",
+        title: "Read carefully <br/> before you trade",
+        description: "Trading is not a game of luck; it is a discipline of risk management. Below is the structure of what you are accepting when you enter the market.",
+        sections: {
+          one: {
+            number: "01",
+            title: "High Risk & Leverage",
+            text: "Trading Forex and Cryptocurrencies carries a high level of risk. The leverage provided can work against you as much as it can work for you. You may lose all of your initial investment."
+          },
+          two: {
+            number: "02",
+            title: "No Financial Advice",
+            text: "We are educators, not brokers. Every signal or bot trade is an educational case study. You take full responsibility for every 'Buy' or 'Sell' order you execute."
+          },
+          three: {
+            number: "03",
+            title: "Technical Limitations",
+            text: "Slippage, internet lag, and broker execution errors are part of the game. ElDorado FX is not liable for losses due to technical malfunctions or platform failures."
+          }
+        },
+        footer: "Official Disclosure © {year} ElDorado FX"
+      },
+    
     countdown: {
       hrs: "HRS",
       min: "MIN",
@@ -242,231 +262,257 @@ export const ui = {
       home: "Inicio",
       services: "Servicios",
       about: "Sobre nosotros",
-      contact: "Contacto",
+      contact: "Canales",
       ariaLabel: "Cambiar idioma"
     },
     hero: {
-      badge: "Señales de trading y automatización",
-      title: "Señales de trading <br /> profesionales y automatización",
-      description: "Señales de mercado de alta calidad y automatización, construidas en torno a la gestión de riesgos.",
-      joinUs: "Únete a nosotros",
-      viewServices: "Ver servicios",
-      liveMarketStructure: "Estructura de mercado en tiempo real · XAUUSD y BTCUSD"
+      badge: "Señales expertas · Trading automático · Resultados reales",
+      title: "Deja que traders reales trabajen por ti. <br /> mientras tú obtienes beneficios",
+      description: "Señales diarias en XAUUSD y BTCUSD por traders verificados o automatiza todo con nuestro bot. Sin estrés. Sin dudas. Solo resultados consistentes.",
+      joinUs: "Únete al grupo gratuito",
+      viewServices: "Ver cómo funciona",
+      liveMarketStructure: "Análisis en tiempo real · Operaciones reales · Más de 6 años de experiencia"
     },
     servicesSection: {
-      badge: "Esto es lo que hacemos"
+      badge: "Esto es lo que mejor hacemos"
     },
     servicesTabs: {
-      forexTitle: "Forex como nunca antes",
+      forexTitle: "Forex que se adapta a ti",
       signals: {
         tab: "Señales",
-        title: "Señales de Trading Gratuitas y Premium",
-        description: "Señales de trading estructuradas en torno a la gestión de riesgos, la claridad y la ejecución disciplinada. Información gratuita para aprender, acceso premium para la consistencia."
+        title: "Señales Gratuitas y VIP",
+        description: "Recibe señales claras y precisas en XAUUSD y BTCUSD. Puedes copiarlas tal cual o analizarlas para mejorar tu trading. Tú decides."
       },
       coaching: {
         tab: "Coaching 1:1",
-        title: "Coaching de Trading Personalizado",
-        description: "Guía personal centrada en la mentalidad, la protección del capital y el refinamiento del proceso, adaptada a su nivel de trading y objetivos."
+        title: "Mentoría Privada de Trading",
+        description: "Mejora tu operativa con acompañamiento real. Mentalidad, gestión de capital y estrategia — todo adaptado a tu nivel."
       },
       bot: {
         tab: "Bot de Trading",
-        title: "Automatización Premium",
-        description: "Estrategias automatizadas basadas en reglas diseñadas para eliminar el sesgo emocional respetando reglas estrictas de riesgo y preservación de capital."
+        title: "Bot Automático Plug & Play",
+        description: "Nuestro bot opera por ti con reglas claras y sin emociones. Conéctalo a tu cuenta MT4 y deja que trabaje mientras tú haces lo tuyo."
       }
     },
     footer: {
-      description: "Trading estructurado, mentalidad primero en riesgo. Sin promesas. Sin atajos.",
+      description: "Trading con estructura y enfoque en el riesgo. Sin promesas vacías. Sin atajos.",
       navigation: "Navegación",
       legal: "Legal",
-      disclaimer: "El trading de productos apalancados conlleva un alto nivel de riesgo y puede no ser adecuado para todos los inversores. El desempeño pasado no es indicativo de resultados futuros.",
+      disclaimer: "El trading con productos apalancados implica un alto nivel de riesgo y puede no ser adecuado para todos los inversores. El rendimiento pasado no garantiza resultados futuros.",
       terms: "Términos",
-      privacy: "Privacidad",
-      copyright: "© {year} ElDoradoFx. Todos los derechos reservados.",
+      privacy: "Política de privacidad",
+      copyright: "© {year} ElDoradoFX. Todos los derechos reservados.",
       developedBy: "Desarrollado por David López",
-      riskWarning: "Advertencia de riesgo: El trading de Forex e Instrumentos Financieros Apalancados conlleva un riesgo significativo y puede resultar en la pérdida de su capital invertido. No debería invertir más de lo que puede permitirse perder. El desempeño pasado no garantiza resultados futuros."
+      riskWarning: "Advertencia de riesgo: Operar con Forex e instrumentos financieros apalancados conlleva un riesgo significativo y puede provocar la pérdida total de su capital. No invierta más de lo que está dispuesto a perder. Los resultados pasados no aseguran rendimientos futuros."
     },
     team: {
-      badge: "Nuestros traders",
-      title: "Dos Traders, Dos Estrategias",
-      description: "Dos traders profesionales con estilos de ejecución distintos. Uno opera en marcos temporales más cortos. El otro opera configuraciones swing. Ambos siguen la misma mentalidad de riesgo primero.",
-      ricardo: "Ricardo — Scalping",
-      ricardoDescription: "Opera en marcos temporales más cortos con entradas y salidas rápidas. Enfocado en precisión, velocidad y control de riesgo estricto. Cada operación sigue las mismas reglas de ejecución.",
-      masterKelvin: "MasterKelvin — Swing Trading",
-      masterKelvinDescription: "Se enfoca en posiciones de varios días basadas en la estructura de marcos temporales superiores. Menos frecuente, más paciente. El riesgo siempre se define antes de la entrada. Proceso sobre impulso.",
-      adaptability: "Dos estilos permiten flexibilidad a través de condiciones de mercado. Cuando las condiciones de scalping se debilitan, las configuraciones swing pueden ser más claras — y viceversa. Esto no se trata de cobertura. Se trata de adaptabilidad estructural."
+      badge: "Nuestros Traders",
+      title: "Dos Traders. Dos Estilos. Un Solo Enfoque.",
+      description: "Uno es scalper. El otro, swing trader. Juntos combinan más de 6 años de experiencia real en Forex con un mismo principio: disciplina, estructura y gestión de riesgo ante todo.",
+      ricardo: "Ricardo el Scalper",
+      ricardoDescription: "Opera en marcos temporales bajos con entradas y salidas rápidas. Precisión quirúrgica, velocidad y control estricto del riesgo. Cada operación sigue reglas claras y repetibles.",
+      masterKelvin: "MasterKelvin el Swing Trader",
+      masterKelvinDescription: "Opera con paciencia y visión a varios días. Identifica estructuras limpias en marcos temporales mayores y ejecuta solo cuando el riesgo está definido. Menos trades, más intención.",
+      adaptability: "Dos estilos. Dos ritmos. Una sola ventaja. No es cobertura: es adaptación. Cuando el mercado no da entradas rápidas, el swing toma el control — y viceversa."
     },
     signals: {
       badge: "Ejecución manual",
-      title: "Señales de Trading",
-      description: "Señales manuales de alta calidad enfocadas en XAUUSD y BTCUSD, ejecutadas con reglas estrictas de gestión de riesgo.",
-      entryStopTargets: "• Entrada clara, stop-loss y objetivos",
-      capitalProtection: "• Protección del capital primero",
-      noOvertrading: "• Sin overtrading, sin exageraciones",
-      accessFreeSignals: "Acceder a nuestro grupo de señales gratuitas"
+      title: "Señales de Trading Manual",
+      description: "Recibe señales claras en XAUUSD y BTCUSD. Todo con entrada, stop y objetivos definidos. Solo copia, ejecuta y aprende si quieres ir más allá.",
+      entryStopTargets: "• Entrada, stop-loss y targets definidos",
+      capitalProtection: "• Protección del capital ante todo",
+      noOvertrading: "• Sin sobreoperar, sin ruido innecesario",
+      accessFreeSignals: "Únete al grupo gratuito de señales"
     },
     bot: {
       badge: "Automatización",
-      title: "Bot de Trading",
-      emotionFree: "• Ejecución sin emociones",
-      ruleBased: "• Entradas basadas en reglas",
-      setForget: "• Operación configurar y olvidar",
-      learnMore: "Más información"
+      title: "Bot de Trading Automático",
+      emotionFree: "• Sin emociones. Solo ejecución lógica.",
+      ruleBased: "• Entradas basadas en reglas reales",
+      setForget: "• Configura una vez y deja que opere por ti",
+      learnMore: "Cómo funciona"
     },
     masterclass: {
       badge: "Educación",
       title: "Masterclass de Trading",
-      description: "Aprenda los fundamentos detrás de nuestro marco de trading.",
-      riskManagement: "Gestión de riesgos 101",
-      marketStructure: "Fundamentos de estructura de mercado",
-      signalExecution: "Reglas de ejecución de señales",
-      learnMore: "Más información"
+      description: "Aprende cómo operamos en serio desde la estructura del mercado hasta la ejecución. Nada de teoría vacía. Solo lo que usamos día a día.",
+      riskManagement: "Gestión de riesgo desde cero",
+      marketStructure: "Lectura de estructura de mercado",
+      signalExecution: "Cómo y cuándo ejecutamos una señal",
+      learnMore: "Ver detalles"
     },
     philosophy: {
       badge: "Nuestra filosofía",
-      title: "Cómo entendemos el trading",
-      description: "No prometemos resultados. Definimos un marco claro de cómo operamos, gestionamos el riesgo y tomamos decisiones.",
+      title: "El marco que seguimos. El motivo por el que seguimos ganando.",
+      description: "No prometemos resultados rápidos. Seguimos un marco claro basado en disciplina, estructura y mentalidad a largo plazo. Esto es trading con intención.",
       principles: {
         definedRisk: "Riesgo definido en cada operación",
-        noOverexposure: "Sin sobreexposición, nunca",
-        transparentLogic: "Lógica y reglas transparentes",
-        consistencyOverFrequency: "Consistencia sobre frecuencia",
-        executionWithoutImpulse: "Ejecución sin impulso",
-        longTermMindset: "Mentalidad a largo plazo"
+        noOverexposure: "Nunca sobreexponemos el capital",
+        transparentLogic: "Lógica clara y reglas replicables",
+        consistencyOverFrequency: "Consistencia > cantidad de operaciones",
+        executionWithoutImpulse: "Sin decisiones impulsivas",
+        longTermMindset: "Mentalidad enfocada en el largo plazo"
       },
       bento: {
         strategicCore: "Núcleo Estratégico",
-        masterOneMarket: "Domine un mercado. Ignore el ruido.",
-        masterOneMarketDescription: "No perseguimos señales en cada rincón del mundo forex. Nos especializamos. XAUUSD es nuestro enfoque principal, con BTC en la mezcla cuando importa. La simplicidad es una estrategia.",
-        security: "Seguridad",
-        protectCapital: "Proteja su capital a toda costa",
-        protectCapitalDescription: "Sin capital, sin juego. La preservación es la prioridad #1. Usamos stops loss estrictos y negociables, y nos enfocamos en la consistencia sobre victorias llamativas. Pips pequeños. Gran disciplina.",
+        masterOneMarket: "Especialízate, No persigas sombras.",
+        masterOneMarketDescription: "No seguimos todo el mercado. Nos enfocamos. XAUUSD es nuestro campo de batalla. A veces BTC. Simplicidad = ventaja.",
+        security: "Protección de Capital",
+        protectCapital: "Sin capital, no hay juego, no lo quemes.",
+        protectCapitalDescription: "Proteger el capital es la regla #1. Usamos stops claros, sin excepciones, y priorizamos consistencia sobre ganancias llamativas. Disciplina > ego.",
         execution: "Ejecución",
-        priceActionLeads: "El precio lidera. Los indicadores confirman.",
-        priceActionLeadsDescription: "Operamos basándonos en lo que dicen los gráficos primero — análisis técnico limpio. Los indicadores vienen en segundo lugar, solo para confirmar la historia que el precio ya está contando."
+        priceActionLeads: "El precio manda, lo demás confirma.",
+        priceActionLeadsDescription: "Leemos la acción del precio antes que nada. Análisis técnico limpio. Los indicadores solo confirman lo que el gráfico ya dijo."
       }
     },
     trust: {
-      badge: "Nuestros traders",
-      title: "Confianza de traders disciplinados",
-      description: "Dos traders profesionales. Dos estrategias distintas. Un solo enfoque: gestión de riesgo disciplinada, claridad y consistencia a largo plazo a través de condiciones de mercado cambiantes.",
-      learnMore: "Conozca más sobre nuestro enfoque →",
+      badge: "Por qué confían en nosotros",
+      title: "La confianza se gana con disciplina",
+      description: "Dos traders reales. Dos estilos distintos. Un solo enfoque: gestión de riesgo disciplinada, claridad total y consistencia real en cualquier tipo de mercado.",
+      learnMore: "Descubre cómo trabajamos →",
       metrics: {
         yearsExperience: "Años de experiencia",
-        marketsCovered: "Mercados cubiertos",
-        signalsLastYear: "Señales el año pasado",
-        masterclasses: "Masterclasses"
+        marketsCovered: "Mercados operados",
+        signalsLastYear: "Señales ganadoras en el ultimo año",
+        masterclasses: "Masterclasses impartidas"
       },
-      liveResults: "Resultados en vivo"
+      liveResults: "Ver resultados en vivo"
     },
     howWeGotHere: {
       badge: "Nuestro camino",
-      title: "Cómo llegamos aquí",
-      firstParagraph: "ElDoradoFx no se construyó de la noche a la mañana. Es el resultado de años dedicados a observar mercados, cometer errores, refinar la ejecución y comprender que la supervivencia siempre viene antes que el beneficio.",
-      secondParagraph: "Hemos operado a través de diferentes ciclos de mercado, diferentes condiciones y diferentes estados emocionales. Lo que permaneció constante fue la necesidad de estructura, disciplina y riesgo definido."
+      title: "Nada de esto pasó por suerte",
+      firstParagraph: "ElDoradoFX no nació de un día para otro. Es el resultado de años viendo gráficos, tomando pérdidas, afinando ejecución y entendiendo algo clave: primero sobrevives, después ganas.",
+      secondParagraph: "Hemos operado en mercados en euforia y en crisis. Nos hemos equivocado, nos hemos ajustado. Y lo que nunca cambió fue esto: estructura, disciplina y control de riesgo por encima de todo."
     },
     contact: {
       badge: "Nuestros canales",
-      title: "Donde compartimos nuestro trabajo",
-      description: "Cada plataforma tiene un rol claro — educación, comunidad y actualizaciones. No cruzamos ruido. Usamos cada canal intencionalmente.",
-      socialFeed: "Feed Social",
-      followJourney: "Siga el viaje",
-      followJourneyDescription: "Capturas diarias de mercado, estilo de vida detrás de los gráficos y actualizaciones de ejecución de fuego rápido.",
+      title: "Dónde compartimos nuestro trabajo real",
+      description: "Cada canal tiene un propósito. Nada de copiar/pegar. Nada de contenido por likes. Solo educación, comunidad y análisis bien estructurado.",
+      socialFeed: "Redes sociales",
+      followJourney: "Sigue el proceso",
+      followJourneyDescription: "Capturas reales del mercado, estilo de vida detrás de las operaciones y actualizaciones de ejecución sin filtro ni show.",
       youtube: {
-        title: "Análisis de mercado y lógica de ejecución",
-        description: "Usamos YouTube para explicar cómo analizamos los mercados, cómo se estructuran las operaciones y por qué la gestión de riesgo viene primero. Sin exageraciones — solo proceso y razonamiento."
+        title: "Análisis y lógica de ejecución",
+        description: "YouTube es donde explicamos el 'por qué' detrás de cada operación. Nada de hype. Solo estructura, estrategia y gestión real del riesgo."
       },
       telegram: {
-        title: "Donde realmente sucede el trabajo",
-        description: "Telegram no es soporte. No es marketing. Es donde viven el análisis, la lógica de ejecución y el contexto en tiempo real.",
-        oneChannel: "Un canal. Estructura clara.",
-        oneChannelDescription: "Usamos Telegram como un entorno de trabajo real. El contexto del mercado, notas de ejecución y actualizaciones se comparten abiertamente, sin promesas o urgencia artificial.",
-        marketContext: "• Contexto y estructura de mercado",
-        executionReasoning: "• Razonamiento de ejecución",
-        freePremium: "• Entornos gratuitos y premium",
-        accessWarning: "El acceso a los grupos se gestiona desde el canal principal. Sin garantías. Sin señales sin contexto.",
-        accessFreeSignals: "Acceder a nuestro grupo de señales gratuitas"
+        title: "Donde realmente operamos",
+        description: "Telegram no es soporte ni marketing. Es nuestro centro de operaciones: análisis diario, lógica detrás de cada entrada y contexto del mercado en tiempo real.",
+        oneChannel: "Un canal. Todo el enfoque.",
+        oneChannelDescription: "Telegram funciona como nuestra sala de trading. Nada de señales sueltas. Todo tiene contexto, estructura y lógica detrás.",
+        marketContext: "• Estructura y contexto del mercado",
+        executionReasoning: "• Lógica detrás de cada operación",
+        freePremium: "• Acceso gratuito y premium",
+        accessWarning: "El acceso se gestiona solo desde el canal oficial. No damos señales sin contexto. No usamos urgencia falsa.",
+        accessFreeSignals: "Únete al grupo gratuito de señales"
       },
       telegramEcosystem: {
         badge: "Ecosistema Telegram",
         title: "Inteligencia en tiempo real",
-        description: "Acceso directo a nuestro salón de trading. Únase al canal VIP, use nuestro bot de señales y chatee con la comunidad."
+        description: "Accede directo a nuestra operativa: canal VIP, bot de señales y comunidad real. Sin filtros. Sin ruido."
       }
     },
     approach: {
-      notOurStyle: "No es nuestro estilo",
-      whatWeDontDo: "Lo que no hacemos",
-      noHype: "• Sin exageraciones o promesas poco realistas",
-      noRandom: "• Sin entradas aleatorias o overtrading",
-      noUndefinedRisk: "• Sin señales sin riesgo definido",
-      noEmotional: "• Sin toma de decisiones emocional",
-      ourApproach: "Nuestro enfoque",
-      whatWeFocusOn: "En lo que nos enfocamos",
-      capitalProtection: "• La protección del capital viene primero",
-      ruleBased: "• Solo ejecución basada en reglas",
-      fewerTrades: "• Menos operaciones, mayor claridad",
-      longTermConsistency: "• Consistencia a largo plazo en el tiempo"
+      notOurStyle: "Lo que no somos",
+      whatWeDontDo: "Aquí no hacemos esto",
+      noHype: "• Sin promesas vacías ni humo.",
+      noRandom: "• Sin entradas aleatorias ni sobreoperar.",
+      noUndefinedRisk: "• Sin operaciones sin riesgo definido.",
+      noEmotional: "• Sin decisiones tomadas por impulso.",
+      ourApproach: "Lo que sí hacemos.",
+      whatWeFocusOn: "Nuestro enfoque es simple pero potente:",
+      capitalProtection: "• Proteger el capital es prioridad #1.",
+      ruleBased: "• Solo operamos con reglas claras.",
+      fewerTrades: "• Menos operaciones, mejor ejecución.",
+      longTermConsistency: "• Constancia a largo plazo, no ganancias rápidas."
     },
     finalCta: {
-      ifThisResonates: "Si este enfoque resuena con usted",
-      talkToUs: "Hable con nosotros"
+      ifThisResonates: "Si esto conecta contigo...",
+      talkToUs: "Hablemos."
     },
     heroForPages: {
       tradingSystems: "Sistemas de Trading",
-      logicOverEmotion: "Lógica sobre emoción",
-      logicOverEmotionDescription: "Todos nuestros servicios están construidos en torno a reglas predefinidas, protección de capital y ejecución disciplinada."
+      logicOverEmotion: "Lógica por encima de la emoción",
+      logicOverEmotionDescription: "Todos nuestros servicios están construidos sobre reglas claras, gestión de riesgo y ejecución sin improvisaciones."
     },
     servicesPage: {
       badge: "Acceso",
-      title: "Servicios y acceso",
-      description: "Elija según la estructura, el nivel de automatización y el marco de riesgo.",
-      riskShort: "El trading implica riesgos.",
-      readFullDisclosure: "Leer la advertencia de riesgo completa"
+      title: "Servicios diseñados para tu estilo de trading",
+      description: "Elige según tu nivel de experiencia, tiempo disponible y tolerancia al riesgo. Puedes operar, seguir señales o automatizar todo.",
+      riskShort: "Sí, el trading tiene riesgo... pero quedarse quieto también.",
+      readFullDisclosure: "Lee la advertencia completa de riesgo"
     },
     servicesGrid: {
       free: {
-        badge: "Gratis",
-        title: "Señales Gratuitas",
-        subtitle: "Acceso público · Sin compromiso",
+        badge: "Acceso Gratuito",
+        title: "Comunidad de Señales",
+        subtitle: "Sin costes · Sin compromisos",
         xaubtc: "XAUUSD · BTCUSD",
-        manualExecution: "Ejecución manual",
-        basicRisk: "Reglas de riesgo básicas",
-        tradeExplanations: "Explicaciones de operaciones",
-        educationIncluded: "Educación incluida",
-        customization: "Personalización",
-        privateAccess: "Acceso privado",
-        noPayment: "Sin pago",
-        learnMore: "Más información"
+        manualExecution: "Operativas manuales para copiar",
+        basicRisk: "Gestión de riesgo básica incluida",
+        tradeExplanations: "Sin sesiones en directo",
+        educationIncluded: "Sin análisis de mercado profundo",
+        customization: "Acceso a canal público",
+        privateAccess: "Sin mentoría privada",
+        noPayment: "Gratis de por vida",
+        learnMore: "Ver qué hay dentro"
       },
+
       premium: {
-        badge: "Recomendado",
-        title: "Señales Premium",
-        subtitle: "Estructurado · Explicado · Disciplinado",
-        advancedRisk: "Marco de riesgo avanzado",
-        ongoingSupport: "Soporte continuo",
-        monthlyYearly: "Mensual / Anual",
+        badge: "Lo más elegido",
+        title: "Señales VIP Premium",
+        subtitle: "Máxima estructura y claridad",
         xaubtc: "XAUUSD · BTCUSD",
-        manualExecution: "Ejecución manual",
-        basicRisk: "Reglas de riesgo básicas",
-        tradeExplanations: "Explicaciones de operaciones",
-        educationIncluded: "Educación incluida",
-        customization: "Personalización",
-        privateAccess: "Acceso privado",
-        noPayment: "Sin pago",
-        learnMore: "Más información"
+        manualExecution: "Guía y ejecución en tiempo real",
+        advancedRisk: "Marco avanzado de gestión de riesgo",
+        ongoingSupport: "Mentoría y actualizaciones constantes",
+        monthlyYearly: "Planes mensuales o anuales",
+        tradeExplanations: "Sesiones de trading en vivo",
+        educationIncluded: "Descuento en Masterclasses",
+        customization: "Entorno privado exclusivo",
+        privateAccess: "Contacto directo con el equipo",
+        noPayment: "Sin comisiones ocultas",
+        learnMore: "Desbloquear acceso VIP"
       },
+
       bot: {
         badge: "Automatización",
-        title: "Bot de Trading",
-        subtitle: "Totalmente automatizado · Basado en lógica",
-        xaubtc: "Solo XAUUSD",
-        automatedExecution: "Ejecución automatizada",
-        hardcodedRisk: "Reglas de riesgo codificadas",
-        logicBased: "Entradas basadas en lógica",
-        emotionalFree: "Trading sin emociones",
-        setForget: "Configurar y olvidar",
-        oneTimePayment: "Pago único"
+        title: "Trading Bot Institucional",
+        subtitle: "100% Manos libres · Basado en lógica",
+        xaubtc: "Especializado en XAUUSD",
+        automatedExecution: "Ejecución totalmente automatizada",
+        hardcodedRisk: "Riesgo blindado por algoritmo",
+        logicBased: "Decisiones 100% objetivas",
+        emotionalFree: "Cero errores humanos o emocionales",
+        setForget: "Configúralo y deja que trabaje por ti",
+        oneTimePayment: "Pago único (Acceso de por vida)",
+        educationIncluded: "No incluye mentoría"
       }
     },
+
+    riskDisclosure: {
+        badge: "Cumplimiento Legal",
+        title: "Lee con atención <br/> antes de operar",
+        description: "El trading no es un juego de azar; es una disciplina de gestión de riesgo. A continuación detallamos lo que aceptas al entrar al mercado.",
+        sections: {
+          one: {
+            number: "01",
+            title: "Alto Riesgo y Apalancamiento",
+            text: "Operar Forex y Criptomonedas conlleva un riesgo elevado. El apalancamiento puede trabajar tanto a tu favor como en tu contra. Puedes perder la totalidad de tu capital invertido."
+          },
+          two: {
+            number: "02",
+            title: "Sin Asesoría Financiera",
+            text: "Somos educadores, no brokers. Cada señal o trade del bot es un estudio de caso educativo. Tú asumes la responsabilidad total de cada orden de compra o venta."
+          },
+          three: {
+            number: "03",
+            title: "Limitaciones Técnicas",
+            text: "El slippage, el lag y los errores de ejecución del broker son parte del negocio. ElDorado FX no se hace responsable por pérdidas debidas a fallos técnicos."
+          }
+        },
+        footer: "Descargo Oficial © {year} ElDorado FX"
+      },
     countdown: {
       hrs: "HRS",
       min: "MIN",

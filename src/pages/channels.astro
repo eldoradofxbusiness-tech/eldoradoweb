@@ -1,11 +1,11 @@
 ---
-import CorporateLayout from "../../layouts/CorporateLayout.astro";
-import HeroForPages from "../../components/sections/HeroForPages.astro";
+import CorporateLayout from "../layouts/CorporateLayout.astro";
+import HeroForPages from "../components/sections/HeroForPages.astro";
 
-import Youtube from "../../components/sections/social-media/Youtube.astro";
-import MediaBento from "../../components/sections/MediaBento.astro";
-import Telegram from "../../components/sections/social-media/Telegram.astro";
-import { useTranslations, getLanguageFromPath } from "../../i18n/utils";
+import Youtube from "../components/sections/social-media/Youtube.astro";
+import MediaBento from "../components/sections/MediaBento.astro";
+import Telegram from "../components/sections/social-media/Telegram.astro";
+import { useTranslations, getLanguageFromPath } from "../i18n/utils";
 
 const lang = getLanguageFromPath(Astro.url.pathname);
 const t = useTranslations(lang);
@@ -14,9 +14,9 @@ const t = useTranslations(lang);
 <CorporateLayout title="ElDoradoFx — Our Channels">
 
 <HeroForPages
-  badge="Nuestros canales"
-  title="Donde compartimos nuestro trabajo"
-  description="Cada plataforma tiene un papel claro: educación, comunidad y actualizaciones. No publicamos contenido irrelevante."
+  badge="Our Channels"
+  title="Where Trading Meets Transparency"
+  description="Get a closer look at how we trade, what we teach, and how we think across Telegram, YouTube, and our daily market feed."
   videoSrc="/hero_videos/social_hero.mp4"
   videoClass="opacity-30"
 />
@@ -27,9 +27,9 @@ const t = useTranslations(lang);
 />
 
 <MediaBento
-  badge='Siga el viaje'
-  title="Siga el viaje"
-  description="Capturas diarias de mercado, estilo de vida detrás de los gráficos y actualizaciones de ejecución de fuego rápido."
+  badge={t("contact.socialFeed")}
+  title={t("contact.followJourney")}
+  description="Here you will find our personal side, behind-the-scenes content, and psico trading advice."
   mainLabel="@eldoradofx"
   icon="ig"
   images={[
@@ -39,7 +39,7 @@ const t = useTranslations(lang);
       badge: "ig"
     },
      {
-      src: "/social_images/ig_image_2.webp",
+      src: "social_images/ig_image_2.webp",
       link: "https://www.instagram.com/reel/DQzH6c_jHqY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       badge: "ig"
     }, {
