@@ -5,16 +5,20 @@ import tailwindcss from '@tailwindcss/vite';
 
 import react from '@astrojs/react';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
 
+  site: 'https://www.eldoradofx.com',
+
   prefetch: {
     prefetchAll: false, 
     defaultStrategy: 'viewport'
   },
 
-  integrations: [react()]
+  integrations: [react(), sitemap()]
 });

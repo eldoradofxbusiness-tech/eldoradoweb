@@ -10,8 +10,10 @@ import { useTranslations, getLanguageFromPath } from "../i18n/utils";
 const lang = getLanguageFromPath(Astro.url.pathname);
 const t = useTranslations(lang);
 ---
-
-<CorporateLayout title="ElDoradoFx — Our Channels">
+<CorporateLayout 
+  title="Official Channels | Join the ElDorado FX Community"
+  description="Access our live trading floor. Get real-time market context, execution reasoning, and free signals directly on Telegram and YouTube."
+>
 
 <HeroForPages
   badge="Our Channels"
