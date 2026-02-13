@@ -12,12 +12,11 @@ import { useTranslations, getLanguageFromPath } from "../../../i18n/utils";
 const lang = getLanguageFromPath(Astro.url.pathname);
 const t = useTranslations(lang);
 ---
-  <!-- TEAM SECTION -->
   <Section class="py-16 bg-(--color-canvas-end) z-2">
     <Divider class="my-20" />
     <Container class="flex flex-col items-center reveal fade">
 
-      <Badge variant="gold" class="mb-6">
+      <Badge variant="glow" class="mb-6 badge-glow">
         {t("team.badge")}
       </Badge>
 

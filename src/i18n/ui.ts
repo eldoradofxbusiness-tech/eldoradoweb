@@ -9,8 +9,8 @@ export const ui = {
     },
     hero: {
       badge: "Expert Signals · Auto-Trading · Real Results",
-      title: "Let the Pros Trade <br />While You Profit",
-      description: "Daily XAUUSD & BTCUSD signals from verified experts or go fully hands-free with our auto-trading bot. No stress. No guesswork. Just consistent gains.",
+      title: "Stop Guessing Start Profiting<br/>With ElDoradoFX",
+      description: "Expert XAUUSD & BTCUSD signals delivered daily, or go fully automated with our smart trading bot. Designed for traders who want results.",
       joinUs: "Join the Free Group",
       viewServices: "See How It Works",
       liveMarketStructure: "Live market insights · Real trades · 6+ years of experience"
@@ -18,7 +18,7 @@ export const ui = {
     servicesPage: {
       badge: "Your Trading, Your Way",
       title: "Choose Your Path to Profits",
-      description: "Whether you want to trade like a pro, follow signals, or let the bot do it all for you we’ve got the setup that fits your schedule and risk level.",
+      description: "Whether you want to learn step by step, follow expert signals, or automate your trading, we offer options designed for beginners. Pick the path that matches your time, goals, and comfort level.",
       riskShort: "Yes, trading involves risk  but so does staying broke.",
       readFullDisclosure: "Read our full risk disclosure"
     },
@@ -30,17 +30,17 @@ export const ui = {
       signals: {
         tab: "Signals",
         title: "Free & VIP Trading Signals",
-        description: "Get clear, high-accuracy XAUUSD and BTCUSD trades with entry, stop loss, and targets. Just copy to take action, or study the setup to improve your skills. You choose how deep you go."
+        description: "Get simple, easy-to-follow XAUUSD and BTCUSD signals with clear entry, stop loss, and target levels. Just copy the trade and execute or learn step by step by studying each setup. No experience needed."
       },
       coaching: {
         tab: "1:1 Coaching",
         title: "Private Coaching for Traders",
-        description: "Level up your trading with personal mentorship from real pros. Fix your mindset, sharpen your strategy, and protect your capital like a veteran."
+        description: "Accelerate your progress with 1-on-1 mentorship from experienced professionals. Learn the right mindset, build a clear strategy, and manage risk properly so you can trade with confidence and protect your capital."
       },
       bot: {
         tab: "Auto-Trading",
         title: "Plug & Play Trading Bot",
-        description: "Let our bot do the heavy lifting rule-based, emotion-free, and fully managed. Just connect your MT4 account and let it work while you live."
+        description: "Our intelligent trading bot handles the execution for you rule-based, emotion-free, and fully optimized with AI integration. Simply connect your MT4 account and let it trade while you focus on life."
       }
     },
     footer: {
@@ -92,38 +92,38 @@ export const ui = {
     },
     philosophy: {
       badge: "Our Philosophy",
-      title: "The Way We Trade And Why It Works",
-      description: "We don’t make wild promises. We follow a strict framework rooted in discipline, structure, and long-term thinking. This is trading with purpose.",
+      title: "How We Trade And Why It Delivers Results",
+      description: "We follow a proven, structured trading system focused on precision, discipline, and consistency. No hype. No gambling. Just a professional system focused on consistent execution and long-term growth.",
       principles: {
-        definedRisk: "Every trade has a clearly defined risk",
-        noOverexposure: "We never risk more than we can lose",
-        transparentLogic: "Our logic is clean, repeatable, and transparent",
-        consistencyOverFrequency: "We value consistent results over constant action",
-        executionWithoutImpulse: "No emotional trades, ever",
-        longTermMindset: "We play the long game — growth over gimmicks"
+        definedRisk: " Every trade comes with a clear plan you can follow",
+        noOverexposure: "We manage risk carefully to protect your account",
+        transparentLogic: "We focus on steady progress, not risky moves",
+        consistencyOverFrequency: "We focus on steady progress, not risky moves",
+        executionWithoutImpulse: "We follow rules to avoid emotional mistakes",
+        longTermMindset: "We aim for safe, long-term growth"
       },
       bento: {
         strategicCore: "Strategic Core",
-        masterOneMarket: "Specialize. Don’t Chase.",
-        masterOneMarketDescription: "We master one market XAUUSD. Sometimes BTC. That’s it. No noise, no distractions. We go deep, not wide. Simplicity is strategy.",
+        masterOneMarket: "Trade Less. Understand More.",
+        masterOneMarketDescription: "Rather than jumping between many markets, we focus on XAUUSD and key BTCUSD setups. This approach helps us know these markets inside out and provide clearer, more reliable trading opportunities.",
         security: "Capital Protection",
-        protectCapital: "Don't Burn Your Capital, Preserve It.",
-        protectCapitalDescription: "No capital, no game. We use tight stop-losses, clear structure, and never let greed override risk. This isn’t about big wins it’s about staying in the game.",
+        protectCapital: "Protect Your Money First",
+        protectCapitalDescription: "Good trading starts with protecting your capital. We use clear stop-losses, simple risk rules, and disciplined execution to limit losses. The goal isn’t chasing big wins it’s growing your account safely and staying in the game long term.",
         execution: "Execution Style",
-        priceActionLeads: "Price Action First, Indicators Second.",
-        priceActionLeadsDescription: "We trade what the chart *actually* says clean, readable market structure. Indicators only confirm what price action already told us."
+        priceActionLeads: "Price Action First. Indicators Help.",
+        priceActionLeadsDescription: "We focus on what the chart is actually doing. Price action guides our decisions, while indicators are used only to support them. This keeps our trading simple, clear, and easy to understand."
       }
     },
     trust: {
-      badge: "Why Traders Trust Us",
-      title: "Trusted by Traders Who Take It Seriously",
-      description: "Two pros. Two styles. One shared mindset: disciplined risk, clear structure, and long-term consistency no matter the market conditions.",
+      badge: "About Us",
+      title: "Meet the ElDoradoFx Trading Team",
+      description: "We are two professional traders with years of real market experience, each specializing in a different trading style. This gives our members a balanced approach combining fast opportunities with longer-term setups. Ricardo Short-Term Specialist, Ricardo focuses on fast-paced trading and short-term market opportunities. His style is built around quick decision-making, precision timing, and active market execution MasterKelvin Swing Trading Specialist MasterKelvin focuses on medium to longer-term market movements. His approach emphasizes patience, structure, and capturing larger trends as they develop. Together, we combine speed and strategy to give new traders a clear, structured way to approach the market.",
       learnMore: "See how we trade →",
       metrics: {
         yearsExperience: "Years of Experience",
         marketsCovered: "Markets Focused",
-        signalsLastYear: "Winning (Last Year)",
-        masterclasses: "Masterclasses Taught"
+        signalsLastYear: "Winning Signals (Last Year)",
+        masterclasses: "Winning Pips."
       },
       liveResults: "View Real Results"
     },
@@ -179,50 +179,51 @@ export const ui = {
       ifThisResonates: "If this feels like your kind of trading…",
       talkToUs: "Let’s talk."
     },
-    servicesGrid: {
-      free: {
-        badge: "Free",
-        title: "Free Signals Group",
-        subtitle: "No cost · No commitment",
-        xaubtc: "XAUUSD · BTCUSD",
-        manualExecution: "Manual trades you can follow",
-        basicRisk: "Basic risk rules always included",
-        tradeExplanations: "No live trading",
-        educationIncluded: "No Market Analysis",
-        customization: "Public channel access",
-        privateAccess: "No private coaching",
-        noPayment: "Completely free, forever",
-        learnMore: "See what's inside"
-      },
-      premium: {
-        badge: "Recommended",
-        title: "Premium Signals Access",
-        subtitle: "More structure · More clarity",
-        xaubtc: "XAUUSD · BTCUSD",
-        manualExecution: "Trade with real-time guidance",
-        advancedRisk: "Advanced risk management framework",
-        ongoingSupport: "Ongoing mentorship & updates",
-        monthlyYearly: "Monthly or yearly access",
-        tradeExplanations: "Live trading sessions",
-        educationIncluded: "Masterclasses Discount",
-        customization: "Private group environment",
-        privateAccess: "Direct access to the team",
-        noPayment: "No hidden fees",
-        learnMore: "Explore Premium Access"
-      },
-      bot: {
-        badge: "Automation",
-        title: "Auto-Trading Bot",
-        subtitle: "Hands-free · Logic-first",
-        xaubtc: "XAUUSD only",
-        automatedExecution: "Fully automated trades",
-        hardcodedRisk: "Risk parameters are hard-coded",
-        logicBased: "Rules-based decision making",
-        emotionalFree: "No emotional trading",
-        setForget: "Set it up once, let it run",
-        oneTimePayment: "One-time payment only"
-      }
-    },
+  servicesGrid: {
+  free: {
+    badge: "Free",
+    title: "Free Signals Channel",
+    subtitle: "Start trading with zero cost and zero pressure",
+    xaubtc: "XAUUSD trade ideas",
+    manualExecution: "Easy-to-follow manual trades",
+    basicRisk: "Basic risk guidance included",
+    tradeExplanations: "Beginner-friendly environment",
+    educationIncluded: "Community-focused setup",
+    customization: "Public channel access",
+    privateAccess: "No private coaching",
+    noPayment: "Completely free access",
+    learnMore: "See what's inside"
+  },
+  premium: {
+    badge: "Recommended",
+    title: "ElDoradoFx PREMIUM 3.0",
+    subtitle: "Trade with structure, clarity, and professional guidance",
+    xaubtc: "High-probability XAUUSD + Bonus BTCUSD",
+    manualExecution: "Real-time execution guidance never trade alone",
+    advancedRisk: "Advanced risk management framework",
+    ongoingSupport: "Continuous mentorship & market forecast",
+    monthlyYearly: "Flexible monthly or yearly membership",
+    tradeExplanations: "Exclusive live trading sessions",
+    educationIncluded: "Masterclass discounts for Premium members",
+    customization: "Sessions Analysis included",
+    privateAccess: "Direct access to the ElDoradoFx team",
+    noPayment: "Limited spots serious traders only",
+    learnMore: "Explore Premium Access"
+  },
+  bot: {
+    badge: "Automation",
+    title: "AI Auto-Trading Bot",
+    subtitle: "Intelligent Gold Execution",
+    xaubtc: "AI-driven XAUUSD strategy",
+    automatedExecution: "Fully automated no manual trading",
+    hardcodedRisk: "Smart built-in risk management",
+    logicBased: "Emotion-free, data-driven decisions",
+    emotionalFree: "Continuous system updates",
+    setForget: "Easy setup run and monitor",
+    oneTimePayment: "Monthly or one-time payment options",
+    educationIncluded: "Does not include mentorship"
+  }
+},
 
     riskDisclosure: {
         badge: "Legal Compliance",

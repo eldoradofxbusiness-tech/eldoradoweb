@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 ---
 <div class="w-full py-10 px-6 lg:px-0 flex flex-col items-center gap-8 reveal from bottom reveal fade">
 
-   <Badge variant="gold" class="mb-4">
+   <Badge variant="glow" class="mb-4">
         {t("trust.badge")}
     </Badge>
 
@@ -18,10 +18,8 @@ const t = useTranslations(lang);
       {t("trust.title")}
     </Heading>
 
-    <Text muted class="text-base lg:text-lg leading-relaxed max-w-3xl mx-auto">
-      {t("trust.description")}
-    </Text>
-
+   <Text muted class="text-base lg:text-lg leading-relaxed max-w-3xl mx-auto text-center" set:html={t("trust.description")} />
+   
     <div class="flex justify-center">
       <TraderCoins />
     </div>
