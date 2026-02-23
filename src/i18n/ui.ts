@@ -29,7 +29,7 @@ export const ui = {
       forexTitle: "Forex That Fits Your Life",
       signals: {
         tab: "Signals",
-        title: "Free & VIP Trading Signals",
+        title: "Free & Premium TradingSignals",
         description: "Get simple, easy-to-follow XAUUSD and BTCUSD signals with clear entry, stop loss, and target levels. Just copy the trade and execute or learn step by step by studying each setup. No experience needed."
       },
       coaching: {
@@ -117,7 +117,7 @@ export const ui = {
     trust: {
       badge: "About Us",
       title: "Meet the ElDoradoFx Trading Team",
-      description: "We are two professional traders with years of real market experience, each specializing in a different trading style. This gives our members a balanced approach combining fast opportunities with longer-term setups. Ricardo Short-Term Specialist, Ricardo focuses on fast-paced trading and short-term market opportunities. His style is built around quick decision-making, precision timing, and active market execution MasterKelvin Swing Trading Specialist MasterKelvin focuses on medium to longer-term market movements. His approach emphasizes patience, structure, and capturing larger trends as they develop. Together, we combine speed and strategy to give new traders a clear, structured way to approach the market.",
+      description: "We are two professional traders with 8+ years of real market experience, each specializing in a different trading style. Ricardo Short-Term Specialist, Ricardo focuses on fast-paced trading and short-term market opportunities. MasterKelvin Swing Trading Specialist focuses on medium to longer-term market movements. Together, we combine speed and strategy to give new traders a clear, structured way to approach the market.",
       learnMore: "See how we trade →",
       metrics: {
         yearsExperience: "Years of Experience",
