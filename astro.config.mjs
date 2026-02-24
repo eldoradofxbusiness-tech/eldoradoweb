@@ -25,5 +25,13 @@ export default defineConfig({
   integrations: [react(), sitemap()],
   
   
-  adapter: cloudflare()
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
+    runtime: {
+      mode: 'directory', 
+      type: 'pages',
+    }
+  })
 });
