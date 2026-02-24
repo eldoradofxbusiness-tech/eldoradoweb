@@ -1,6 +1,6 @@
 {
 	"main": "dist/_worker.js/index.js",
-	"name": "eldoradofxweb",
+	"name": "eldoradoweb",
   "compatibility_date": "2026-02-03",
   "compatibility_flags": [
     "nodejs_compat",
