@@ -10,10 +10,9 @@ import Badge from "../../components/ui/Badge.astro";
 import TelegramIcon from "../../components/ui/TelegramIcon.astro";
 import ParticlesBackground from "../../components/ui/ParticlesBackground.astro";
 import HeroGlow from "../../components/ui/HeroGlow.astro";
-import Brokers from "../../components/ui/Brokers.astro";
 import Divider from "../../components/ui/Divider.astro";
 import TestimonialsCarousel from "../../components/react/TestimonialsCarousel";
-import { CheckCircle2, TrendingUp, Users, ShieldCheck, Zap, BarChart3 } from "lucide-react";
+import { CheckCircle2, TrendingUp, Users, Zap, BarChart3 } from "lucide-react";
 import { useTranslations, getLanguageFromPath } from "../../i18n/utils";
 import { ui } from "../../i18n/ui";
 
@@ -22,10 +21,10 @@ const lang = getLanguageFromPath(Astro.url.pathname);
 const TARGET_DATE = "2026-02-01T00:00:00"; 
 ---
 
-<LandingLayout 
-  title="ElDoradoFX – Free Signals | 91% Win Rate"
-  description="Join 1,000+ traders getting daily signals that actually work. 100% Free."
-  ctaText="JOIN FREE SIGNALS CHANNEL"
+<LandingLayout
+  title="ElDoradoFX – Understand Gold. Trade With Clarity."
+  description="Daily XAUUSD breakdowns, key levels, and simple explanations — plus high-probability trade ideas. Free access."
+  ctaText="ACCESS FREE GOLD ANALYSIS"
   ctaHref="https://t.me/eldoradofxfree"
 >
   <Section class="relative min-h-screen flex items-center bg-black overflow-hidden pt-20">
@@ -41,18 +40,24 @@ const TARGET_DATE = "2026-02-01T00:00:00";
             VERIFIED TELEGRAM GROUP
           </Badge>
         </div>
-        
+
         <Heading level={1} class="text-6xl md:text-[110px] mb-6 font-black uppercase italic leading-[0.8] text-white tracking-tighter">
-          REAL SIGNALS. <br/>
-          <span class="text-yellow-400 drop-shadow-[0_0_40px_rgba(185,138,37,0.5)]">ZERO COST. ZERO FLUFF.</span>
+          UNDERSTAND <span class="text-yellow-400 drop-shadow-[0_0_40px_rgba(185,138,37,0.5)]">GOLD.</span> <br/>
+          <span class="text-white">TRADE WITH </span><span class="text-yellow-400 drop-shadow-[0_0_40px_rgba(185,138,37,0.5)]">CLARITY.</span>
         </Heading>
-        
+
         <Text class="text-xl md:text-2xl text-white/70 mb-10 max-w-3xl leading-tight">
-          Join <span class="text-white font-bold">ElDoradoFX Free</span> — our public channel where real traders get daily XAUUSD & BTCUSD setups. Nothing to pay. Nothing to prove.
+          Daily XAUUSD breakdowns, key levels, and simple explanations — plus a limited number of high-probability trade ideas.
         </Text>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 w-full max-w-3xl">
-          {["No signups", "No spam", "No shady admins"].map(item => (
+        <Button variant="primary" href="https://t.me/eldoradofxfree" class="px-16 py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
+          <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
+          ACCESS TODAY’S GOLD ANALYSIS
+        </Button>
+        <p class="mt-4 text-[10px] tracking-[0.3em] text-white/40 font-bold uppercase">Free access. No signup. No noise.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10 w-full max-w-3xl">
+          {["No overhyped promises", "No signal spam", "No confusing analysis"].map(item => (
             <div class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <CheckCircle2 size={16} class="text-yellow-500" />
               <span class="text-[10px] uppercase tracking-widest font-bold text-white/90">{item}</span>
@@ -60,11 +65,7 @@ const TARGET_DATE = "2026-02-01T00:00:00";
           ))}
         </div>
 
-        <Button variant="primary" href="https://t.me/eldoradofxfree" class="px-16 py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
-          <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
-          JOIN THE FREE SIGNALS CHANNEL
-        </Button>
-        <p class="mt-4 text-[10px] tracking-[0.3em] text-white/40 font-bold uppercase">It’s instant. No form. Just value.</p>
+        <p class="mt-8 text-white/50 text-sm italic">Used by traders looking for clarity — not random entries.</p>
       </div>
     </Container>
   </Section>
@@ -72,19 +73,18 @@ const TARGET_DATE = "2026-02-01T00:00:00";
   <Section class="py-32 bg-canvas relative overflow-hidden">
     <Container>
       <div class="max-w-4xl mx-auto mb-20 text-center">
-        <Badge variant="gold" class="mb-4">INSIDE THE GROUP</Badge>
+        <Badge variant="gold" class="mb-4">INSIDE THE CHANNEL</Badge>
         <Heading level={2} class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white">
-          What You Get <span class="text-yellow-400">For Free</span>
+          What Traders Are <span class="text-yellow-400">Seeing Daily</span>
         </Heading>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {[
-          { t: "DAILY SIGNALS", d: "Get 2–3 institutional-grade setups every day. Clear. Timed. Ready.", icon: TrendingUp, img: "social_images/tl_image_6.webp" },
-          { t: "MARKET COMMENTARY", d: "Daily market breakdowns with expert context, not noise.", icon: Zap, img: "social_images/tl_image_7.webp" },
-          { t: "MASTERCLASS ACCESS", d: "Be the first to unlock discounted access to our elite programs.", icon: ShieldCheck, img: "social_images/tl_image_12.webp" },
-          { t: "BROKER BONUSES", d: "We’ve partnered with Vantage & PU Prime for exclusive perks.", icon: BarChart3, img: "social_images/brokers.png" },
-          { t: "REAL COMMUNITY", d: "Active traders. No bots. Real convos. All built in London.", icon: Users, img: "social_images/tl_image_13.webp" }
+          { t: "DAILY GOLD BREAKDOWNS", d: "Understand direction, key levels, and why price moves — step by step.", icon: TrendingUp, img: "social_images/tl_image_6.webp" },
+          { t: "CLEAR TRADE IDEAS", d: "1–2 high-probability setups explained with simple reasoning.", icon: Zap, img: "social_images/tl_image_7.webp" },
+          { t: "KEY LEVELS & DIRECTION", d: "Know where price is likely to react before the session starts.", icon: BarChart3, img: "social_images/tl_image_12.webp" },
+          { t: "ACTIVE COMMUNITY", d: "Real traders. Real discussions. No bots. No noise.", icon: Users, img: "social_images/tl_image_13.webp" }
         ].map(item => (
           <div class="group relative h-80 rounded-3xl overflow-hidden border border-white/10 bg-white/[0.02]">
             <img src={item.img} alt={item.t} class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 ease-out group-hover:scale-110" />
@@ -101,6 +101,8 @@ const TARGET_DATE = "2026-02-01T00:00:00";
           </div>
         ))}
       </div>
+
+      <p class="text-center text-white/50 text-sm mt-12 italic">No hype. No signal flooding. Just clarity.</p>
     </Container>
   </Section>
 
@@ -109,17 +111,17 @@ const TARGET_DATE = "2026-02-01T00:00:00";
     <Container>
       <div class="grid lg:grid-cols-2 gap-20 items-center">
         <div>
-          <Badge variant="glow" class="mb-6">REAL REPUTATION</Badge>
+          <Badge variant="glow" class="mb-6">REAL TRADERS</Badge>
           <Heading level={2} class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white mb-8">
-            Why 1,000+ Traders <br/> <span class="text-yellow-400">Trust ElDoradoFX</span>
+            Why Traders <br/> <span class="text-yellow-400">Keep Coming Back</span>
           </Heading>
 
           <ul class="space-y-8">
             {[
-              { t: "6+ Years Experience", d: "We’ve traded through all kinds of market chaos." },
-              { t: "91% Signal Accuracy", d: "Backed by data. Not luck. Not hype." },
-              { t: "Latinos in London", d: "We’re real traders — not faceless bots or fake admins." },
-              { t: "Built for Side Income", d: "Perfect for busy professionals & trading beginners." }
+              { t: "Real Market Experience", d: "We’ve traded through all types of market conditions." },
+              { t: "Real Traders — Not Bots", d: "No fake admins. No automation. Just real people trading." },
+              { t: "Built for Clarity & Consistency", d: "Designed for traders who want structure, not chaos." },
+              { t: "No Signal Flooding", d: "We focus on quality setups — not quantity." }
             ].map(point => (
               <li class="flex items-start gap-5">
                 <div class="mt-1 h-5 w-5 rounded-full border border-yellow-500 flex items-center justify-center flex-shrink-0">
@@ -133,10 +135,11 @@ const TARGET_DATE = "2026-02-01T00:00:00";
             ))}
           </ul>
 
-            <Brokers/>
+          <p class="mt-8 text-white/40 text-xs italic">No hype. No unrealistic claims. Just consistent execution.</p>
         </div>
 
         <div class="relative group">
+          <p class="text-[10px] text-yellow-500 font-bold tracking-[0.3em] uppercase mb-6 text-center">Real examples from the channel</p>
           <TestimonialsCarousel lang={lang as "en" | "es"} translations={ui[lang]}  client:load />
         </div>
       </div>
@@ -148,19 +151,21 @@ const TARGET_DATE = "2026-02-01T00:00:00";
     <Container size="narrow" class="text-center relative z-20">
       <Divider class="mb-20 opacity-20" />
       <Heading level={2} class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white mb-6">
-        Ready to <span class="text-yellow-400 underline decoration-yellow-500/50">Trade Smarter?</span>
+        Start Learning Gold <br/> <span class="text-yellow-400 underline decoration-yellow-500/50">the Right Way — Free</span>
       </Heading>
-      <Text class="text-xl text-white/60 mb-12 uppercase tracking-[0.2em] font-bold">Signals that teach. Not just tell.</Text>
+      <Text class="text-xl text-white/60 mb-12 max-w-2xl mx-auto">Get 1–2 high-quality XAUUSD setups per day + simple market breakdowns.</Text>
 
       <Button variant="primary" href="https://t.me/eldoradofxfree" class="px-16 py-8 text-2xl font-black italic tracking-tighter uppercase group shadow-[0_0_50px_rgba(185,138,37,0.4)]">
         <TelegramIcon class="mr-4 group-hover:scale-110 transition-transform" />
-        JOIN THE FREE SIGNALS CHANNEL
+        JOIN FREE TELEGRAM — GET TODAY’S GOLD SETUP
       </Button>
-      
-      <p class="mt-8 text-white/40 text-sm font-bold uppercase tracking-widest">It’s 100% free. You’ll be inside in seconds.</p>
+
+      <p class="mt-8 text-white/40 text-sm font-bold uppercase tracking-widest">It’s 100% free. Instant access. No signup.</p>
+
+      <p class="mt-8 text-white/50 text-sm max-w-xl mx-auto">Most traders lose because they follow noise. <span class="text-yellow-400 font-bold">Start with structure instead.</span></p>
 
       <div class="mt-12 flex flex-col items-center justify-center gap-3">
-        <p class="text-[10px] text-yellow-500 font-bold tracking-[0.3em] uppercase">Thousands already inside</p>
+        <p class="text-[10px] text-yellow-500 font-bold tracking-[0.3em] uppercase">1,000+ traders already inside</p>
         <div class="flex -space-x-2">
           <img src="/social_images/total_subscribers.jpeg" class="w-96 h-25 rounded-md border-[#B98A25] shadow-[0_0_50px_-10px_rgba(185,138,37,0.35)]" />
         </div>
